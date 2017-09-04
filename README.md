@@ -1,2 +1,3 @@
 # audits_public
-Public security audits of smart-contracts
+
+Official MixBytes Team audit reports repositary
