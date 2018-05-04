@@ -32,7 +32,7 @@
 ##### 2. [U_ForeignBridge.sol: 124, 139](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L124)
 Следует использовать hash вместо hashSender - иначе число signed для данного message никогда не станет больше 1, т.к. в hashSender включается msg.sender. Скорее всего, hashSender следует использовать только для исключения двойных подписей одним и тем же валидатором (в вызовах messagesSigned и setMessagesSigned).
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 3. [U_ForeignBridge.sol: 103](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L103)
 При увеличении числа требуемых подписей валидаторов возможна неоднократная выдача токенов: 
@@ -46,7 +46,7 @@
 ##### 4. [U_ForeignBridge.sol: 143](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L143)
 При увеличении числа требуемых подписей валидаторов возможна неоднократная генерация события `CollectedSignatures` для данного сообщения.
 
-*Дискуссиия и исправление доступны в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20/files).*
+*Дискуссиия и исправление доступны в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
 
 ### [ПРЕДУПРЕЖДЕНИЯ]
 
@@ -91,12 +91,12 @@
 
 *Аудитор: В комментариях в коде говорится, что да, захватываем кусок соседнего поля, но там всегда нули, потому что ... . И здесь речь как раз о том, чтобы не надеяться, что там будут нули, а явно это гарантировать, наложив маску. Можно читать 20 байт так, можно захватить следующее поле и выполнить сдвиг на 12 байт вправо.*
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files)*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21)*
 
 ##### 3. [Proxy.sol: 30](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeability/Proxy.sol#L30)
 Не обновляется значение указателя на свободную память. Рекомендуется добавить `mstore(0x40, add(ptr, size))`.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files)*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21)*
 
 ##### 4. [U_BridgeValidators.sol: 14](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L14)
 Рекомендуем добавить проверку в метод initialize: `require(owner != address(0));`.
@@ -111,22 +111,22 @@
 ##### 6. [U_BridgeValidators.sol: 28](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L28)
 Контроль пользовательского ввода рекомендуем делать с помощью `require`. `assert` рекомендуем применять сугубо для контроля самосогласованности кода.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 7. [POA20.sol: 46](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/POA20.sol#L46)
 Может быть объявлена как `view`.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 8. [POA20.sol: 31](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/POA20.sol#L31)
 Нет необходимости использовать механизм `super`, т.к. функция не переопределяет функцию родительского контракта `transfer`.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 9. [POA20.sol: 31](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/POA20.sol#L31)
 Не проверяется результат выполнения `transfer`. Спецификация ERC20 говорит: “NOTE: An important point is that callers should handle false from returns (bool success). Callers should not assume that false is never returned!”. В текущем коде по факту всегда возвращается `true`, однако закладываться на это — значит закладывать скрытую проблему в код, которая может проявить себя в будущем.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 10. [POA20.sol: 43](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/POA20.sol#L43)
 Не обрабатывается результат работы `onTokenTransfer`. Впрочем, похоже и сам автор спецификации ERC677 не знает зачем эта функция возвращает булево значение, и как его обрабатывать.
@@ -137,12 +137,12 @@
 Что касается ERC827, оно еще активно патчится и обсуждается, не далее как неделю назад: https://github.com/ethereum/EIPs/issues/827#issuecomment-381966457. То же касается любого не-ERC20 стандарта токена на данный момент.
 Для токена нашего проекта Smartz мы выбрали следующее решение: https://github.com/smartzplatform/sale/blob/master/contracts/token/TokenWithApproveAndCallMethod.sol.*
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 11. [U_ForeignBridge.sol: 45](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L45)
 Проверка `require(address(erc677token()) != address(0x0));` является избыточной, т.к. мы делаем это проверку при назначении токена. Может быть заменена на `assert`.
 
-*Изменено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Изменено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 12. [U_ForeignBridge.sol: 50](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L50)
 Логика расходится с описанием. Событие `Withdraw` генерируется немедленно после перевода токенов на foreign bridge, в то время как на странице [README.md](https://github.com/poanetwork/bridge-ui/blob/b552b053bd2d01a7fa4243f138448258174f4871/README.md) сказано, что это происходит после валидации транзакции (валидаторами? Или имеется ввиду майнинг транзакции?): “When the transaction is validated, the user should expect to see a Withdrawal Event on the Foreign Network (right-side - Ethereum Foundation).”. То же касается передачи по мосту в обратную сторону.
@@ -172,7 +172,7 @@
 ##### 3. [U_ForeignBridge.sol: 120](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L120) и [U_HomeBridge.sol: 62](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_HomeBridge.sol#L62)
 Рекомендуем эту, хоть и тривиальную, валидацию сообщений вынести в `library Message` как в единую точку, ответственную за десериализацию сообщений. Можно предложить сделать десериализацию одной функцией, возвращающей несколько значений, а также выполняющей валидацию.
 
-*Исправлено в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20/files)*
+*Исправлено в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20)*
 
 ##### 4. [UpgradeabilityProxy.sol: 24](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeability/UpgradeabilityProxy.sol#L24)
 Стоит сделать механизм контроля версий, предотвращающий обновление на более старую версию.
@@ -186,17 +186,17 @@
 ##### 5. [U_HomeBridge.sol: 29](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_HomeBridge.sol#L29)
 Рекомендуем убедиться, что `msg.data.length == 0` — что пользователем/клиентским ПО не была ошибочно вызвана другая, несуществующая функция, а производится именно перевод эфира без параметров.
 
-*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 6. [U_BridgeValidators.sol: 28](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L28)
 Можно использовать более специфичную функцию: `require(!isValidator(_validator));`.
 
-*Исправлено в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20/files).*
+*Исправлено в [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
 
 ##### 7. [U_ForeignBridge.sol: 78](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L78)
 Здесь и в прочих подобных местах. Если функция будет вызываться исключительно внешними вызовами (external call), рекомендуем заменить модификатор видимости `public` на `external`. Во-первых, тем самым мы более точно описываем для компилятора то, как задумали работу системы контрактов. Например, случайный внутренний вызов external функции в контракте либо контракте-наследнике вызовет ошибку компиляции и потребует либо убрать вызов, либо пересмотреть роль функции в системе контрактов. По сути это схоже с использованием спецификатора const в некоторых языках программирования. Во-вторых, это сэкономит немного газа (https://medium.com/@gus_tavo_guim/public-vs-external-functions-in-solidity-b46bcf0ba3ac).
 
-*Во многом исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21/files).*
+*Во многом исправлено в [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 8. Реализовать обновляемость (upgradability) контрактов другим способом. 
 Минусы текущей реализации:
