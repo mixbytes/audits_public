@@ -41,7 +41,7 @@ If you increase the number of required validator signatures, tokens can be relea
 3)  One of the validators (which is probably malicious) that hasn’t yet signed this `transactionHash`, sends a signature:
 4)  So, the token generation code is invoked once again, as the number `signed` is now 3, which is the same as the number of `requiredSignatures`.
 
-*`isAlreadyProcessed` method was added. A discussion of the solution is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).
+*`isAlreadyProcessed` method was added. A discussion of the solution is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
 
 ##### 4. [U_ForeignBridge.sol: 143](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L143)
 When the number of required validator signatures increases, `CollectedSignatures` may be repeatedly generated for this message.
