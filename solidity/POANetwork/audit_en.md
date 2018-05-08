@@ -30,15 +30,15 @@ No verification is performed to confirm that a `_validator` being removed is an 
 *Fixed at [40a07ebd12bc2cc0716d4a1eb8004d979619907d](https://github.com/poanetwork/poa-bridge-contracts/commit/40a07ebd12bc2cc0716d4a1eb8004d979619907d).*
 
 ##### 2. [U_ForeignBridge.sol: 124, 139](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L124)
-`hash` should be used instead of `hashSender`, otherwise the signed number for `message` will never exceed 1, as `msg.sender` is enabled in `hashSender`. It appears only `hashSender` should be used to exclude dual signatures using the same validator (when invoking `messagesSigned` and `setMessagesSigned`).
+`hash` should be used instead of `hashSender`, otherwise the signatures number for `message` will never exceed 1, as `msg.sender` is included in `hashSender`. It appears only `hashSender` should be used to exclude dual signatures issued by the same validator (when invoking `messagesSigned` and `setMessagesSigned`).
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 3. [U_ForeignBridge.sol: 103](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L103)
 If you increase the number of required validator signatures, tokens can be released multiple times:
 1)  Let’s say that `requiredSignatures` was 2, and you received the signature from the second validator and generated tokens for `recipient`;
-2)  In the contract `validatorContract` increased the number of `requiredSignatures` to 3;
-3)  One of the validators (which is probably malicious) that hasn’t yet signed this `transactionHash`, sends a signature:
+2)  In the contract `validatorContract` the number of `requiredSignatures` was increased to 3;
+3)  One of the validators (which is probably malicious) that hasn’t yet signed this `transactionHash`, sends a signature;
 4)  So, the token generation code is invoked once again, as the number `signed` is now 3, which is the same as the number of `requiredSignatures`.
 
 *`isAlreadyProcessed` method was added. A discussion of the solution is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
@@ -51,7 +51,7 @@ When the number of required validator signatures increases, `CollectedSignatures
 ### [WARNINGS]
 
 ##### 1. [Helpers.sol: 49](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L49)
-Quadratic complexity of the algorithm — normally, there’s a risk of block gas limit. We recommend creating either a hash map, or a balanced binary search tree located in the array.
+Quadratic complexity of the algorithm — normally, there’s a risk of hitting block gas limit. We recommend creating either a hash map, or a balanced binary search tree located in the array.
 
 *Talking to the customer:*
 Auditor: “You can create a mapping library by executing sload/sstore in the hash address (function id, call id, id maps, key). However, you may not want to waste gas, since you’re going to require 20k * array_length. So, it’s better to do this in memory. But memory is limited here, and there aren’t really any ready-made solutions. The ecosystem is not yet prepared for either an allocator, or for a standard library of structures. Thus, the fastest way may be to limit the number of validators and calculate consumed gas in terms of a worst-case scenario.”
@@ -144,7 +144,7 @@ After reading the [README.md](https://github.com/poanetwork/bridge-ui/blob/b552
 *Added to TODO.*
 
 ##### 14. [U_HomeBridge.sol: 22](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_HomeBridge.sol#L22)
-We recommend including the following verifications: `require(_homeDailyLimit > 0);` into the correspondent `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
+We recommend including the following verifications: `require(_homeDailyLimit > 0);` into the corresponding `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
 
 *Fixed at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_HomeBridge.sol#L25).*
 
