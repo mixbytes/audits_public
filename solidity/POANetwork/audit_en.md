@@ -73,31 +73,31 @@ Fixed at [69b97796f684ecde0261e32a413bf5dbf3b3f11c](https://github.com/poanetwo
 ### [REMARKS]
 
 ##### 1. [Helpers.sol: 50](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L50)
-Is it really a good idea to use `false` here? This most likely needs `require` (not `assert`, as input calling parameters are created by independent code), or ignoring duplicates without stopping the function, along with counting unique signatures.
+Is it really a good idea to use `false` here? This most likely needs `require` (not `assert`, as call arguments are created by independent code), or ignoring duplicates without stopping the function, along with counting unique signatures.
 
 *Fixed at master [Message.sol: 103](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/libraries/Message.sol#L103).*
 
 ##### 2. [Message.sol: 27](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Message.sol#L27)
-We recommend applying a mask to the interesting bits using the `and(mload(add(message, 20)), 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)`.
+We recommend applying a mask to the corresponding bits using the `and(mload(add(message, 20)), 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)`.
 
-*Customer: “mload can read 32 bytes, can’t it? I want to understand what it’s for.”*
+*Customer: “mload reads 32 bytes, isn’t it? I want to understand what it’s for.”*
 
 *Auditor: “Comments to the code say that yes, we’re engaging a part of the adjacent field as well, but it always contains zeros, because...  Here we’re talking exactly of not relying on zeros that may or may not be there but making sure they are there by means of applying a mask. This way we can read 20 bytes, engage the next field and make a 12 bytes-shift to the right.”*
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 3. [Proxy.sol: 30](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeability/Proxy.sol#L30)
-The value of the free memory index is not updated. You should add `mstore(0x40, add(ptr, size))`.
+The value of the pointer to the free memory is not updated. You should add `mstore(0x40, add(ptr, size))`.
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 4. [U_BridgeValidators.sol: 14](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L14)
-We recommend adding a verification procedure to the initialize method: `require(owner != address(0));`.
+We recommend adding a next check to the initialize method: `require(owner != address(0));`.
 
 *Fixed at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_BridgeValidators.sol#L18).*
 
 ##### 5. [U_BridgeValidators.sol: 20](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L20)
-The first condition is redundant because it is duplicated by the `addValidator` method. You’d better include the second verification in the `addValidator` method in order to encapsulate the verification inside.
+The first condition is redundant because it is duplicated by the `addValidator` method. You’d better include the second check in the `addValidator` method in order to encapsulate the check inside.
 
 *Altered at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_BridgeValidators.sol#L14).*
 
@@ -131,7 +131,7 @@ The `onTokenTransfer` output is not processed. However, even the authors of the 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 11. [U_ForeignBridge.sol: 45](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L45)
-The `require(address(erc677token()) != address(0x0));` verification is redundant because we’re already performing it at the time of token assignment. This can be replaced with the `assert` verification.
+The `require(address(erc677token()) != address(0x0));` check is redundant because we’re already performing it at the time of token assignment. This can be replaced with the `assert` verification.
 
 *Changed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
@@ -144,7 +144,7 @@ After reading the [README.md](https://github.com/poanetwork/bridge-ui/blob/b552
 *Added to TODO.*
 
 ##### 14. [U_HomeBridge.sol: 22](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_HomeBridge.sol#L22)
-We recommend including the following verifications: `require(_homeDailyLimit > 0);` into the corresponding `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
+We recommend including the following checks: `require(_homeDailyLimit > 0);` into the corresponding `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
 
 *Fixed at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_HomeBridge.sol#L25).*
 
