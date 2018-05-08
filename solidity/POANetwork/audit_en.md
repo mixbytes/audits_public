@@ -1,6 +1,6 @@
 # Audit of bridge smart contracts in the POA Network project
 
-######Contract
+###### Contract
 
 URL of the audited contract: https://github.com/poanetwork/poa-parity-bridge-contracts/tree/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts
 
@@ -18,7 +18,7 @@ The code of the contract may be viewed manually in order to identify known vulne
 
 ## Identified issues
 
-###[CRITICAL]
+### [CRITICAL]
 
 - not found
 
@@ -29,12 +29,12 @@ No verification is performed to confirm that a `_validator` being removed is an 
 
 *Fixed at [40a07ebd12bc2cc0716d4a1eb8004d979619907d](https://github.com/poanetwork/poa-bridge-contracts/commit/40a07ebd12bc2cc0716d4a1eb8004d979619907d).*
 
-#####2. [U_ForeignBridge.sol: 124, 139](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L124)
+##### 2. [U_ForeignBridge.sol: 124, 139](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L124)
 `hash` should be used instead of `hashSender`, otherwise the signed number for `message` will never exceed 1, as `msg.sender` is enabled in `hashSender`. It appears only `hashSender` should be used to exclude dual signatures using the same validator (when invoking `messagesSigned` and `setMessagesSigned`).
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
-#####3. [U_ForeignBridge.sol: 103](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L103)
+##### 3. [U_ForeignBridge.sol: 103](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L103)
 If you increase the number of required validator signatures, tokens can be released multiple times:
 1)  Let’s say that `requiredSignatures` was 2, and you received the signature from the second validator and generated tokens for `recipient`;
 2)  In the contract `validatorContract` increased the number of `requiredSignatures` to 3;
@@ -43,14 +43,14 @@ If you increase the number of required validator signatures, tokens can be relea
 
 *`isAlreadyProcessed` method was added. A discussion of the solution is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).
 
-#####4. [U_ForeignBridge.sol: 143](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L143)
+##### 4. [U_ForeignBridge.sol: 143](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L143)
 When the number of required validator signatures increases, `CollectedSignatures` may be repeatedly generated for this message.
 
 *Discussion and fix is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
 
 ### [WARNINGS]
 
-#####1. [Helpers.sol: 49](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L49)
+##### 1. [Helpers.sol: 49](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L49)
 Quadratic complexity of the algorithm — normally, there’s a risk of block gas limit. We recommend creating either a hash map, or a balanced binary search tree located in the array.
 
 *Talking to the customer:*
