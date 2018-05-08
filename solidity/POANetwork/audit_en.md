@@ -8,8 +8,8 @@ URL of the audited contract: https://github.com/poanetwork/poa-parity-bridge-co
 
 ##### CRITICAL: possible stealing of Ether/tokens, or their permanent blocking with no opportunity of recovering access, or any other loss of Ether/tokens payable to any party (e.g., as dividends).
 ##### SERIOUS: possible violations of contract operations, where the manual amendment or complete replacement of the contract is required to recover proper operations.
-#####WARNINGS: possible violation of the contract’s planned logic, or possible DoS attack on the contract.
-#####REMARKS: any other remarks.
+##### WARNINGS: possible violation of the contract’s planned logic, or possible DoS attack on the contract.
+##### REMARKS: any other remarks.
 
 
 ## Audit methodology
