@@ -208,4 +208,4 @@ Weak points of the suggested option:
 
 We’ve identified a number of challenges that prevent proper operations and need to be addressed. We’ve found no risks that funds or tokens may have been stolen by any third parties. We’ve also identified a number of potentially insecure constructions and provided recommendations with regard to the further development and adjustment of code.
 
-All required alterations have been applied as of 05/28/2018.
+All required alterations have been applied as of 04/28/2018.
