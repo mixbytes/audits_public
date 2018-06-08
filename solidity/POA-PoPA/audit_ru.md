@@ -30,23 +30,21 @@
 
 ### [ПРЕДУПРЕЖДЕНИЯ]
 
-##### 1. ProofOfPhysicalAddress.sol#L44-L46
+##### 1. [ProofOfPhysicalAddress.sol#L44-L46](https://github.com/poanetwork/poa-popa/blob/d28f182b8239fb9351e7e6cacb6f363b8d5ae06a/blockchain/contracts/ProofOfPhysicalAddress.sol#L44-L46)
 
 Счетчики `totalUsers`, `totalAddresses` и `totalConfirmed` только увеличиваются, но никогда не уменьшаются. Логично было бы их уменьшать при удалении адресов и пользователей.
 
-Так было сделано, поскольку предыдущая версия ERC780 позволяла пользователю удалить `claim` о себе в обход смарт-контракта, так что мы не могли бы быть уверены в точности этих цифр, если бы учитывали удаления.
-
-*В новой версии это учтено, [PR 136](https://github.com/poanetwork/poa-popa/pull/136).*
+*Так было сделано, поскольку предыдущая версия ERC780 позволяла пользователю удалить `claim` о себе в обход смарт-контракта, так что мы не могли бы быть уверены в точности этих цифр, если бы учитывали удаления. В новой версии это учтено, [PR 136](https://github.com/poanetwork/poa-popa/pull/136).*
 
 ### [ЗАМЕЧАНИЯ]
 
-##### 1. https://github.com/ethereum/EIPs/issues/780 контракт EthereumClaimsRegistry.sol обновился по сравнению с тем что используется в аудируемом коде.
+##### 1. [https://github.com/ethereum/EIPs/issues/780](https://github.com/ethereum/EIPs/issues/780) контракт EthereumClaimsRegistry.sol обновился по сравнению с тем что используется в аудируемом коде.
 
 В новой версии сошлись на том, что `removeClaim` может вызывать `issuer`, но не `subject`. Мотивация такая: если `claim` содержит недостоверную информацию, `subject` может опубликовать встречный `claim` от своего имени и дальше уже вопрос доверия. В то же время если `subject` просто хочет удалить свои данные, то `removeClaim` этому не поможет, поскольку информацию все еще можно достать из истории изменений.
 
 В коде контракта удаление claim-а subject-ом не используется, но в тестах проверяется.
 
-```
+```javascript
 --- EthereumClaimsRegistry.sol	2018-05-10 11:19:04.459670819 +0300
 +++ EthereumClaimsRegistry-EIP780-20180510.sol	2018-05-10 11:22:10.510566403 +0300
 @@ -1,6 +1,3 @@
@@ -96,11 +94,11 @@
 
 *Обновлено в [PR 136](https://github.com/poanetwork/poa-popa/pull/136).*
 
-##### 2. ProofOfPhysicalAddress.sol#L98
+##### 2. [ProofOfPhysicalAddress.sol#L98](https://github.com/poanetwork/poa-popa/blob/d28f182b8239fb9351e7e6cacb6f363b8d5ae06a/blockchain/contracts/ProofOfPhysicalAddress.sol#L98)
 
 При передаче в `userAddressConfirmed` значения `addressIndex` большего, чем длина массива `physicalAddresses`, будет exception. В функции есть проверка существования user-а:
 
-```
+```javascript
 require(userExists(wallet))
 ```
 
@@ -110,15 +108,15 @@ require(userExists(wallet))
 
 *Проверка добавлена в [PR 138](https://github.com/poanetwork/poa-popa/pull/138).*
 
-##### 3. ProofOfPhysicalAddress.sol#L200
+##### 3. [ProofOfPhysicalAddress.sol#L200](https://github.com/poanetwork/poa-popa/blob/d28f182b8239fb9351e7e6cacb6f363b8d5ae06a/blockchain/contracts/ProofOfPhysicalAddress.sol#L200)
 
 Функция `userAddress` так же как `userAddressConfirmed` не проверяет существования индекса перед обращением к элементу массива.
 
 *Проверка добавлена в [PR 138](https://github.com/poanetwork/poa-popa/pull/138).*
 
-##### 4. ProofOfPhysicalAddress.sol#L214
+##### 4. [ProofOfPhysicalAddress.sol#L214](https://github.com/poanetwork/poa-popa/blob/d28f182b8239fb9351e7e6cacb6f363b8d5ae06a/blockchain/contracts/ProofOfPhysicalAddress.sol#L214)
 
-`userAddressInfo - в этой функции такая же проблема, не проверяется существование индекса.
+`userAddressInfo` - в этой функции такая же проблема, не проверяется существование индекса.
 
 *Проверка добавлена в [PR 138](https://github.com/poanetwork/poa-popa/pull/138).*
 
@@ -151,7 +149,7 @@ require(userExists(wallet))
 
 Параметр data (входные данные транзакции), известен (по крайней мере, все его составляющие), и оно подписывается ключом сервера. Нужно проверить, что с сессией Х переданы эти самые параметры, как есть (abi-закодировав их). Знать id транзакции не нужно на этапе `/prepareRegTx`.
 
-Есть альтернатива - запомнить в сессии подпись [https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/web-dapp/routes/prepare_reg_tx.js#L60-L62](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/web-dapp/routes/prepare_reg_tx.js#L60-L62). Подсунуть одну и ту же транзакцию в разные сессии теперь атакующий не сможет - не сойдутся подписи транзакции с сохраненной в сессии (а она каждый раз разная, т.к. в подписываемых параметрах есть случайное значение confirmation code). Но придется повозиться с abi-декодированием input транзакции.
+Есть альтернатива - запомнить в сессии подпись [prepare_reg_tx.js#L60-L62](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/web-dapp/routes/prepare_reg_tx.js#L60-L62). Подсунуть одну и ту же транзакцию в разные сессии теперь атакующий не сможет - не сойдутся подписи транзакции с сохраненной в сессии (а она каждый раз разная, т.к. в подписываемых параметрах есть случайное значение confirmation code). Но придется повозиться с abi-декодированием input транзакции.
 
 *[PR 178](https://github.com/poanetwork/poa-popa/pull/178)*
 
@@ -161,7 +159,7 @@ require(userExists(wallet))
 
 Довольно опасно оставлять подобный код в таком виде, т.к. если в конфиге будет закомментировано `priceWei`, он начнет работу в production. Предлагается добавить
 
-```
+```javascript
 if (process.env.NODE_ENV !== 'test')
     throw new Error(‘not implemented’);
 ```
