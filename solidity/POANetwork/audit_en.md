@@ -30,15 +30,15 @@ No verification is performed to confirm that a `_validator` being removed is an 
 *Fixed at [40a07ebd12bc2cc0716d4a1eb8004d979619907d](https://github.com/poanetwork/poa-bridge-contracts/commit/40a07ebd12bc2cc0716d4a1eb8004d979619907d).*
 
 ##### 2. [U_ForeignBridge.sol: 124, 139](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L124)
-`hash` should be used instead of `hashSender`, otherwise the signed number for `message` will never exceed 1, as `msg.sender` is enabled in `hashSender`. It appears only `hashSender` should be used to exclude dual signatures using the same validator (when invoking `messagesSigned` and `setMessagesSigned`).
+`hash` should be used instead of `hashSender`, otherwise the signatures number for `message` will never exceed 1, as `msg.sender` is included in `hashSender`. It appears only `hashSender` should be used to exclude dual signatures issued by the same validator (when invoking `messagesSigned` and `setMessagesSigned`).
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 3. [U_ForeignBridge.sol: 103](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L103)
 If you increase the number of required validator signatures, tokens can be released multiple times:
 1)  Let’s say that `requiredSignatures` was 2, and you received the signature from the second validator and generated tokens for `recipient`;
-2)  In the contract `validatorContract` increased the number of `requiredSignatures` to 3;
-3)  One of the validators (which is probably malicious) that hasn’t yet signed this `transactionHash`, sends a signature:
+2)  In the contract `validatorContract` the number of `requiredSignatures` was increased to 3;
+3)  One of the validators (which is probably malicious) that hasn’t yet signed this `transactionHash`, sends a signature;
 4)  So, the token generation code is invoked once again, as the number `signed` is now 3, which is the same as the number of `requiredSignatures`.
 
 *`isAlreadyProcessed` method was added. A discussion of the solution is available in [PR 20](https://github.com/poanetwork/poa-bridge-contracts/pull/20).*
@@ -51,7 +51,7 @@ When the number of required validator signatures increases, `CollectedSignatures
 ### [WARNINGS]
 
 ##### 1. [Helpers.sol: 49](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L49)
-Quadratic complexity of the algorithm — normally, there’s a risk of block gas limit. We recommend creating either a hash map, or a balanced binary search tree located in the array.
+Quadratic complexity of the algorithm — normally, there’s a risk of hitting block gas limit. We recommend creating either a hash map, or a balanced binary search tree located in the array.
 
 *Talking to the customer:*
 Auditor: “You can create a mapping library by executing sload/sstore in the hash address (function id, call id, id maps, key). However, you may not want to waste gas, since you’re going to require 20k * array_length. So, it’s better to do this in memory. But memory is limited here, and there aren’t really any ready-made solutions. The ecosystem is not yet prepared for either an allocator, or for a standard library of structures. Thus, the fastest way may be to limit the number of validators and calculate consumed gas in terms of a worst-case scenario.”
@@ -73,31 +73,31 @@ Fixed at [69b97796f684ecde0261e32a413bf5dbf3b3f11c](https://github.com/poanetwo
 ### [REMARKS]
 
 ##### 1. [Helpers.sol: 50](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Helpers.sol#L50)
-Is it really a good idea to use `false` here? This most likely needs `require` (not `assert`, as input calling parameters are created by independent code), or ignoring duplicates without stopping the function, along with counting unique signatures.
+Is it really a good idea to use `false` here? This most likely needs `require` (not `assert`, as call arguments are created by independent code), or ignoring duplicates without stopping the function, along with counting unique signatures.
 
 *Fixed at master [Message.sol: 103](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/libraries/Message.sol#L103).*
 
 ##### 2. [Message.sol: 27](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/libraries/Message.sol#L27)
-We recommend applying a mask to the interesting bits using the `and(mload(add(message, 20)), 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)`.
+We recommend applying a mask to the corresponding bits using the `and(mload(add(message, 20)), 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF)`.
 
-*Customer: “mload can read 32 bytes, can’t it? I want to understand what it’s for.”*
+*Customer: “mload reads 32 bytes, isn’t it? I want to understand what it’s for.”*
 
 *Auditor: “Comments to the code say that yes, we’re engaging a part of the adjacent field as well, but it always contains zeros, because...  Here we’re talking exactly of not relying on zeros that may or may not be there but making sure they are there by means of applying a mask. This way we can read 20 bytes, engage the next field and make a 12 bytes-shift to the right.”*
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 3. [Proxy.sol: 30](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeability/Proxy.sol#L30)
-The value of the free memory index is not updated. You should add `mstore(0x40, add(ptr, size))`.
+The value of the pointer to the free memory is not updated. You should add `mstore(0x40, add(ptr, size))`.
 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 4. [U_BridgeValidators.sol: 14](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L14)
-We recommend adding a verification procedure to the initialize method: `require(owner != address(0));`.
+We recommend adding a next check to the initialize method: `require(owner != address(0));`.
 
 *Fixed at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_BridgeValidators.sol#L18).*
 
 ##### 5. [U_BridgeValidators.sol: 20](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_BridgeValidators.sol#L20)
-The first condition is redundant because it is duplicated by the `addValidator` method. You’d better include the second verification in the `addValidator` method in order to encapsulate the verification inside.
+The first condition is redundant because it is duplicated by the `addValidator` method. You’d better include the second check in the `addValidator` method in order to encapsulate the check inside.
 
 *Altered at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_BridgeValidators.sol#L14).*
 
@@ -131,7 +131,7 @@ The `onTokenTransfer` output is not processed. However, even the authors of the 
 *Fixed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
 ##### 11. [U_ForeignBridge.sol: 45](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_ForeignBridge.sol#L45)
-The `require(address(erc677token()) != address(0x0));` verification is redundant because we’re already performing it at the time of token assignment. This can be replaced with the `assert` verification.
+The `require(address(erc677token()) != address(0x0));` check is redundant because we’re already performing it at the time of token assignment. This can be replaced with the `assert` verification.
 
 *Changed at [PR 21](https://github.com/poanetwork/poa-bridge-contracts/pull/21).*
 
@@ -144,7 +144,7 @@ After reading the [README.md](https://github.com/poanetwork/bridge-ui/blob/b552
 *Added to TODO.*
 
 ##### 14. [U_HomeBridge.sol: 22](https://github.com/poanetwork/poa-parity-bridge-contracts/blob/d796891477e15823c7bdd5b0b2f9a38e10f17b94/contracts/upgradeable_contracts/U_HomeBridge.sol#L22)
-We recommend including the following verifications: `require(_homeDailyLimit > 0);` into the correspondent `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
+We recommend including the following checks: `require(_homeDailyLimit > 0);` into the corresponding `setHomeDailyLimit` function. The same is recommended for `U_ForeignBridge` contract.
 
 *Fixed at [master](https://github.com/poanetwork/poa-bridge-contracts/blob/8cf94e4b8b9651d163f15a135ea7f8841b5d2d46/contracts/upgradeable_contracts/U_HomeBridge.sol#L25).*
 
@@ -208,4 +208,4 @@ Weak points of the suggested option:
 
 We’ve identified a number of challenges that prevent proper operations and need to be addressed. We’ve found no risks that funds or tokens may have been stolen by any third parties. We’ve also identified a number of potentially insecure constructions and provided recommendations with regard to the further development and adjustment of code.
 
-All required alterations have been applied as of 05/28/2018.
+All required alterations have been applied as of 04/28/2018.
