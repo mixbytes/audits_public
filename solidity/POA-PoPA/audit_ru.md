@@ -122,24 +122,25 @@ require(userExists(wallet))
 
 *Проверка добавлена в [PR 138](https://github.com/poanetwork/poa-popa/pull/138).*
 
-https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol 
-В функциях рекомендуется использовать спецификаторы view или pure вместо constant.
+##### 5. [ProofOfPhysicalAddress.sol](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol) 
 
-Поменяли https://github.com/poanetwork/poa-popa/pull/156
+В функциях рекомендуется использовать спецификаторы `view` или `pure` вместо `constant`.
 
-##### 5. [ProofOfPhysicalAddress.sol#L97](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L97)
+*Поменяли [PR 156](https://github.com/poanetwork/poa-popa/pull/156).*
+
+##### 6. [ProofOfPhysicalAddress.sol#L97](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L97)
 
 Здесь и далее рекомендуется вынести проверку `require(userExists(wallet));` в виде модификатора.
 
 *Уже сделано в [PR 127](https://github.com/poanetwork/poa-popa/pull/127)*
 
-##### 6. [ProofOfPhysicalAddress.sol#L104](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L104)
+##### 7. [ProofOfPhysicalAddress.sol#L104](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L104)
 
 Перед декодированием рекомендуется добавить проверку, что claim существует: `if (0 == claim) return false;`.
 
 *Добавлено в [PR 151](https://github.com/poanetwork/poa-popa/pull/151)*
 
-##### 7. [ProofOfPhysicalAddress.sol#L225](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L225) 
+##### 8. [ProofOfPhysicalAddress.sol#L225](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L225) 
 
 Рекомендуется добавить выше `require(userAddressConfirmed(wallet, ai));`, иначе здесь будет декодирование заведомо нулевого claim.
 
@@ -170,19 +171,19 @@ return (
 
 *Добавили [PR 159](https://github.com/poanetwork/poa-popa/pull/159)*
 
-##### 8. [ProofOfPhysicalAddress.sol#L100](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L100)
+##### 9. [ProofOfPhysicalAddress.sol#L100](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L100)
 
 С т.з. логики, заложенной в код, это условие никогда не выполняется. Для проверки самосогласованности кода его рекомендуется заменить на `assert(keccakIdentifier != 0x0)`.
 
 *Добавлено в [PR 152](https://github.com/poanetwork/poa-popa/pull/152)*
 
-##### 9. [ProofOfPhysicalAddress.sol#L309](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L309)
+##### 10. [ProofOfPhysicalAddress.sol#L309](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L309)
 
 Алгоритм с O(N) сложностью по записи данных в блокчейн. Можно заменить текущий алгоритм (сдвиг элементов массива начиная с `index + 1`) на перемещение последнего элемента (с индексом `length - 1`) на позицию `index`, если `index != length - 1`. Это даст алгоритм с O(1) сложностью по записи данных в блокчейн.
 
 *Сделано [PR 154](https://github.com/poanetwork/poa-popa/pull/154)*
 
-##### 10. [ProofOfPhysicalAddress.sol#L331](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L331)
+##### 11. [ProofOfPhysicalAddress.sol#L331](https://github.com/poanetwork/poa-popa/blob/e259cec1fcfcfdff30a52bffb395d845c774855b/blockchain/contracts/ProofOfPhysicalAddress.sol#L331)
 
 На [диаграмме](https://github.com/poanetwork/poa-popa/tree/e259cec1fcfcfdff30a52bffb395d845c774855b#proof-of-physical-address-popa) указано, что confirmation code отправляется из DApp web напрямую в смарт-контракт, минуя DApp server. Однако в коде требуется подпись DApp server.
 
