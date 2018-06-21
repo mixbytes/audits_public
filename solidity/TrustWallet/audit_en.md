@@ -38,12 +38,16 @@ According to [specification](https://github.com/TrustWallet/contracts-trust/issu
 2 years, and intermediate partial releases are not expected. At the same time, in `Migration.sol` there are intermediate 
 partial releases of tokens every 183 days.
 
+*Updated in the whitepaper.*
+
 ##### 2. [Migration.sol#L19](https://github.com/TrustWallet/contracts-trust/blob/0b4ccc05402e1517ef44688e8a488f7dbc01cfac/contracts/Migration.sol#L19)
 
 According to [specification](https://github.com/TrustWallet/contracts-trust/issues/5) `Advisors/Partners` pool is vested 
 over 1 year with 25% released every 3 months starting from the date of first Token Distribution.
 At the same time, in `Migration.sol` release logic is the following: to release 20% every 3 months and the first release
 is immediate. Which contradicts the specification at least in numbers.
+
+*Fixed in [2a85f6c](https://github.com/TrustWallet/contracts-trust/commit/2a85f6c1ff593b43e8d0c38b7b6d04d055ea6e3f).*
 
 ### [SUMMARY]
 

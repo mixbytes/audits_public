@@ -37,10 +37,14 @@
 В описании https://github.com/TrustWallet/contracts-trust/issues/5 сказано что Reserve вестится на 2 года, но не заявлен периодический релиз токенов. 
 А в Migration.sol прописан vestingInterval полгода.
 
+*Информация в whitepaper обновлена.*
+
 ##### 2. [Migration.sol#L19](https://github.com/TrustWallet/contracts-trust/blob/0b4ccc05402e1517ef44688e8a488f7dbc01cfac/contracts/Migration.sol#L19)
 
 Для Advisors https://github.com/TrustWallet/contracts-trust/issues/5 заявлен релиз по 25% за 1 год, но  в Migration.sol прописан релиз по 20% и дата
 start ставится на 3 месяца в прошлое.
+
+*Исправлено в коммите [2a85f6c](https://github.com/TrustWallet/contracts-trust/commit/2a85f6c1ff593b43e8d0c38b7b6d04d055ea6e3f).*
 
 ### [ПРЕДЛОЖЕНИЯ]
 
