@@ -1,4 +1,4 @@
-# Audit of Trust Wallet smart contracts
+# Audit of TST Token smart contracts
 
 ###### Contract
 
