@@ -51,5 +51,5 @@ is immediate. Which contradicts the specification at least in numbers.
 
 ### [SUMMARY]
 
-The code of the token and vesting contract is flawless and well written. There are a few concerns regarding accordance of
-the migration code with the specification.
+The code of the token and vesting contract is flawless and well written. There was a few concerns regarding accordance of
+the migration code with the specification which are fixed as of 22 jun 2018.
