@@ -1,6 +1,8 @@
-# Audit of UBCoin Token smart contracts
+![MixBytes()](https://github.com/mixbytes/audits_public/blob/master/mixbytes-logo.png?raw=true)
 
-###### Contract
+# Audit of UBCoin Token smart contracts by MixBytes team
+
+## Contract
 
 URL of the audited contract: https://github.com/ubcoin/ubcoin/blob/f93ba05064c88fc74d1ce90f8570e0b1d724849a/contracts/UBCoinToken.sol (and its dependencies)
 
@@ -46,3 +48,6 @@ According to [ERC-20 standard](https://github.com/ethereum/EIPs/blob/master/EIPS
 
 According to [ERC-20 standard](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md#decimals) type of returned value for `decimals` should be `uint8`
 
+---
+
+MixBytes(), 2018
