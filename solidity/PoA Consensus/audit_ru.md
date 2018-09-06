@@ -26,7 +26,7 @@
 
 Если наберется > 200 валидаторов, `getBallotLimitPerValidator` начнет возвращать ноль. Эта функция используется в функции `withinLimit`, а значит никто не сможет больше создавать новые ballot-ы - все изменения заблокируются.
 
-Данная проблема сейчас не актуальна благодаря ошибке в реализации модификатора `[withinLimit](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L136)` где вместо `<=` должно быть `<`, иначе разрешается превышать лимит на 1 при вызовах `[_createBallot](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L181)`. Если эту ошибку исправить, будет блокировка возможности голосований за изменения при достижении числа валидаторов 200.
+Данная проблема сейчас не актуальна благодаря ошибке в реализации модификатора [withinLimit](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L136), где вместо `<=` должно быть `<`, иначе разрешается превышать лимит на 1 при вызовах [_createBallot](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L181). Если эту ошибку исправить, будет блокировка возможности голосований за изменения при достижении числа валидаторов 200.
 
 *Исправлено в [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).*
 
@@ -58,7 +58,7 @@
 
 `uint256 public constant MAX_PENDING_CHANGE_CONFIRMATIONS = 50` - такое определение константы заблокирует возможность вносить изменения в случае если порог (возвращается из `ballotsStorage.getBallotThreshold(metadataChangeThresholdType))` через голосование установят выше 50-ти.
 
-Исправлено в [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).
+*Исправлено в [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).*
 
 *Клиент: здесь https://github.com/poanetwork/poa-network-consensus-contracts/pull/164/files#diff-2c00ed73fa555c3fa081a96e5b5893dc было решено вернуть значение 50 в качестве ограничения, чтобы лимитировать итерации циклов здесь https://github.com/varasev/poa-network-consensus-contracts/blob/aa6eab9a28fbc710858b0e020e7f5f69dda8ba17/contracts/ValidatorMetadata.sol#L447 и здесь https://github.com/varasev/poa-network-consensus-contracts/blob/aa6eab9a28fbc710858b0e020e7f5f69dda8ba17/contracts/ValidatorMetadata.sol#L638. Добавленный код учитывает минимальный порог, поэтому если порог будет выше значения 50, блокировка при финализации не произойдет: https://github.com/varasev/poa-network-consensus-contracts/blob/aa6eab9a28fbc710858b0e020e7f5f69dda8ba17/contracts/ValidatorMetadata.sol#L275-L280*
 
@@ -66,7 +66,7 @@
 
 *Клиент: да, его можно обойти, если `minThreshold` больше значения `50`. Но маловероятно, что `minThreshold` будет установлен в такое большое значение при инициализации контракта `BallotsStorage`. Я дополнительно сделаю проверку внутри функции `BallotsStorage.init`, чтобы это значение нельзя было превысить.*
 
-*Улучшения по этому предупреждению выполнены в https://github.com/poanetwork/poa-network-consensus-contracts/pull/166*
+*Улучшения по этому предупреждению выполнены в [PR 166](https://github.com/poanetwork/poa-network-consensus-contracts/pull/166).*
 
 ##### 7. [KeysManager.sol#L323](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L323)
 
@@ -80,7 +80,7 @@
 
 Нет, в простом виде проверка при создании - не подойдет, я писал об этом в последнем замечании. Если ее делать, то сразу нужно заводить счетчик ожидаемых к добавлению валидаторов, и суммировать его с текущим числом при проверке условия.
 
-*Клиент: мы решили не добавлять такую проверку, т.к. ситуация с кол-вом валидаторов, равным 2000, маловероятна. Чтобы не усложнять код для обработки такого маловероятного события. Решение вопроса с нефинализируемыми голосованиями описано в замечании № 9.*
+*Клиент: мы решили не добавлять такую проверку, т.к. ситуация с кол-вом валидаторов, равным 2000, маловероятна. Чтобы не усложнять код для обработки такого маловероятного события. Решение вопроса с нефинализируемыми голосованиями описано в [замечании № 9](#9-votingtochangekeyssoll116).*
 
 ##### 8. [KeysManager.sol#L263](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L263)
 
@@ -189,7 +189,7 @@
 
 *Клиент: да, но мы решили, что незакрываемые голосования в подобных случаях - это нормально. Если мы, например, не можем добавить voting-ключ уже несуществующему mining-ключу, то такое голосование не должно финализироваться и должно иметь признак "не финализировано", чтобы было видно, что предполагаемые изменения не применены. Сами случаи таких голосований теоретически по коду возможны, но маловероятны (теперь в том числе благодаря дополнительным проверкам еще при создании голосования). Однако, если вы считаете, что нефинализированные голосования могут представлять какую-то угрозу - просьба прокомментировать.*
 
-Хотя если голосование не финализируется, то не будет вызвана функция _decreaseValidatorLimit, что чревато уменьшением лимита голосований конкретного валидатора. Я подумаю, как лучше сделать.
+*Хотя если голосование не финализируется, то не будет вызвана функция _decreaseValidatorLimit, что чревато уменьшением лимита голосований конкретного валидатора. Я подумаю, как лучше сделать.*
 
 Глобальных последствий от незакрываемых голосований, напр. DoS'а, не видно.
 
@@ -211,9 +211,9 @@
 
 *Клиент: если рассматривать негативные последствия от нефинализированных голосований, то я вижу только один момент с функцией VotingToChange._decreaseValidatorLimit (описал выше).*
 
-Можно изменить код всех функций KeysManager, которые вызываются из VotingToChangeKeys, так, чтобы они не делали revert, а возвращали false в случае неудачи. Тогда функция финализации не будет делать revert (как это сделано с VotingToManageEmissionFunds) и можно будет обойтись без `prefinalize`.
+*Можно изменить код всех функций KeysManager, которые вызываются из VotingToChangeKeys, так, чтобы они не делали revert, а возвращали false в случае неудачи. Тогда функция финализации не будет делать revert (как это сделано с VotingToManageEmissionFunds) и можно будет обойтись без `prefinalize`.*
 
-Было решено заменить revert'ы на return'ы, как вы предложили выше. Теперь при финализации голосования, если условия в момент финализации не выполняются, транзакция все равно пройдет, но изменения не будут применены. Это выполнено в [PR 155](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155). Для устранения проблемы с функцией `_decreaseValidatorLimit` в функции `VotingToChange._finalizeBallot` код изменен следующим образом: [diff](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155/files#diff-1b5bd6dd22e70fb3f22f92d5589b038fR217) - т.е. изменение лимита голосования происходит один раз (при первой транзакции финализации). При повторных попытках финализации изменение счетчика не происходит, чтобы нельзя было его накрутить.
+*Было решено заменить revert'ы на return'ы, как вы предложили выше. Теперь при финализации голосования, если условия в момент финализации не выполняются, транзакция все равно пройдет, но изменения не будут применены. Это выполнено в [PR 155](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155). Для устранения проблемы с функцией `_decreaseValidatorLimit` в функции `VotingToChange._finalizeBallot` код изменен следующим образом: [diff](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155/files#diff-1b5bd6dd22e70fb3f22f92d5589b038fR217) - т.е. изменение лимита голосования происходит один раз (при первой транзакции финализации). При повторных попытках финализации изменение счетчика не происходит, чтобы нельзя было его накрутить.*
 
 ##### 10. [ValidatorMetadata.sol#L279](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L279)
 
@@ -315,7 +315,7 @@ Threshold type `MetadataChange` фактически не используетс
 
 Функция `rewardHBBFT` вероятно должна быть описана в интерфейсе [IBlockReward](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/interfaces/IBlockReward.sol#L7).
 
-*Клиент: смарт-контракт BlockReward в одном из PR был разделен на две части: RewardByBlock и RewardByTime (каждый со своим интерфейсом): PR 140.*
+*Клиент: смарт-контракт BlockReward в одном из PR был разделен на две части: RewardByBlock и RewardByTime (каждый со своим интерфейсом): [PR 140](https://github.com/poanetwork/poa-network-consensus-contracts/pull/140).*
 
 ##### 5. [PoaNetworkConsensus.sol#L168](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/PoaNetworkConsensus.sol#L168)
 
