@@ -12,7 +12,7 @@ The obsolete mechanism of voting should be removed. Its disadvantages include, f
 
 ##### 2. [VotingToChangeMinThreshold.sol#L98](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeMinThreshold.sol#L98)
 
-If the vote threshold is increased for changing the keys, and when voting ([KeysManager.sol#L454](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L454)) is deleted, it is not verified that the total number of voting keys remaining in the system is still greater than the current threshold and voting can in principle be terminated (see. [VotingToChange.sol#L229](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L229)). As a result, a denial of service may occur.
+If the vote threshold is increased for changing the keys or voting key ([KeysManager.sol#L454](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L454)) is deleted, it is not verified that the total number of voting keys remaining in the system is still greater than the current threshold and voting can in principle be finished (see. [VotingToChange.sol#L229](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L229)). As a result, a denial of service may occur.
 
 *Client: Yes, we have an [issue created on this topic](https://github.com/poanetwork/poa-network-consensus-contracts/issues/154) — it is assumed that if the threshold is higher than the number of validators, then you can vote for changing the implementation of `BallotsStorage`, which stores this threshold value because the voting for the change of implementation in such cases is not blocked. Please comment on it if you still see the problem given the above. I am thinking of solving this issue after the hard fork in order to save time now. Also at the stage of creating a vote for the change of threshold, we have such a test for the number of validators: [VotingToChangeMinThreshold.sol#L21](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeMinThreshold.sol#L21) — although this is a test for the number of mining keys and not voting keys, we do not have validators with an empty voting key (theoretically and technically they might exist, but this is unlikely).*
 
@@ -24,9 +24,9 @@ Yes, that's it. Plus, the number of voters, equal to the aforementioned `getProx
 
 ##### 1. [BallotsStorage.sol#L101](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/BallotsStorage.sol#L101)
 
-If there are > 200 validators, `getBallotLimitPerValidator` will start sending back zero. This function is used in the function `withinLimit`, which means that no one can create new ballots any more — all changes will be blocked.
+If there are > 200 validators, `getBallotLimitPerValidator` will return zero. This function is used in the function `withinLimit`, which means that no one will be able to create new ballots any more — all changes will be blocked.
 
-This problem is not currently relevant due to an error in the implementation of the `[withinLimit](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L136)` modifier where instead of `<=` there should be `<`, otherwise it is allowed to exceed the limit by 1 for calls to `[_createBallot](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L181)`. If this error is corrected, there will be a blocking of the possibility of voting for changes when the number of validators reaches 200.
+This problem is not currently relevant due to an error in the implementation of the [`withinLimit`](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L136) modifier where instead of `<=` there should be `<`, otherwise it is allowed to exceed the limit by 1 for calls to [`_createBallot`](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingToChange.sol#L181). If this error is corrected, there will be a blocking of the possibility of voting for changes when the number of validators reaches 200.
 
 *Fixed at [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).*
 
@@ -51,6 +51,7 @@ It is possible to create two or more ballots for deleting the same mining key wh
 ##### 5. [ValidatorMetadata.sol#L260](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L260)
 
 The public modifier allows the voting key owner to use any mining key, including creating a request for changing other people's data or editing someone else's request before it is accepted.
+
 Client: the changeRequestForValidator function has been removed with its code having been transferred to the changeRequest function at [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).
 
 ##### 6. [ValidatorMetadata.sol#L331](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L331)
@@ -75,7 +76,7 @@ By the way, this is another place where you can create an unclosable ballot.
 
 *Client: yes, right. It will be necessary to add a check for the number of validators when creating a ballot. It is unlikely that the system will reach 2,000 validators, but nonetheless.*
 
-No, in a simple form, a check during creation won't suffice; I wrote about this in the last comment. If it is done, then you have to immediately start a counter of the validators expected to be added and then add them to the current number when checking the condition.
+No, in a simple form, a check during creation won't suffice; I wrote about this in the last comment. If it is done, then you have to keep a counter of the validators expected to be added and add them to the current number when checking the condition.
 
 *Client: We decided not to add such a check because the situation with a number of validators equal to 2000 is unlikely. In order not to complicate the code for processing such an unlikely event. The solution for the issue with unfinalisable ballots is described in comment No 9.*
 
@@ -89,7 +90,7 @@ Exceeding `maxLimitValidators` is possible, if some of the initial keys are used
 
 In some parts of the code that read the mining keys logs, there are limits to reading the logs (e.g. also here [KeysManager.sol#L181](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L181)), which are different. However, there is no limitation for mining keys logging. This means that when the set limits are reached, reading the log will stop returning the correct data. The reaching of the limits can occur as a result of attacker actions, and also, with some extremely low probability, during a regular operation. We recommend setting identical limits everywhere for reading and writing.
 
-Client: if we just put a limit on the record, the function `VotingToChangeKeys.checkIfMiningExisted` will behave the same as now — return false for the key that was created more than 25 exchanges ago. Do I understand correctly that you propose to prohibit the swap mining key if the limit is reached? As for the `KeysManager.migrateMiningKey` function — it will now take the value of the same limit from the public-getter maxOldMiningKeysDeepCheck(): [PR 156](https://github.com/poanetwork/poa-network-consensus-contracts/pull/156/files#diff-7b2957c0b674ce4e78e903e367828aa6). 
+Client: if we just put a limit on the mining key exchange recording, the function `VotingToChangeKeys.checkIfMiningExisted` will behave the same as now — return false for the key that was created more than 25 key exchanges ago. Do I understand correctly that you propose to prohibit swapping mining key if the limit is reached? As for the `KeysManager.migrateMiningKey` function — it will now take the value of the same limit from the public-getter maxOldMiningKeysDeepCheck(): [PR 156](https://github.com/poanetwork/poa-network-consensus-contracts/pull/156/files#diff-7b2957c0b674ce4e78e903e367828aa6). 
 
 Yes, it turns out that the limit is 25 key changes. You would know better how this will interfere. There are alternatives (make a tree structure, Bloom filter, ...), but they are relatively cumbersome.
 
@@ -101,13 +102,17 @@ We recommend adding a check whether the `currentValidators[i]` validator has not
 
 *Fixed at [PR 156](https://github.com/poanetwork/poa-network-consensus-contracts/pull/156).*
 
-##### 11. In the documentation https://github.com/poanetwork/wiki/wiki/Ballots-Overview.-Life-cycle-and-limits#limits global limits for ballots are mentioned (e.g. “Validator Management Ballot: 9 active ballots at one time”). In the audited version of the code they are not present, but if they are implemented, they will not only be useless against spam, but in a compartment with the problem of unclosable ballots they can lead to a global denial of service.
+##### 11. Global limits for ballots
 
-*Client: Yes, this information in the documentation is outdated (we will correct it). Instead of global limits, we use limits for each validator, calculated in the `BallotsStorage.getBallotLimitPerValidator` function: [BallotsStorage.sol#L135-L145](https://github.com/poanetwork/poa-network-consensus-contracts/blob/fd2b2c6c2f4a4b1b5bdacd4f9510397e3c5124fa/contracts/BallotsStorage.sol#L135-L145) The solution for unfinalisable ballots is described in comment No 9. Please comment: Do you see any problems with spam protection in the current implementation, which relies on `BallotsStorage.getBallotLimitPerValidator`?*
+In [the documentation](https://github.com/poanetwork/wiki/wiki/Ballots-Overview.-Life-cycle-and-limits#limits) global limits for ballots are mentioned (e.g. “Validator Management Ballot: 9 active ballots at one time”). In the audited version of the code they are not present, but if they are implemented, they will not only be useless against spam, but in a compartment with the problem of unclosable ballots they can lead to a global denial of service.
+
+*Client: Yes, this information in the documentation is outdated (we will correct it). Instead of global limits, we use limits for each validator, calculated in the `BallotsStorage.getBallotLimitPerValidator` function: [BallotsStorage.sol#L135-L145](https://github.com/poanetwork/poa-network-consensus-contracts/blob/fd2b2c6c2f4a4b1b5bdacd4f9510397e3c5124fa/contracts/BallotsStorage.sol#L135-L145). The solution for unfinalisable ballots is described in comment No 9. Please comment: Do you see any problems with spam protection in the current implementation, which relies on `BallotsStorage.getBallotLimitPerValidator`?*
 
 We see no problems here.
 
-##### 12. In the documentation https://github.com/poanetwork/wiki/wiki/POA-Network-Whitepaper#creating-a-new-ballot on the diagram there is a comment that the contract method looks for votes ready to be finalised and finalises them, but it is not present in the code. The next diagram contains the same comment https://github.com/poanetwork/wiki/wiki/POA-Network-Whitepaper#voting-on-a-ballot
+##### 12. Documentation
+ 
+In [the documentation](https://github.com/poanetwork/wiki/wiki/POA-Network-Whitepaper#creating-a-new-ballot) on the diagram there is a comment that the contract method looks for votes ready to be finalised and finalises them, but it is not present in the code. The next diagram contains the same comment https://github.com/poanetwork/wiki/wiki/POA-Network-Whitepaper#voting-on-a-ballot
 
 *Client: we will remove the superfluous note from the diagrams. The corresponding issue: https://github.com/poanetwork/wiki/issues/67.*
 
