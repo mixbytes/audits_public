@@ -309,7 +309,7 @@ Threshold type `MetadataChange` фактически не используетс
 
 ##### 2. [VotingTo.sol#L186](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingTo.sol#L186)
 
-Используется Функция `hasAlreadyVoted`, которая определяет mining key по voting key через `KeyMaster` и вызывает `hasMiningKeyAlreadyVoted`. А строкой раньше мы уже определили mining key и этот вызов можно заменить сразу на вызов `hasMiningKeyAlreadyVoted`.
+Используется Функция `hasAlreadyVoted`, которая определяет mining key по voting key через `KeysManager` и вызывает `hasMiningKeyAlreadyVoted`. А строкой раньше мы уже определили mining key и этот вызов можно заменить сразу на вызов `hasMiningKeyAlreadyVoted`.
 
 *Исправлено в [PR 149](https://github.com/poanetwork/poa-network-consensus-contracts/pull/149).*
 

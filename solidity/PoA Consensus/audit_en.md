@@ -128,7 +128,7 @@ In the `rewardHBBFT` function, in the loop, there is a distribution of rewards b
 
 One of the problems that arise: if the miner has lost control of the key and changed it through a ballot, it is possible that the reward will go to the old key because the list of `hbbftPayoutKeys` had not been updated for a long time.
 
-*Client: the work here is built on the following principle. It is assumed that all validators should receive compensation in turn. At the very beginning, the list of validators is taken. During the cycle, the reward is charged to each validator in the order of its number in the array. If the loop goes beyond the current size of the array of validators, then after processing the last validator in the array, the list is updated because during the processing of the array from the zero element to the last, the lineup of validators could change. Thus, the processing begins with the null validator of the already updated list. I.e. it takes a snapshot of the validators list, and it does not change until this list is processed to the end. Once it is processed to the end, the snapshot is taken again. Etc. This contract has not been fully worked out yet — it is possible that the algorithm will change, but we still need to test the current version of its code. Let me know if the calculation algorithm given above is not completely clear to you. We have a small description of the task by which the function was implemented: https://github.com/poanetwork/RFC/issues/16*
+*Client: the work here is built on the following principle. It is assumed that all validators should receive compensation in turn. At the very beginning, the list of validators is taken. During the cycle, the reward is charged to each validator in the order of its number in the array. If the loop goes beyond the current size of the array of validators, then after processing the last validator in the array, the list is updated because during the processing of the array from the zero element to the last, the lineup of validators could change. Thus, the processing begins with the first validator of the already updated list. I.e. it takes a snapshot of the validators list, and it does not change until this list is processed to the end. Once it is processed to the end, the snapshot is taken again. Etc. This contract has not been fully worked out yet — it is possible that the algorithm will change, but we still need to test the current version of its code. Let me know if the calculation algorithm given above is not completely clear to you. We have a small description of the task by which the function was implemented: https://github.com/poanetwork/RFC/issues/16*
 
 ### [REMARKS]
 
@@ -160,7 +160,7 @@ Directly specifying an integer value (enum) will potentially cause problems when
 
 ##### 5. [VotingToChangeKeys.sol#L93](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeKeys.sol#L93)
 
-Nowhere after the call to `areBallotParamsValid` it is checked that `mining key!= address(0)`. Therefore, one can, for example, create a ballot to add a voting key for the zero address. If, for some reason, such a ballot ends with an accept, at the finalisation stage, a revert will occur when trying to add voting keys to `KeysManager`, and this member will have an unremovable Ballot freeze.
+Nowhere after the call to `areBallotParamsValid` it is checked that `mining key != address(0)`. Therefore, one can, for example, create a ballot to add a voting key for the zero address. If, for some reason, such a ballot ends with an accept, at the finalisation stage, a revert will occur when trying to add voting keys to `KeysManager`, and this member will have an unremovable Ballot freeze.
 
 *Fixed at [PR 147](https://github.com/poanetwork/poa-network-consensus-contracts/pull/147).*
 
@@ -190,9 +190,9 @@ The attacker has the opportunity to force specification of another, already regi
 
 But, it seems, there is again the risk of an unclosable ballot.
 
-*Client: yes, but we decided that unclosable ballots in such cases are normal. If, for example, we cannot add a voting-key to a nonexistent mining key, then such a ballot should not be finalised and should have the sign "not finalised" to show that the proposed changes have not been applied. The very cases of such voting are theoretically possible by code, but are unlikely (now including due to additional checks even during the creation of voting). However, if you think that unfinalised ballots may pose a threat, please provide your comments.*
+*Client: yes, but we decided that unclosable ballots in such cases are normal. If, for example, we cannot add a voting key to a nonexistent mining key, then such a ballot should not be finalised and should have the sign "not finalised" to show that the proposed changes have not been applied. The very cases of such voting are theoretically possible by code, but are unlikely (now including due to additional checks even during the creation of voting). However, if you think that unfinalised ballots may pose a threat, please provide your comments.*
 
-*Although if the ballot is not finalised, the function _decreaseValidatorLimit will not be called, which would entail a decrease in the voting limit of a particular validator. I'll think of a better solution.*
+*Although if the ballot is not finalised, the function _decreaseValidatorLimit will not be called, which would entail a decrease in the ballot creation limit of a particular validator. I'll think of a better solution.*
 
 No global consequences from the unclosable ballots (e.g. DoS) are seen.
 
@@ -208,13 +208,13 @@ Yes, now there are checks, which is good, but now a lot of potential places wher
 
 *Client: so, you suggest to get rid of reverts in KeysManager, and to set the 'if'-conditions. If the condition is not met, then the ballot effects are not applied, but the ballot is still marked as finalised. Am I right?*
 
-Not completely. I suggest to keep the reverts, but here [VotingToChangeKeys.sol#L297](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeKeys.sol#L297) and in all similar places, replace the external call with a structure, for example `keysManager.addMiningKey.value (0) (affectedKey);`, i.e. ignore pop-up exceptions.
+Not completely. I suggest to keep the reverts, but here [VotingToChangeKeys.sol#L297](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeKeys.sol#L297) and in all similar places, replace the external call with a code like `keysManager.addMiningKey.value (0) (affectedKey);`, i.e. ignore pop-up exceptions.
 
 Now that I have outlined such a rebellious though, I started doubting myself. Maybe, as an alternative — we could get rid of the reverts in the code that applies the changes and ignore the changes, if they cannot be applied, i.e. just `return;`.
 
-*Client: if we consider the negative consequences of unfinalised ballots, then I see only one instance with the function VotingToChange._decreaseValidatorLimit (described above).*
+*Client: if we consider the negative consequences of unfinalised ballots, then I see only one instance with the function `VotingToChange._decreaseValidatorLimit` (described above).*
 
-*We can change the code for all the KeysManager functions that are called from VotingToChangeKeys, so that they do not initiate revert, but rather return false if it fails. Then the finalisation function will not do a revert (as done with VotingToManageEmissionFunds) and we can do without `prefinalise`.*
+*We can change the code for all the `KeysManager` functions that are called from `VotingToChangeKeys`, so that they do not initiate revert, but rather return false if it fails. Then the finalisation function will not do a revert (as done with `VotingToManageEmissionFunds`) and we can do without `prefinalise`.*
 
 *It was decided to replace the reverts with returns, as you suggested above. Now when finalising the ballot, if the conditions at the time of finalisation are not met, the transaction will still pass, but the changes will not be applied. This has been fixed at [PR 155](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155). To fix the problem with the `_decreaseValidatorLimit` function in the `VotingToChange._finalizeBallot` function, the code is changed as follows: [diff](https://github.com/poanetwork/poa-network-consensus-contracts/pull/155/files#diff-1b5bd6dd22e70fb3f22f92d5589b038fR217) — i.e. the ballot limit change happens once (during the first finalisation transaction). If the finalisation attempts are repeated, the counter value does not change, so that it cannot be increased by cheaters.*
 
@@ -232,7 +232,7 @@ Since the voting key is taken into account during the ballot, rather than the mi
 
 ##### 12. [ValidatorMetadata.sol](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol)
 
-Is the expected behaviour that when changing the mining key of the validator, it will lose its metainformation? Is the expected behaviour that when returning the existing mining key to the rows of active validators, the old metainformation will automatically be associated with this mining key? We recommend processing the deletion and change of the validator key in `ValidatorMetadata`.
+Is the expected behaviour that when changing the mining key of the validator, it will lose its metainformation? Is the expected behaviour that when returning the existing mining key to the active validators set, the old metainformation will automatically be associated with this mining key? We recommend processing the deletion and change of the validator key in `ValidatorMetadata`.
 
 *Fixed at [PR 158](https://github.com/poanetwork/poa-network-consensus-contracts/pull/158).*
 
@@ -242,17 +242,21 @@ Since there can only be one ballot at a time about the emission, one validator c
 
 *Client: if the validator does so, other validators will be able to vote against and exclude it from the list of validators (in a separate ballot for the keys). For the validators to have more difficulty in colluding, there should be 50% + 1 validator voted, as done in [PR 160](https://github.com/poanetwork/poa-network-consensus-contracts/pull/160). If the validator does this inadvertently (e.g. created a ballot with an incorrect payout address), it will have 15 minutes to cancel the erroneous ballot. The abolition of erroneous ballots is implemented in [PR 168](https://github.com/poanetwork/poa-network-consensus-contracts/pull/168).*
 
-##### 14. Generating keys for contract storages through `abi.encodePacked` seems a dangerous practice because of the probability of collision: e.g. if keys for two different records are formed from such sets of fragments [‘foo‘, ‘bar‘], [‘foob‘, ‘ar‘], a collision will occur. It is recommended to use `abi.encode`.
+##### 14. `abi.encodePacked`
+
+Generating keys for contract storages through `abi.encodePacked` seems a dangerous practice because of the probability of collision: e.g. if keys for two different records are formed from such sets of fragments [‘foo‘, ‘bar‘], [‘foob‘, ‘ar‘], a collision will occur. It is recommended to use `abi.encode`.
 
 *Fixed at [PR 159](https://github.com/poanetwork/poa-network-consensus-contracts/pull/159).*
 
-##### 15. In contracts, the comparison of the elements of `enum` to more/less is used, and also the assumption that the first `enum` element declared in the source code will be converted to `0` and back. Unfortunately, the solidity documentation gives very little guarantee about the aspects of `enum`, and does not guarantee the functioning of the techniques described above. We recommend avoiding them.
+##### 15. Enums
+
+In contracts, the comparison of the elements of `enum` to more/less is used, and also the assumption that the first `enum` element declared in the source code will be converted to `0` and back. Unfortunately, the solidity documentation gives very little guarantee about the aspects of `enum`, and does not guarantee the functioning of the techniques described above. We recommend avoiding them.
 
 *Client: in practice for Solidity it is checked that the first element in enum is always 0, and each next element is 1 more than the previous one. This is accepted in most programming languages (except for languages that allow explicit assignment of values to enum elements), so we believe that this basic principle will not change in Solidity in the future. At least the current version 0.4.24 is all right in this aspect. If this plan somehow changes in the future, then our unit tests will show errors - we will see it and make corrections, if necessary.*
 
 ##### 16. [EmissionFunds.sol#L49](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/EmissionFunds.sol#L49)
 
-Theoretically, an attacker can spam the EVM stack in such a way that the call to the legitimate recipient will not work and will simply return false (for more details, see https://solidity.readthedocs.io/en/latest/security-considerations.html#callstack-depth), i.e. the attacker can disrupt the payment (at the same time, the funds remain safe). However, for this purpose, the attacker must be a validator, and his voting key must be the address of the contract.
+Theoretically, an attacker can fill up the EVM stack in such a way that the call to the legitimate recipient will not work and will simply return false (for more details, see https://solidity.readthedocs.io/en/latest/security-considerations.html#callstack-depth), i.e. the attacker can disrupt the payment (at the same time, the funds remain safe). However, for this purpose, the attacker must be a validator, and his voting key must be the address of a contract.
 
 *Client: not completely clear about the voting key. Do I correctly understand that the attacker should call the function `VotingToManageEmissionFunds.finalize` with an overflowed stack? The `EmissionFunds.sendFundsTo` function can only be called from there.*
 
@@ -260,9 +264,9 @@ Yes, you understand correctly, to call with an almost overflowed stack, so that 
 
 *Client: maybe we need to add `require (msg.sender == tx.origin);` to the `VotingToManagerEmissionFunds._finalize` function?*
 
-I think it will be a little more reliable to require that msg.sender not be a contract.
+I think it will be a little more reliable to require that `msg.sender` not be a contract.
 
-*Client: as I understand, for this purpose it is possible to cause asm-function extcodesize(msg.sender), although its call will cost 700 Gas. Do you happen to know a cheaper solution to determine if the address belongs to an arbitrary contract?*
+*Client: as I understand, for this purpose it is possible to use asm-function `extcodesize(msg.sender)`, although its call will cost 700 Gas. Do you happen to know a cheaper solution to determine if the address belongs to an arbitrary contract?*
 
 We do not know. 700 Gas is 30 times less than the fee for the Ether transfer. I think that it is acceptable.
 
@@ -270,7 +274,7 @@ We do not know. 700 Gas is 30 times less than the fee for the Ether transfer. I 
 
 ##### 17. [BlockReward.sol#L122](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/BlockReward.sol#L122)
 
-It is possible to achieve a block Gas limit due to an entry to the storage during `_hbbftRefreshPayoutKeys()`. Directly in the code, strict restrictions on the growth of `keysNumberToReward` are not visible.
+It is possible to achieve a block Gas limit due to writing to the storage during `_hbbftRefreshPayoutKeys()`. Directly in the code, strict restrictions on the growth of `keysNumberToReward` are not visible.
 
 *Client: here it is assumed that the reward function will be called by the Parity engine (or the engine based on it). The Parity documentation says that such functions are called on behalf of the special address `0xffffFFFfFFffffffffffffffFfFFFfffFFFfFFfE` and the transactions are "system" ones: https://wiki.parity.io/Block-Reward-Contract.html#limitations*
 
@@ -282,7 +286,7 @@ It is possible to achieve a block Gas limit due to an entry to the storage durin
 
 ##### 18. [BlockReward.sol#L151](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/BlockReward.sol#L151)
 
-Is it correct that the payout to the validator always occurs, regardless of the Boolean flag `keysManager.isPayoutActive (miningKey)`?
+Is it correct that the payout to the validator always occurs, regardless of the Boolean flag `keysManager.isPayoutActive(miningKey)`?
 
 *Client: Yes, if the validator does not have a payout key, then the payment should occur to its mining key (for example, such a case is with the Master of Ceremony).*
 
@@ -290,7 +294,7 @@ Is it correct that the payout to the validator always occurs, regardless of the 
 
 The threshold type `MetadataChange` is not actually used during the consensus work (voting for changes in metadata are constructed differently).
 
-*Client: this type of threshold is used in the function `ValidatorMetadata.getMinThreshold`:[ValidatorMetadata.sol#L366](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L366) — the threshold value used in the function `ValidatorMetadata.finalize`:[ValidatorMetadata.sol#L342](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L342)*.
+*Client: this type of threshold is used in the function `ValidatorMetadata.getMinThreshold`: [ValidatorMetadata.sol#L366](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L366) — the threshold value used in the function `ValidatorMetadata.finalize`:[ValidatorMetadata.sol#L342](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L342)*.
 
 Yes, the question is removed.
 
@@ -304,7 +308,7 @@ The function `initialKeys` and `getInitialKey` have the same signature and retur
 
 ##### 2. [VotingTo.sol#L186](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/abstracts/VotingTo.sol#L186)
 
-The function `hasAlreadyVoted` is used, which defines the mining key by the voting key via `KeyMaster` and calls `hasMiningKeyAlreadyVoted`. A line earlier, we already defined the mining key, and this call can be replaced with the `hasMiningKeyAlreadyVoted` call.
+The function `hasAlreadyVoted` deducts the mining key by the voting key via `KeysManager` and calls `hasMiningKeyAlreadyVoted`. A line earlier, we already deducted the mining key, and this call can be replaced with the `hasMiningKeyAlreadyVoted` call.
 
 *Fixed at [PR 149](https://github.com/poanetwork/poa-network-consensus-contracts/pull/149).*
 
@@ -328,13 +332,13 @@ The function `rewardHBBFT` should probably be described in the [IBlockReward](ht
 
 ##### 6. [PoaNetworkConsensus.sol#L169](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/PoaNetworkConsensus.sol#L169)
 
-The `if (pendingList.length> 0)` check in the code of the `removeValidator` function looks meaningless because if `length == 0`, `revert` happens earlier in the code.
+The `if (pendingList.length > 0)` check in the code of the `removeValidator` function looks meaningless because if `length == 0`, `revert` happens earlier in the code.
 
 *Fixed at [PR 149](https://github.com/poanetwork/poa-network-consensus-contracts/pull/149).*
 
 ##### 7. [VotingToChangeKeys.sol#L230](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeKeys.sol#L230)
 
-In cases other than `_affectedKeyType == uint256(KeyTypes.MiningKey)`, it is recommended to add a check `require (keysManager.isMiningActive(_miningKey));`, similar to the functions `_areKeySwapBallotParamsValid` and `_areKeyRemovalBallotParamsValid`.
+In cases other than `_affectedKeyType == uint256(KeyTypes.MiningKey)`, it is recommended to add a check `require(keysManager.isMiningActive(_miningKey));`, similar to the functions `_areKeySwapBallotParamsValid` and `_areKeyRemovalBallotParamsValid`.
 
 *Fixed at [PR 152](https://github.com/poanetwork/poa-network-consensus-contracts/pull/152).*
 
