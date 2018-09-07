@@ -52,7 +52,7 @@ It is possible to create two or more ballots for deleting the same mining key wh
 
 The public modifier allows the voting key owner to use any mining key, including creating a request for changing other people's data or editing someone else's request before it is accepted.
 
-Client: the changeRequestForValidator function has been removed with its code having been transferred to the changeRequest function at [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).
+*Client: the `changeRequestForValidator` function has been removed with its code having been transferred to the changeRequest function at [PR 146](https://github.com/poanetwork/poa-network-consensus-contracts/pull/146).*
 
 ##### 6. [ValidatorMetadata.sol#L331](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/ValidatorMetadata.sol#L331)
 
@@ -78,7 +78,7 @@ By the way, this is another place where you can create an unclosable ballot.
 
 No, in a simple form, a check during creation won't suffice; I wrote about this in the last comment. If it is done, then you have to keep a counter of the validators expected to be added and add them to the current number when checking the condition.
 
-*Client: We decided not to add such a check because the situation with a number of validators equal to 2000 is unlikely. In order not to complicate the code for processing such an unlikely event. The solution for the issue with unfinalisable ballots is described in comment No 9.*
+*Client: We decided not to add such a check because the situation with a number of validators equal to 2000 is unlikely. In order not to complicate the code for processing such an unlikely event. The solution for the issue with unfinalisable ballots is described in [remark No 9](#9-votingtochangekeyssoll116).*
 
 ##### 8. [KeysManager.sol#L263](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/KeysManager.sol#L263)
 
@@ -106,7 +106,7 @@ We recommend adding a check whether the `currentValidators[i]` validator has not
 
 In [the documentation](https://github.com/poanetwork/wiki/wiki/Ballots-Overview.-Life-cycle-and-limits#limits) global limits for ballots are mentioned (e.g. “Validator Management Ballot: 9 active ballots at one time”). In the audited version of the code they are not present, but if they are implemented, they will not only be useless against spam, but in a compartment with the problem of unclosable ballots they can lead to a global denial of service.
 
-*Client: Yes, this information in the documentation is outdated (we will correct it). Instead of global limits, we use limits for each validator, calculated in the `BallotsStorage.getBallotLimitPerValidator` function: [BallotsStorage.sol#L135-L145](https://github.com/poanetwork/poa-network-consensus-contracts/blob/fd2b2c6c2f4a4b1b5bdacd4f9510397e3c5124fa/contracts/BallotsStorage.sol#L135-L145). The solution for unfinalisable ballots is described in comment No 9. Please comment: Do you see any problems with spam protection in the current implementation, which relies on `BallotsStorage.getBallotLimitPerValidator`?*
+*Client: Yes, this information in the documentation is outdated (we will correct it). Instead of global limits, we use limits for each validator, calculated in the `BallotsStorage.getBallotLimitPerValidator` function: [BallotsStorage.sol#L135-L145](https://github.com/poanetwork/poa-network-consensus-contracts/blob/fd2b2c6c2f4a4b1b5bdacd4f9510397e3c5124fa/contracts/BallotsStorage.sol#L135-L145). The solution for unfinalisable ballots is described in [remark No 9](#9-votingtochangekeyssoll116). Please comment: Do you see any problems with spam protection in the current implementation, which relies on `BallotsStorage.getBallotLimitPerValidator`?*
 
 We see no problems here.
 
@@ -172,7 +172,7 @@ The value of the free memory pointer is not updated. Before using a fragment of 
 
 Commented on the issue. Long story short — it is a dangerous practice. However, if you do not use the "allocator" at all, the question is removed.
 
-*Client: Does it mean that in our case, such a solution may be used? EternalStorageProxy.sol#L58-L75.*
+*Client: Does it mean that in our case, such a solution may be used? [EternalStorageProxy.sol#L58-L75](https://github.com/poanetwork/poa-network-consensus-contracts/blob/cdda8976896f85b4d71e0a28216616cf3e9df385/contracts/eternal-storage/EternalStorageProxy.sol#L58-L75).*
 
 Yes.
 
@@ -196,7 +196,7 @@ But, it seems, there is again the risk of an unclosable ballot.
 
 No global consequences from the unclosable ballots (e.g. DoS) are seen.
 
-*Client: the solution for this issue is complete in comment No 9.*
+*Client: the solution for this issue is complete in remark No 9.*
 
 ##### 9. [VotingToChangeKeys.sol#L116](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/VotingToChangeKeys.sol#L116)
 
