@@ -1,3 +1,21 @@
+# Audit of POA Network Consensus Smart Contracts
+
+###### Scope of the audit
+
+[https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/](https://github.com/poanetwork/poa-network-consensus-contracts/blob/8089b20d6b491acaf08f61ab82242c79b8aac41a/contracts/)
+
+## Classification of Detected Issues
+
+##### CRITICAL: bugs that enable theft of ether/tokens; or lock access to funds without possibility to restore it; or lead to any other loss of ether/tokens to be transferred to any party (for example, dividends).
+
+##### MAJOR: bugs that can trigger a contract failure, with further recovery only possible through manual modification of the contract state or contract replacement altogether.
+
+##### WARNINGS: bugs that can break the intended contract logic or enable a DoS attack on the contract.
+
+##### COMMENTS: all other issues.
+
+## Detected Issues
+
 ### [CRITICAL]
 
 Not found
