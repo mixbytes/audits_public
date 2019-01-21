@@ -1,10 +1,12 @@
+![](MixBytes.png)
+
 # Audit of LTO Token Sale Contracts
 
 ## Introduction
 
 ### General Provisions
 
-The LTO Network team asked us to audit their token sale contracts. The code is located in the hidden github repository. 
+The LTO Network team asked [MixBytes](https://mixbytes.io) to audit their token sale contracts. The code is located in the hidden github repository. 
 
 ### Scope of the Audit
 
