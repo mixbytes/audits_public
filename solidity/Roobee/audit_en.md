@@ -57,7 +57,7 @@ None found.
 
 ### WARNING
 
-1.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L336
+1.[Roobee.sol:336](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L336)
 
 Here and further on: there is a minimal risk that the compiler optimizer will reject the entire string despite the presence of the side effect (revert), since the result is not used. The compiler is still young and under active development as evidenced by major version zero.
 We do not recommend using this construction. Instead, it is better to explicitly write `require (getAvailableBalance (msg.sender)> = value)`.
@@ -65,21 +65,21 @@ We do not recommend using this construction. Instead, it is better to explicitly
 *Fixed in
 [16431b1](https://github.com/roobee-platform/Roobee/commit/16431b13ca376a8ad5375b49cacc2d71a1029040).*
 
-2.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L371
+2.[Roobee.sol:371](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L371)
 
 After `approvalFallback` execution, the allowance that the` _spender` had before calling the `approveAndCall` function will not be returned to its original value. Potentially, this enables `_spender` not to spend tokens immediately and not to perform the operation requested in` _extraData`, but to write off the tokens later, using the remaining allowance.
 We recommend returning the allowance for` _spender` to its original value before ending the `approveAndCall` function.
 
 *Acknowledged.*
 
-3.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L268-L269
+3.[Roobee.sol:268-269](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L268-L269)
 
 Token `name` and` symbol` differ from those stated in the [documentation] (https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/README.md#roobee) by the case of characters.
 
 * Fixed in
 [5eb2b41](https://github.com/roobee-platform/Roobee/commit/5eb2b41159de6b2693cc97a50bf3bb9efba2d66b).*
 
-4.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L316
+4.[Roobee.sol:316](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L316)
 
 We recommend adding a check that the `_unfreezeTimestamp` value does not exceed reasonable limits.
 
@@ -88,15 +88,15 @@ We recommend adding a check that the `_unfreezeTimestamp` value does not exceed 
 
 ### COMMENT
 
-1.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L294
+1.[Roobee.sol:294](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L294)
 
 In case the user executes `_subsequentUnlock`, then when the time reaches ` _unfreezeTimestamp`, all user tokens will still remain frozen for 30 days.
 
-2.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L357
+2.[Roobee.sol:357](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L357)
 
 The previous allowance value of `_spender` will be reset at this point.
 
-3.https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L280
+3.[Roobee.sol:280](https://github.com/roobee-platform/Roobee/blob/12ff7eb423aedf426c8e1389a686ace0eda2eddb/contracts/Roobee.sol#L280)
 
 We recommend using `decimals` instead of duplicating` 1e18`.
 
