@@ -64,64 +64,66 @@ Not found
 
 ### COMMENTS
 
-1.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L103
+1\. [AddressBook.sol#L103](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L103)
+
 We recommend adding the explicit check `isInitialized`.
 
-*Fixed at https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
+*Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
-
-2.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L91
+2\. [AddressBook.sol#L91](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L91)
 
 There is a constant for this kind of error message - `ERROR_CID_MALFORMED`. We recommend factoring out the entire check as a modifier. 
 
-*Fixed at https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
+*Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
 
-3.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33
+3\. [AddressBook.sol#L33](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33)
 
 There is no way to get the entire list of addresses stored in the address book. An array can be added to keep track of all present addresses. When an entry is deleted from the address book, the last array element can replace the deleted element to prevent array fragmentation.
 
-*Fixed at  https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
+*Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
 
-4.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33
+4\. [AddressBook.sol#L33](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33)
 
 Explicit positions of the storage data are not used, that can complicate migration of the current contract instance to a new one. A simple example of explicit storage data positions can be seen [here](https://github.com/aragon/aragonOS/blob/940605977685cc9ad5ee85d67a6c310e3e8aab24/contracts/apps/AppStorage.sol).
 The important thing to understand is that the memory layout of the next version has to match the memory layout of the current version exactly. Otherwise, the following code version will have troubles accessing the data stored in the proxy storage. E.g., any addition of a base contract will ruin the layout, as it will shift the offsets of the fields.
 
 *Acknowledged*
 
-5.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L62
+5\. [AddressBook.sol#L62](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L62)
 
 It is expected that structured content objects for the entries will be stored in IPFS. Users and developers should keep in mind that IPFS does not guarantee data availability. After some time unused data is removed from IPFS unless explicitly pinned by some node.
 
-*Acknowledged, dev notes were created at https://github.com/AutarkLabs/planning-suite/blob/4f3f11c194b285f8e407e3cd4def56afb418b233/apps/address-book/contracts/AddressBook.sol#L60* 
+*Acknowledged, dev notes were created at [AddressBook.sol#L60](https://github.com/AutarkLabs/planning-suite/blob/4f3f11c194b285f8e407e3cd4def56afb418b233/apps/address-book/contracts/AddressBook.sol#L60)* 
 
 
-6.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L64
+6\. [AddressBook.sol#L64](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L64)
 
 IPFS addresses have the form of `<encoding>.encode(multihash(<digest>, <function>))` (https://github.com/multiformats/multihash#example), that makes the check of line 64 valid only for base58 encoding of sha256 hashes.
 
 *Acknowledged, comments about supported encoding are at https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
 
 
-7.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L86
+7\. [AddressBook.sol#L86](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L86)
 
 Similarly to the `_cid` argument of the `removeEntry` function, an additional argument `oldCid` and a content check can be introduced to prevent race conditions and ensure that the updated entry was to be updated.
 
-*Fixed at https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
+*Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
 
-8.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L62
-https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L75
-https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L86
+8\. [AddressBook.sol#L62](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L62)
+
+[AddressBook.sol#L75](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L75)
+
+[AddressBook.sol#L86](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L86)
 
 The functions can be marked as `external` to save some gas (https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices?answertab=active#tab-top).
 
-*Fixed at https://github.com/AutarkLabs/planning-suite/tree/ed2f199ddda280d1e7033648b69399547f05eec7*
+*Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
 
-9.https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33
+9\. [AddressBook.sol#L33](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L33)
 
 IPFS-address can be stored as an array of bytes instead of a string. A more “smart” check may be introduced for the adding/updating code (to dynamically identify the hash function used and the necessary input size).
 
@@ -130,4 +132,4 @@ IPFS-address can be stored as an array of bytes instead of a string. A more “s
 
 ## CONCLUSION
 
-The contract https://github.com/AutarkLabs/open-enterprise/blob/37742fe405/apps/address-book/contracts/AddressBook.sol doesn’t have any vulnerabilities according to our analysis.
+The [fixed contract](https://github.com/AutarkLabs/open-enterprise/blob/37742fe405/apps/address-book/contracts/AddressBook.sol) doesn’t have any vulnerabilities according to our analysis.
