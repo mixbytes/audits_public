@@ -16,7 +16,7 @@ With this in mind, [MixBytes](https://mixbytes.io/) team was willing to contribu
 
 Code written by: Autark
 
-Audited commit: https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol 
+Audited commit: [AddressBook.sol, version 66a8515](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol)
 
 
 ## Security Assessment Principles
