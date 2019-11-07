@@ -16,7 +16,7 @@ With this in mind, [MixBytes](https://mixbytes.io/) team was willing to contribu
 
 Code written by: Autark
 
-Audited commit: [AddressBook.sol, version 66a8515](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol)
+Audited commit: [AddressBook.sol version 66a8515](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol).
 
 
 ## Security Assessment Principles
@@ -118,7 +118,7 @@ Similarly to the `_cid` argument of the `removeEntry` function, an additional ar
 
 [AddressBook.sol#L86](https://github.com/AutarkLabs/planning-suite/blob/66a851551888ba7eadaab6a5f037048655bc5d88/apps/address-book/contracts/AddressBook.sol#L86)
 
-The functions can be marked as `external` to save some gas (https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices?answertab=active#tab-top).
+The functions can be marked as `external` to [save some gas](https://ethereum.stackexchange.com/questions/19380/external-vs-public-best-practices?answertab=active#tab-top).
 
 *Fixed at [ed2f199](https://github.com/AutarkLabs/planning-suite/blob/ed2f199ddda280d1e7033648b69399547f05eec7/apps/address-book/contracts/AddressBook.sol)*
 
