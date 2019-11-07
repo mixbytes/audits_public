@@ -60,7 +60,7 @@ Not found
  
 ### WARNINGS
 
-1.[Allocations.sol#L463](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L463)
+1\. [Allocations.sol#L463](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L463)
 
 After some standby period of the contract, all functions with the `transitionsPeriod` modifier will fail with an error due to the lack of gas for creating all periods.
 
@@ -70,7 +70,7 @@ We recommend adding a separate function that will create the missing periods. Th
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-2.[Allocations.sol#L417](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L417)
+2\. [Allocations.sol#L417](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L417)
 
 There is no limit on the number of candidates for rewards. If there are a lot of them, then the transaction will end with an error due to lack of gas. In this case, `Payout` will not be added as well.
 
@@ -78,7 +78,7 @@ There is no limit on the number of candidates for rewards. If there are a lot of
 [Allocations.sol#L419](https://github.com/AutarkLabs/open-enterprise/blob/f85f07565cb6d57161da0252ca7df2c473c3fcfd/apps/allocations/contracts/Allocations.sol#L419)*
 
 
-3.[Allocations.sol#L298](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L298)
+3\. [Allocations.sol#L298](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L298)
 
 Budget can be allocated to a non-existent account that will be created in the future. We recommend preventing such behaviour and checking for the account.
 
@@ -86,7 +86,7 @@ Budget can be allocated to a non-existent account that will be created in the fu
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-4.[Allocations.sol#L527](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L527)
+4\. [Allocations.sol#L527](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L527)
 
 The cycle will be aborted and the transaction will be rolled back if there are `candidateAddresses` with `supports` equal to 0. A number of measures in the comments below will help prevent the problem. As an additional measure, you can explicitly check for `supports` in this loop.
 
@@ -94,7 +94,7 @@ The cycle will be aborted and the transaction will be rolled back if there are `
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-5.[Allocations.sol#L358](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L358)
+5\. [Allocations.sol#L358](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L358)
 
 New periods are not being initialized. We suggest adding the `transitionsPeriod` modifier.  
 
@@ -102,7 +102,7 @@ New periods are not being initialized. We suggest adding the `transitionsPeriod`
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-6.[Allocations.sol#L528](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L528)
+6\. [Allocations.sol#L528](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L528)
 
 Consider the situation:
 `_candidateIndex` candidate takes away full payment from some `_payoutId` allocated to him at the moment.
@@ -111,7 +111,7 @@ Earlier than the `_nextPaymentTime (_accountId, _payoutId, _candidateIndex)` tim
 *Fixed at
 [Allocations.sol#L567](https://github.com/AutarkLabs/open-enterprise/blob/mainnet-audit-allocations-4/apps/allocations/contracts/Allocations.sol#L567)*
 
-7.[Allocations.sol#L425](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L425)
+7\. [Allocations.sol#L425](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L425)
 
 When calling `runPayout`, `paid` should be passed externally, otherwise this variable will not reflect the true amount of payments in the transaction.
 
@@ -121,7 +121,7 @@ When calling `runPayout`, `paid` should be passed externally, otherwise this var
 
 ### COMMENTS
 
-1.[Allocations.sol#L40-L45](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L40-L45) 
+1\. [Allocations.sol#L40-L45](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L40-L45) 
 
 Constants can be calculated in advance.
 
@@ -129,7 +129,7 @@ Constants can be calculated in advance.
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-2.[Allocations.sol#L56](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L56)
+2\. [Allocations.sol#L56](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L56)
 
 Gas consumption required to save `Payout` can be reduced. Place `uint64 recurrences`, ` uint64 period`, `uint64 startTime` and `bool distSet` one after another, and they will occupy one storage slot.
 
@@ -137,7 +137,7 @@ Gas consumption required to save `Payout` can be reduced. Place `uint64 recurren
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-3.[Allocations.sol#L70](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L70)
+3\. [Allocations.sol#L70](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L70)
 
 Gas consumption required to save `Account` can be reduced. Place `uint64 payoutsLength`, `address token` and `bool hasBudget` one after another, and they will occupy one storage slot.
 
@@ -145,13 +145,13 @@ Gas consumption required to save `Account` can be reduced. Place `uint64 payouts
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-4.[Allocations.sol#L94](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L94)
+4\. [Allocations.sol#L94](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L94)
 
 There’s no need to use the `uint64` key instead of the `uint` one as element adding requires the same amount of gas as `uint`.
 
 *Acknowledged* 
 
-5.[Allocations.sol#L95](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L95)
+5\. [Allocations.sol#L95](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L95)
 
 [Allocations.sol#L97](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L97)
 
@@ -161,13 +161,13 @@ There’s no need to use the `uint64` key instead of the `uint` one as element a
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-6.[Allocations.sol#L118](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L118)
+6\. [Allocations.sol#L118](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L118)
 
 We recommend explicitly checking the given precondition in the code calling `assert` or `require`.
 
 *Acknowledged*
 
-7.[Allocations.sol#L156](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L156)
+7\. [Allocations.sol#L156](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L156)
 
 [Allocations.sol#L170](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L170)
 
@@ -194,7 +194,7 @@ We recommend adding a check for the account (use `require` with a separate reaso
 *Almost all fixed at
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
-8.[Allocations.sol#L331](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L331)
+8\. [Allocations.sol#L331](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L331)
 
 [Allocations.sol#L348](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L348)
 
@@ -204,7 +204,7 @@ We recommend checking for `Payout` basing on `_accountId` and `_payoutId`. This 
 
 *Acknowledged*
 
-9.[Allocations.sol#L170](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L170)
+9\. [Allocations.sol#L170](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L170)
 
 [Allocations.sol#L206](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L206)
 
@@ -215,7 +215,7 @@ We recommend adding a check for payout (`require` with a separate reason for the
 
 
 
-10.[Allocations.sol#L427](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L427)
+10\. [Allocations.sol#L427](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L427)
 
 We recommend checking that `_candidateId` does not go beyond `supports` boundaries.
 
@@ -223,14 +223,14 @@ We recommend checking that `_candidateId` does not go beyond `supports` boundari
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-11.[Allocations.sol#L427](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L427)
+11\. [Allocations.sol#L427](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L427)
 
 It makes sense to return from the function if `individualPayout` turned out to be 0.
 
 *Fixed at
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
-12.[Allocations.sol#L496](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L496)
+12\. [Allocations.sol#L496](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L496)
 
 It makes sense to add the condition `amount > 0`.
 
@@ -238,20 +238,20 @@ It makes sense to add the condition `amount > 0`.
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-13.[Allocations.sol#L207](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L207)
+13\. [Allocations.sol#L207](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L207)
 
 We recommend adding a check for `_idx` index.
 
 *Fixed at
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
-14.[Allocations.sol#L50](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L50)
+14\. [Allocations.sol#L50](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L50)
 
 It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 100 range to be ready for possible changes in the block gas limit and gas consumption by token transfers in the future.
 
 *Acknowledged*
 
-15.[Allocations.sol#L74](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L74)
+15\. [Allocations.sol#L74](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L74)
 
 `Account.balance` is not used.
 
@@ -259,7 +259,7 @@ It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 1
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-16.[Allocations.sol#L60](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L60)
+16\. [Allocations.sol#L60](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L60)
 
 `metadata` is not used.
 
@@ -267,7 +267,7 @@ It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 1
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-17.[Allocations.sol#L88](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L88)
+17\. [Allocations.sol#L88](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L88)
 
 [Allocations.sol#L89](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L89)
 
@@ -277,7 +277,7 @@ It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 1
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-18.[Allocations.sol#L57](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L57)
+18\. [Allocations.sol#L57](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L57)
 
 `candidateKeys` is not used at all.
 
@@ -285,7 +285,7 @@ It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 1
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-19.[Allocations.sol#L82](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L82)
+19\. [Allocations.sol#L82](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L82)
 
 `income` is not used at all.
 
@@ -293,20 +293,20 @@ It is reasonable to make `MAX_SCHEDULED_PAYOUTS_PER_TX` adjustable within 1 .. 1
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-20.[Allocations.sol#L81](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L81)
+20\. [Allocations.sol#L81](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L81)
 
 There is no need for mapping, as the account has only one token. In total, `AccountStatement` is reducible to `uint256 expenses`.
 
 *Acknowledged*
 
-21.[Allocations.sol#L392](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L392)
+21\. [Allocations.sol#L392](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L392)
 
 This and similar checks for sufficient funds are purely informative and do not give any guarantees. On the one hand, it is impossible to pay out more funds than there are in the vault. On the other hand, there are many reasons why funding may not be sufficient, despite the initial checklist. For example, another account may pay out all vault funds, or access to vault may be subsequently limited by access rights.
 There is no mechanism for reserving tokens/ether for a certain payment.
 
 *Acknowledged*
 
-22.[Allocations.sol#L392](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L392)
+22\. [Allocations.sol#L392](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L392)
 
 This check should also involve `_recurrences`, as at the moment it does not reflect the full amount of future payments.
 
@@ -314,13 +314,13 @@ This check should also involve `_recurrences`, as at the moment it does not refl
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-23.[Allocations.sol#L76](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L76) 
+23\. [Allocations.sol#L76](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L76) 
 
 If it is not planned to set the budget for the account equal to 0, then `hasBudget` can be omitted, as the `budget != 0` comparison will be equivalent to `hasBudget`.
 
 *Acknowledged*
 
-24.[Allocations.sol#L153](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L153)
+24\. [Allocations.sol#L153](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L153)
 
 [Allocations.sol#L167](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L167)
 
@@ -338,7 +338,7 @@ We recommend adding the `isInitialized` modifier.
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-25.[Allocations.sol#L128](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L128)
+25\. [Allocations.sol#L128](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L128)
 
 [Allocations.sol#L246](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L246)
 
@@ -348,7 +348,7 @@ Incorrect description of functions. We recommend updating the comments.
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-26.[Allocations.sol#L428](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L428)
+26\. [Allocations.sol#L428](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L428)
 
 There is no need to emit the `Time` event here, because it will be emitted inside `_nextPaymentTime`.
 
@@ -356,7 +356,7 @@ There is no need to emit the `Time` event here, because it will be emitted insid
 [26e6d37](https://github.com/AutarkLabs/open-enterprise/commit/26e6d3766393ed2d12fc57471b56d42c4a680fef)*
 
 
-27.[Allocations.sol#L376](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L376)
+27\. [Allocations.sol#L376](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L376)
 
 We recommend adding extra checks:
 - that the length of `_candidateAddresses` is equal to the length of `_supports`
@@ -364,7 +364,7 @@ We recommend adding extra checks:
 
 *Acknowledged*
 
-28.[Allocations.sol#L406](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L406)
+28\. [Allocations.sol#L406](https://github.com/AutarkLabs/planning-suite/blob/5be80e35f6e8e2c58f2b1b0f95f43baf40886507/apps/allocations/contracts/Allocations.sol#L406)
 
 Zero initialization is unnecessary.
 
