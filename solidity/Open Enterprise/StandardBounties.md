@@ -23,7 +23,7 @@ Reviewed commit: [Standard Bounties version e79d844](https://github.com/Bounties
 
 ### CRITICAL
  
-1.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L381
+1\. [StandardBounties.sol#L381](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L381)
 
 Contributions are not tagged as `refunded`. Funds can be re-withdrawn from the bounty balance by the `refundContribution` requests from contributors who have already received funds during the `refundContributions` call.
 
@@ -37,7 +37,7 @@ An example of the attack vector:
 Ultimately, `C2` received a double refund, and the contribution of `C1` was in fact transferred to `C2`. The balance of the bounty is 0, despite the fact that the issuer intended to refund only `C2`.
 
 *Fixed at
-https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L385*
+[StandardBounties.sol#L385](https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L385)*
 
  
 ### MAJOR
@@ -47,15 +47,15 @@ Not found
 
 ### WARNINGS
  
-1.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L237
+1\. [StandardBounties.sol#L237](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L237)
 
 The function returns nothing, although the function signature indicates that the function should return a `uint`.
 
 *Fixed at
-https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L254*
+[StandardBounties.sol#L254](https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L254)*
 
 
-2.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L407
+2\. [StandardBounties.sol#L407](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L407)
 
 If an issuer does not withdraw all funds from the bounty, this may cause inequality between contributors. Some of them may manage to withdraw the remaining funds, and others do not.
 
@@ -64,18 +64,21 @@ If an issuer does not withdraw all funds from the bounty, this may cause inequal
 *StandardBounties Team: this function is meant to be used as a fail safe, with maximum flexibility to allow the issuers to withdraw funds in whatever quantity they please. I've added a comment to this function as a warning to others who use it, to watch out for this edge-case.*
 
 
-3.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L376
+3\. [StandardBounties.sol#L376](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L376)
 
-The `_contributionIds [i]` is allowed to go beyond the `bounties [_bountyId] .contributions` array bounds. We recommend replacing comparison with the strict one.
+The `_contributionIds[i]` is allowed to go beyond the `bounties[_bountyId].contributions` array bounds. We recommend replacing comparison with the strict one.
 
 *Fixed at
-https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L378*
+[StandardBounties.sol#L378](https://github.com/Bounties-Network/StandardBounties/blob/7c7dfc604a981a6be8cef64e06c5814c939dc2c1/contracts/StandardBounties.sol#L378)*
 
 
-4.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L372 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L402 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L506 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L639
+4\. [StandardBounties.sol#L372](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L372) ,
+
+[StandardBounties.sol#L402](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L402) ,
+
+[StandardBounties.sol#L506](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L506) ,
+
+[StandardBounties.sol#L639](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L639)
 
 As going out of array bounds in these functions is not controlled, `metaTxRelayer` can pass the `0` address as `sender` and successfully pass the access checks. Thus, an attacker who gained access to `metaTxRelayer` can bypass access control in some cases.
 
@@ -88,7 +91,7 @@ As transaction relayer is out of the audit scope, it is not possible to assess t
 
 ### COMMENTS
 
-1.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L19
+1\. [StandardBounties.sol#L19](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L19)
 
 Gas consumption can be optimized 
 
@@ -96,33 +99,36 @@ Gas consumption can be optimized
 * `tokenVersion` -  `uint8` may be used (with `0` constant for Ether, `1` for ERC-20, `2` - for ERC-721).
 * `deadline`, `hasPaidOut` and `tokenVersion` should be placed after `token` to use one storage slot for these fields
 
-2.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L60
+2\. [StandardBounties.sol#L60](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L60)
 
-Gas consumption can be reduced by using https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/ReentrancyGuard.sol
+Gas consumption can be reduced by using [ReentrancyGuard](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/ReentrancyGuard.sol)
 
-Explanation can be found here:
-https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1056
-https://github.com/OpenZeppelin/openzeppelin-solidity/pull/1155
+Explanation can be found [here](https://github.com/OpenZeppelin/openzeppelin-solidity/issues/1056)
+and [here](https://github.com/OpenZeppelin/openzeppelin-solidity/pull/1155).
 
 
-3.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L303 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L816
+3\. [StandardBounties.sol#L303](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L303) ,
 
-Due to the check at the stage of bounty creation, `tokenVersion` can have only `0`, `20`,`721` values. If there are no logical errors in the contract, control never reaches the given code lines. We recommend using `assert` instead of `revert` for checking code consistency.
+[StandardBounties.sol#L816](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L816)
 
-4.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L275
+Due to the check at the stage of bounty creation, `tokenVersion` can have only `0`, `20`, `721` values. If there are no logical errors in the contract, control never reaches the given code lines. We recommend using `assert` instead of `revert` for checking code consistency.
+
+4\. [StandardBounties.sol#L275](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L275)
 
 We recommend adding a check that the deadline has not passed. Otherwise, contribution is meaningless as such.
 
 
-5.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L198
+5\. [StandardBounties.sol#L198](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L198)
 
 We recommend adding a check that the deadline has not passed.
 
-6.https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L111 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L120 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L130 ,
-https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L140
+6\. [StandardBounties.sol#L111](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L111) ,
+
+[StandardBounties.sol#L120](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L120) ,
+
+[StandardBounties.sol#L130](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L130) ,
+
+[StandardBounties.sol#L140](https://github.com/Bounties-Network/StandardBounties/blob/e79d8443097cab2472c91cfa6d91c23bee6f9869/contracts/StandardBounties.sol#L140)
 
 We recommend adding checks that the specified bounty exists and the array bounds are not exceeded in this modifier and alike. Otherwise, access control modifiers will be satisfied when passing `_sender` equal to` 0`.
 
