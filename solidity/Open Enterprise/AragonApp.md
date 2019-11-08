@@ -39,29 +39,32 @@ In the most straightforward case, the ACL subsystem tells about “the doer” (
 ### CRITICAL
  
 Not found
+
  
 ### MAJOR
+
 Not found
+
  
 ### WARNINGS
 
-1.https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/apps/AragonApp.sol#L56
+1\. [AragonApp.sol#L56](https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/apps/AragonApp.sol#L56)
 
 The function `canPerform` calls `dangerouslyCastUintArrayToBytes` that rewrites its argument. So, the argument `_params` of `canPerform` is also rewritten. All the examples in the documentation use helpers `arr` with `canPerform` and `authP`. However, somebody may avoid using this helper (for example, if he already has an array of params).
 
-We recommend returning the parameter to its original state by calling `dangerouslyCastBytesToUintArray`
+We recommend returning the parameter to its original state by calling `dangerouslyCastBytesToUintArray` ([example](https://gist.github.com/quantum13/968399047d768dde554d7ae1379e6452)).
 
-https://gist.github.com/quantum13/968399047d768dde554d7ae1379e6452
+*Acknowledged*
 
-*Acknowledged
 
 ### COMMENTS
 
-1.https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/common/ReentrancyGuard.sol#L25 
+1\. [ReentrancyGuard.sol#L25](https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/common/ReentrancyGuard.sol#L25) 
 
-The reentrancy guard can be optimized using an incrementing value (e.g. https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/ReentrancyGuard.sol). This will yield 2-3 times gas savings in some cases.
+The reentrancy guard can be optimized using an incrementing value (e.g. [this way](https://github.com/OpenZeppelin/openzeppelin-solidity/blob/master/contracts/utils/ReentrancyGuard.sol)). This will yield 2-3 times gas savings in some cases.
 
-2.https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/acl/ACL.sol#L245
+2\. [ACL.sol#L245](https://github.com/aragon/aragonOS/blob/6c7da962bd33fb8cab17bf9818f8b73450eaf350/contracts/acl/ACL.sol#L245)
+
 We recommend at least adding the information about function side effect (rewriting argument `_how`) to the function documentation. At most, return the parameter to its original state.
 
 ## CONCLUSION
