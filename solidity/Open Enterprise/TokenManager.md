@@ -97,7 +97,7 @@ And the arguments are already being encoded in the _evmScript this will behave a
 
 - *Comment*: We suggest appending `bool exist` to the `TokenVesting` struct. This would not lead to the struct size increase because of packing.
 
-*Fixed at https://github.com/AutarkLabs/aragon-apps/commit/c2278f6b0bf9b89a35dc1f1d7a19ea796968f00d*
+*Fixed at [c2278f6](https://github.com/AutarkLabs/aragon-apps/commit/c2278f6b0bf9b89a35dc1f1d7a19ea796968f00d)*
 
 ### WARNINGS
 
@@ -130,7 +130,7 @@ And the arguments are already being encoded in the _evmScript this will behave a
         require(MINT_ROLE == keccak256("MINT_ROLE"));
     }
     ```
-*Fixed at https://github.com/AutarkLabs/aragon-apps/commit/78bca0538136c73f2687ecd7df6a62f6ff0bd357*
+*Fixed at [78bca05](https://github.com/AutarkLabs/aragon-apps/commit/78bca0538136c73f2687ecd7df6a62f6ff0bd357)*
 
 #### 2. Non-optimized struct read access
 
@@ -181,7 +181,7 @@ And the arguments are already being encoded in the _evmScript this will behave a
     TokenVesting memory v = ...;
     ...
     ```
-*Fixed at https://github.com/aragon/aragon-apps/commit/66095754257aee24c4ae9c6c21d61aeae475c615*
+*Fixed at [6609575](https://github.com/aragon/aragon-apps/commit/66095754257aee24c4ae9c6c21d61aeae475c615)*
 
 #### 3. Maximum vesting limitation could restrict the number of active vestings
 
