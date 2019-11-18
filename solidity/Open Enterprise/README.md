@@ -16,6 +16,10 @@
 
 #### [Rewards Smart Contract Audit Report](Rewards.md)
 
+#### [Template Smart Contract Audit Report](Template.md)
+
+#### [TokenManager Smart Contract Audit Report](TokenManager.md)
+
 ### Dependencies Reviews
 
 #### [AragonApp Smart Contract Review](AragonApp.md)
