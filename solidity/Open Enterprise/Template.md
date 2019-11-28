@@ -22,6 +22,7 @@ Audited code:
 * [BaseOEApps version 1502373](https://github.com/AutarkLabs/open-enterprise/blob/1502373a0071253f5b90c9e703395754d2f947cc/templates/open-enterprise/contracts/BaseOEApps.sol)
 * [OpenEnterpriseTemplate version 1502373](https://github.com/AutarkLabs/open-enterprise/blob/1502373a0071253f5b90c9e703395754d2f947cc/templates/open-enterprise/contracts/OpenEnterpriseTemplate.sol)
 
+*The initial commits for the contracts were reviewed by MixBytes while they were in a work-in-progress stage.*
 
 ## Security Assessment Principles
 
@@ -76,11 +77,15 @@ A repeated attempt to get the token from the cache will fail, because the token 
 
 *Fixed at [OpenEnterpriseTemplate.sol#L143](https://github.com/AutarkLabs/open-enterprise/blob/6866c62506b940b84c78f1ecad5f00e24393c437/templates/open-enterprise/contracts/OpenEnterpriseTemplate.sol#L143)*
 
+*Client: the contract was in a work-in-progress state, as the review occurred in parallel to finalizing the development.*
+
 3\. [OpenEnterpriseTemplate.sol#L160](https://github.com/AutarkLabs/open-enterprise/blob/1502373a0071253f5b90c9e703395754d2f947cc/templates/open-enterprise/contracts/OpenEnterpriseTemplate.sol#L160)
 
 This call will not be valid because the current contract is not the `_vault.TRANSFER_ROLE()` permission manager (Voting has already been assigned here [OpenEnterpriseTemplate.sol#L172](https://github.com/AutarkLabs/open-enterprise/blob/1502373a0071253f5b90c9e703395754d2f947cc/templates/open-enterprise/contracts/OpenEnterpriseTemplate.sol#L172)). You can initially set the template as a permission manager, then call `_grantVaultPermissions` and then pass the control to Voting.
 
 *Fixed at [OpenEnterpriseTemplate.sol#L197](https://github.com/AutarkLabs/open-enterprise/blob/6866c62506b940b84c78f1ecad5f00e24393c437/templates/open-enterprise/contracts/OpenEnterpriseTemplate.sol#L197)*
+
+*Client: the contract was in a work-in-progress state, as the review occurred in parallel to finalizing the development.*
 
 
 ### WARNINGS
