@@ -160,3 +160,5 @@ We recommend using `assert` instead of `revert` here, since it is a better way t
 Overall code quality is high. In the course of our analysis we found only a couple of minor slips, several comments and suggestions were made.
 
 The client identified a major issue after examining the intermediary audit report. The issue was addressed and fixed properly.
+
+The [fixed contracts](https://github.com/aragonone/voting-connectors/tree/ae1476395d309bd66857e64f57e37c6364aff2a3) don’t have any vulnerabilities according to our analysis.
