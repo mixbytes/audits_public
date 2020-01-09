@@ -6,13 +6,13 @@
 
 ## General provisions
 
-[Aragon](https://aragon.org) is software allowing to freely organize and collaborate without borders or intermediaries. Create global, bureaucracy-free organizations, companies, and communities.
+[Aragon](https://aragon.org) is software allowing to freely organize and collaborate without borders or intermediaries.
 
 [Aragon One](https://aragon.one) is a Swiss company formed by the founders of the Aragon project, building the tools and community necessary for the project to succeed.
 
 Voting Connectors are apps that serve as bridges to Aragon Voting apps requiring checkpointed balances (or any other app that requires checkpointed balances).
-* Token Wrapper: Wrap external tokens to a checkpointed token.
-* Voting Aggregator: Aggregate voting power over multiple sources.
+* Token Wrapper: wrap external tokens to a checkpointed token.
+* Voting Aggregator: aggregate voting power over multiple sources.
 
 With this in mind, [MixBytes](https://mixbytes.io/) team was willing to contribute to Aragon ecosystem development by providing security assessment of the Voting Connectors smart contracts.
 
