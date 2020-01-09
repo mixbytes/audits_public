@@ -63,73 +63,75 @@ Not found
 
 ### MAJOR
 
-1.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L299
+1\. [VotingAggregator.sol#L299](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L299)
 
 Power source weight is not checkpointed, that makes vote manipulation possible.
 The issue was identified by the client after examining the intermediary audit report.
 
 *Fixed at
-https://github.com/aragonone/voting-connectors/pull/45/commits/c25f24f0698fa7ebf8cab202becd7bfb7bf85c91*
+[c25f24f](https://github.com/aragonone/voting-connectors/pull/45/commits/c25f24f0698fa7ebf8cab202becd7bfb7bf85c91)*
 
 ### WARNINGS
 
-1.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L291
+1\. [VotingAggregator.sol#L291](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L291)
 
 An unbound loop with external calls can have high gas consumption. As a result, block gas limit may prevent some transactions from being executed. We recommend adding a limit to the source number.
 
-*Fixed at https://github.com/aragonone/voting-connectors/pull/46/commits/39c6cca6fcc5923992d20cad99b8fa459df01315*
+*Fixed at [39c6cca](https://github.com/aragonone/voting-connectors/pull/46/commits/39c6cca6fcc5923992d20cad99b8fa459df01315)*
 
 
-2.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L131
+2\. [VotingAggregator.sol#L131](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L131)
 
 
 `_weight` can be set to zero.
 [This check](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L109) implies that such behavior is unfavourable. We suggest adding a similar check to the `changeSourceWeight` function.
 
-*Fixed at https://github.com/aragonone/voting-connectors/pull/46/commits/f31c35fc354d61d7d2d82e2a857697ff901d311f*
+*Fixed at [f31c35f](https://github.com/aragonone/voting-connectors/pull/46/commits/f31c35fc354d61d7d2d82e2a857697ff901d311f)*
 
 
 ### COMMENTS
 
-1.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L78
+1\. [ActivePeriod.sol#L78](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L78)
 
 We suggest adding a check that a period with a given index exists.
 
-*Deleted*  (ActivePeriod was removed)
+*Deleted*  (`ActivePeriod` was removed)
 
 
-2.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/Checkpointing.sol#L33
-https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L36
-https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L56 
+2\. [Checkpointing.sol#L33](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/Checkpointing.sol#L33)
+
+[ActivePeriod.sol#L36](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L36)
+
+[ActivePeriod.sol#L56](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L56) 
 
 APIs of the `Checkpointing` and `ActivePeriod` libraries can be made more explicit in terms of the supported data types (`uint64` for time-like values and `uint192` for numeric values). We suggest using exact data types and forcing users of the libraries to acknowledge that by using type casts.
 Interestingly enough, there is a ready-made `getBlockNumber64` function, which perfectly fits into the picture.
 
-*Fixed at https://github.com/aragonone/voting-connectors/pull/46/commits/935259da1c3b2c6fd56a83a06b89b80fbbb7fb72*
+*Fixed at [935259d](https://github.com/aragonone/voting-connectors/pull/46/commits/935259da1c3b2c6fd56a83a06b89b80fbbb7fb72)*
 
 
-3.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/token-wrapper/contracts/TokenWrapper.sol#L87
+3\. [TokenWrapper.sol#L87](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/token-wrapper/contracts/TokenWrapper.sol#L87)
 
 We recommend adding a warning to the documentation of the `TokenWrapper` contract, stating that neither `totalSupply` nor any balance of the token can exceed the `MAX_UINT192` value.
 
-*Fixed at https://github.com/aragonone/voting-connectors/pull/46/commits/8d0506c4af615cbf7a1000a9c1cfb39ca6991f23*
+*Fixed at [8d0506c](https://github.com/aragonone/voting-connectors/pull/46/commits/8d0506c4af615cbf7a1000a9c1cfb39ca6991f23)*
 
 
-4.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L271
+4\. [VotingAggregator.sol#L271](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L271)
 
 Typo in the word `activation`.
 
 *Deleted* (the method was removed)
 
 
-5.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L103
+5\. [VotingAggregator.sol#L103](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L103)
 
 Many power sources with the same address can be added. Make sure that this is the expected scenario.
 
-*Fixed https://github.com/aragonone/voting-connectors/pull/46/commits/be882834a7c9ace3961b36974cdf68c14b68ce72*
+*Fixed [be88283](https://github.com/aragonone/voting-connectors/pull/46/commits/be882834a7c9ace3961b36974cdf68c14b68ce72)*
 
 
-6.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L131
+6\. [VotingAggregator.sol#L131](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L131)
 
 
 The function can be executed even for a disabled power source. Make sure that this is the desired behavior.
@@ -137,15 +139,16 @@ The function can be executed even for a disabled power source. Make sure that th
 *Acknowledged*
 
 
-7.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L297 
+7\. [VotingAggregator.sol#L297](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L297) 
 
 The `_aggregateAt` function can be temporarily blocked by a malicious power source.
 
-*Extra checks added at https://github.com/aragonone/voting-connectors/pull/46/commits/4d9da909660ca32cb50d90348b0a05b82e785c8e* 
+*Extra checks added at [4d9da90](https://github.com/aragonone/voting-connectors/pull/46/commits/4d9da909660ca32cb50d90348b0a05b82e785c8e)* 
 
 
-8.https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L325
-https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L128
+8\. [VotingAggregator.sol#L325](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/apps/voting-aggregator/contracts/VotingAggregator.sol#L325)
+
+[ActivePeriod.sol#L128](https://github.com/aragonone/voting-connectors/blob/ae01814ef63f795469ab0647a640388d140ef4b7/shared/contract-utils/contracts/ActivePeriod.sol#L128)
 
 We recommend using `assert` instead of `revert` here, since it is a better way to check the code consistency.
 
@@ -155,4 +158,5 @@ We recommend using `assert` instead of `revert` here, since it is a better way t
 ## CONCLUSION
 
 Overall code quality is high. In the course of our analysis we found only a couple of minor slips, several comments and suggestions were made.
+
 The client identified a major issue after examining the intermediary audit report. The issue was addressed and fixed properly.
