@@ -139,6 +139,6 @@ Provided smart contracts were audited and several troublesome issues were identi
  - 1 major issue
  - and also several recomendational comments
 
-All issues were fixed and following tag doesn't have any vulnerabilities according to our analysis:
- - https://github.com/pie-dao/vested-token-migration-app/releases/tag/0.1.5
- - https://github.com/pie-dao/pie-crust/releases/tag/0.1.2
+All issues were fixed and following commits don't have any vulnerabilities according to our analysis:
+ - https://github.com/pie-dao/vested-token-migration-app/commit/779a9e1f7636df675323034a8196f430c5a91102
+ - https://github.com/pie-dao/pie-crust/commit/f2400b5422e1ad4fb45253a6f0ff4ea9102cf0af
