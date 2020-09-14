@@ -88,9 +88,7 @@ Any sum of balances should be calculated as `sum(Ti.balance * (uint256(10) ** (C
 
 After normalization, our example will result in `1e10 * 10**(10-10) + 1e4 * 10**(10-4) = 2e10`, i.e. 2 full Crust tokens.
 
-*Acknowledged*
-
-*Comment from devs:  "Contracts are intended to be used within Aragon DAOs and more specifically PieDAO in which all voting tokens are 18 decimals. I would rather not have the added complexity and opt for simplicity. It also saves some gas when using them for voting."*
+*Fixed at [f2400b5](https://github.com/pie-dao/pie-crust/commit/f2400b5422e1ad4fb45253a6f0ff4ea9102cf0af)*
 
 ### COMMENTS
 
@@ -143,4 +141,4 @@ Provided smart contracts were audited and several troublesome issues were identi
 
 All issues were fixed and following tag doesn't have any vulnerabilities according to our analysis:
  - https://github.com/pie-dao/vested-token-migration-app/releases/tag/0.1.5
- - https://github.com/pie-dao/pie-crust/releases/tag/0.1.1
+ - https://github.com/pie-dao/pie-crust/releases/tag/0.1.2
