@@ -100,9 +100,9 @@ We received 10 USDP more debt due to the different sequence of calls.
  
 If compounding is the desired behavior, we recommend changing the calculation formula using integration.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: materialization of interest is the desired behavior, since before the position is updated, interest should be calculated at the previous rate. They materialize, and then the stability fee (the updated one) is charged on the debt body.*
+*Client: materialization of interest is the desired behavior, since before the position is updated, interest should be calculated at the previous rate. They materialize, and then the stability fee (the updated one) is charged on the debt body.*
  
  
 2\. [Vault.sol#L80-L81](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L80-L81)
@@ -111,9 +111,9 @@ These changes do not take effect immediately after the change in `parameters`. I
  
 We recommend to make the logic of applying changes independent of the frequency and intervals of the `update` call, for example by creating `parameters` snapshots, followed by the time of each change.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: This behavior is desirable. The user retains the current conditions until he issues additional USDP or withdraws the collateral. *
+*Client: This behavior is desirable. The user retains the current conditions until he issues additional USDP or withdraws the collateral.*
  
 3\. [Vault.sol#L77](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L77)
 
@@ -145,17 +145,17 @@ UniswapOracle is used without alternatives, regardless of `oracleType[token][use
  
  
  
-*Acknowledged.
- 
-Client: There will be alternatives in the future. *
+*Acknowledged.*
+
+*Client: There will be alternatives in the future. *
  
 7\. [Vault.sol#L188-L189](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L188-L189)
  
 The code implies the presence of a certain system that carries out the sale of assets of liquidated positions, but there is none in the code of contracts. So either the solution is not complete, or a part of the solution is outside the scope of this audit.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: Initially the liquidation mechanism will be implemented off-chain. *
+*Client: Initially the liquidation mechanism will be implemented off-chain. *
  
 8\. [Vault.sol#L192](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/Vault.sol#L192)
  
@@ -168,9 +168,9 @@ In some rare cases (paying off a large amount of debt with a large fee) subtract
 The proposed oracle is a good decentralized solution, but not the best one. In theory, an attack is possible when the exchange rate of a token with low liquidity on Uniswap is held at inadequately low values for 100 blocks (about half an hour). This will allow to unreasonably liquidate a part of positions and receive a liquidation fee.
 We recommend using a solution that takes into account all liquidity, from centralized exchanges as well. Fortunately, oracles for many tokens based on Chainlink have now appeared.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: We favor a more decentralized delivery model (Uniswap). *
+*Client: We favor a more decentralized delivery model (Uniswap). *
  
 10\. [ChainlinkedUniswapOracle.sol#L67](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/oracles/ChainlinkedUniswapOracle.sol#L67)
  
@@ -209,17 +209,17 @@ An attacker has an opportunity to manipulate the debt positions of third parties
  
 Interest on the use of debt is ignored. We recommend that you ensure that this is the desired behavior.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: The behavior is as planned. *
+*Client: The behavior is as planned. *
  
 14\. [LiquidatorUniswap.sol#L99-L115](https://github.com/unitprotocol/core/blob/518a09081aadda6a383f9845837ed7045101e64f/contracts/liquidators/LiquidatorUniswap.sol#L99-L115)
  
 The liquidator (`msg.sender`) is not rewarded in any way, and its address is not even recorded. We recommend that you ensure that this is the desired behavior.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: The behavior is as planned. *
+*Client: The behavior is as planned. *
  
 ### COMMENTS
  
@@ -227,25 +227,25 @@ Client: The behavior is as planned. *
  
 We recommend storing collateral parameters in a token_address => parameter_structure mapping. This seems a little more correct from the point of view of code design.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
+*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
  
 2\. [UniswapOracle.sol#L35-L36](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/UniswapOracle.sol#L35-L36)
  
 We recommend checking the received pair addresses for inequality to 0.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: It is the old version of oracle, it will be completely rewritten. *
+*Client: It is the old version of oracle, it will be completely rewritten. *
  
 3\. [USDP.sol#L13](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/USDP.sol#L13)
  
 Despite the absence of identified security issues, we recommend using multiply audited code as a basis, for example from `openzeppelin-solidity`.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: Contract code WETH9 is also verified. *
+*Client: Contract code WETH9 is also verified. *
  
 4\. [USDP.sol#L109](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/USDP.sol#L109)
  
@@ -264,25 +264,25 @@ Apparently, the project will have to be finalized by adding new functions. We re
  
 We recommend grouping 7 data structures that store information about a position into one structure with 7 fields, addressed by the token address and the address of the position owner. This seems a little more correct from the point of view of code design.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
+*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
  
 7\. [Vault.sol#L100](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L100)
  
 This function threatens to break encapsulation, because it does not perform any position status checks. We recommend that you only allow an empty position to be cleared.
  
-*Acknowledged.
+*Acknowledged.*
  
-Client: In the Vault contract functions marked with the hasVaultAccess modifier are low-level system functions. They can only be called from other contracts that are allowed access. These contracts keep track of the correctness of function calls in Vault. *
+*Client: In the Vault contract functions marked with the hasVaultAccess modifier are low-level system functions. They can only be called from other contracts that are allowed access. These contracts keep track of the correctness of function calls in Vault. *
  
 8\. [Vault.sol#L204](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L204)
  
 It can be inconvenient to manage a large number of items individually.
  
-*Acknowledged.
- 
-Client: If required, this can be solved with a contract on the higher level, which will take an array as input and call this function in a loop. *
+*Acknowledged.*
+
+*Client: If required, this can be solved with a contract on the higher level, which will take an array as input and call this function in a loop.*
  
 9\. [Vault.sol#L218](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L218)
  
@@ -300,9 +300,9 @@ We recommend that you create an `enum` that describes the different types of ora
  
 The fact that the parameters use data types specific to `UniswapOracle` makes it impossible to abstract the oracle.
  
-*Acknowledged.
- 
-Client: It is assumed that Liquidator contracts will be implemented separately for different types of oracles. *
+*Acknowledged.*
+
+*Client: It is assumed that Liquidator contracts will be implemented separately for different types of oracles.*
  
 12\. [LiquidatorUniswap.sol#L111](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/LiquidatorUniswap.sol#L111)
  
