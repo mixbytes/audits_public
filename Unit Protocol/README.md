@@ -65,7 +65,7 @@ Not found
  
 Position debt is updated, but field `lastUpdate[token][user]` is not. In the future, this may lead to an increase of the position debt.
  
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 2\. [Vault.sol#L160-L161](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L160-L161)
 
@@ -76,10 +76,7 @@ Position debt is updated, but field `lastUpdate[token][user]` is not. In the fut
 Changes of `debts[token][user]` and `tokenDebts[token]` will differ quantitatively, although they should be equal (since `tokenDebts` is the sum). Either after the `tokenDebts` update percentages will be lost, or the `lastUpdate[token][user]` update will be missed.
 We recommend that you either call `update` first, or consider the difference between `getDebt` and `debts[token][user]` when updating `tokenDebts`.
  
- 
- 
- 
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 3\. [VaultManagerUniswap.sol#L215](https://github.com/unitprotocol/core/blob/4d0cd819fffacb8aa4719eb21b38ba3b40a772c9/contracts/vault-managers/VaultManagerUniswap.sol#L215)
  
@@ -124,9 +121,8 @@ Client: This behavior is desirable. The user retains the current conditions unti
  
 Probably it is not the best place to control your debt. So, for example, it makes no sense to roll back a transaction if the debt has already exceeded `tokenDebtLimit (token)` due to the interest accrual, since this will hide the problem. In addition, the debt reduction in the event of overshoot should always be encouraged and not blocked.
 We recommend calculating the corresponding bool indicator in `Vault`, and processing it at a higher level, in the` VaultManager`.
- 
- 
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 4\. [Vault.sol#L166](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L166)
 
@@ -165,7 +161,7 @@ Client: Initially the liquidation mechanism will be implemented off-chain. *
  
 In some rare cases (paying off a large amount of debt with a large fee) subtracting `.sub (amount)` will lead to underflow and rollback of the transaction. We recommend doing the addition first.
  
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 9\. [ChainlinkedUniswapOracle.sol#L20](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/oracles/ChainlinkedUniswapOracle.sol#L20)
  
@@ -189,7 +185,7 @@ We recommend auditing the `@keydonix/uniswap-oracle-contracts` library.
 The cost of the specified amount of Ether is additionally multiplied by 1e18. I.e. the result of the function for the input data `1 ether` will be equal not to 385, but to `385000000000000000000`. If scale factor 1e18 is used on purpose, we recommend that you explicitly mark the scale factor of the return value.
 We would like to give a similar recommendation for a number of other values, for example, ratios represented by percentages without a fractional part are actively used. Now all numerical parameters are passed simply as uint and dimension, as well as the scale factor of the values ​​are indistinguishable, which can lead to errors. Unfortunately, Solidity does not allow you to define your own types derived from uint, representing different values ​​of the domain. The simplest solution can be postfixes or variable prefixes indicating the dimension and/or the scale factor of the variable, for example `price_q112`, `cr_percent`.
  
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 12\. [VaultManagerStandard.sol#L49](https://github.com/unitprotocol/core/blob/4d0cd819fffacb8aa4719eb21b38ba3b40a772c9/contracts/vault-managers/VaultManagerStandard.sol#L49)
 
@@ -207,7 +203,7 @@ We would like to give a similar recommendation for a number of other values, for
  
 An attacker has an opportunity to manipulate the debt positions of third parties, though with no obvious financial benefit to himself. We recommend adding authorization.
  
-*Fixed at https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f*
+*Fixed at [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts)*
  
 13\. [Vault.sol#L216-L245](https://github.com/unitprotocol/core/blob/518a09081aadda6a383f9845837ed7045101e64f/contracts/Vault.sol#L216-L245)
  
@@ -332,5 +328,5 @@ The Unit protocol took current ideas from the stablecoin field as a basis and de
 Due to the limitations of Ethereum, which are also inherent in many other blockchains, the protocol does not always work in real time, which contrasts with centralized solutions. This is the classic tradeoff of decentralization.
 Since the system is quite flexible and has many "moving parts", development and auditing were of significant complexity. Several errors were identified related to debt accounting and interest accrual (on debt). The approach to oracles was also redesigned, a simple Uniswap-based oracle was replaced with a more secure one. This will prevent a hack similar to the first bZx protocol hack. A lot of work has been done and many of the recommended improvements have been made. After a lot of revisions, a full re-audit has been performed.
  
-The following commit does not have any vulnerabilities according to our analysis: https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f.
+The following commit does not have any vulnerabilities according to our analysis: [518a090](https://github.com/unitprotocol/core/tree/518a09081aadda6a383f9845837ed7045101e64f/contracts).
  
