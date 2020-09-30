@@ -147,7 +147,7 @@ UniswapOracle is used without alternatives, regardless of `oracleType[token][use
  
 *Acknowledged.*
 
-*Client: There will be alternatives in the future. *
+*Client: There will be alternatives in the future.*
  
 7\. [Vault.sol#L188-L189](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L188-L189)
  
@@ -155,7 +155,7 @@ The code implies the presence of a certain system that carries out the sale of a
  
 *Acknowledged.*
  
-*Client: Initially the liquidation mechanism will be implemented off-chain. *
+*Client: Initially the liquidation mechanism will be implemented off-chain.*
  
 8\. [Vault.sol#L192](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/Vault.sol#L192)
  
@@ -170,7 +170,7 @@ We recommend using a solution that takes into account all liquidity, from centra
  
 *Acknowledged.*
  
-*Client: We favor a more decentralized delivery model (Uniswap). *
+*Client: We favor a more decentralized delivery model (Uniswap).*
  
 10\. [ChainlinkedUniswapOracle.sol#L67](https://github.com/unitprotocol/core/blob/19706a173e6bfb1e5747d7c91b07582dd4e60358/contracts/oracles/ChainlinkedUniswapOracle.sol#L67)
  
@@ -211,7 +211,7 @@ Interest on the use of debt is ignored. We recommend that you ensure that this i
  
 *Acknowledged.*
  
-*Client: The behavior is as planned. *
+*Client: The behavior is as planned.*
  
 14\. [LiquidatorUniswap.sol#L99-L115](https://github.com/unitprotocol/core/blob/518a09081aadda6a383f9845837ed7045101e64f/contracts/liquidators/LiquidatorUniswap.sol#L99-L115)
  
@@ -219,7 +219,7 @@ The liquidator (`msg.sender`) is not rewarded in any way, and its address is not
  
 *Acknowledged.*
  
-*Client: The behavior is as planned. *
+*Client: The behavior is as planned.*
  
 ### COMMENTS
  
@@ -237,7 +237,7 @@ We recommend checking the received pair addresses for inequality to 0.
  
 *Acknowledged.*
  
-*Client: It is the old version of oracle, it will be completely rewritten. *
+*Client: It is the old version of oracle, it will be completely rewritten.*
  
 3\. [USDP.sol#L13](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/USDP.sol#L13)
  
@@ -245,7 +245,7 @@ Despite the absence of identified security issues, we recommend using multiply a
  
 *Acknowledged.*
  
-*Client: Contract code WETH9 is also verified. *
+*Client: Contract code WETH9 is also verified.*
  
 4\. [USDP.sol#L109](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/USDP.sol#L109)
  
@@ -273,8 +273,8 @@ We recommend grouping 7 data structures that store information about a position 
 This function threatens to break encapsulation, because it does not perform any position status checks. We recommend that you only allow an empty position to be cleared.
  
 *Acknowledged.*
- 
-*Client: In the Vault contract functions marked with the hasVaultAccess modifier are low-level system functions. They can only be called from other contracts that are allowed access. These contracts keep track of the correctness of function calls in Vault. *
+
+*Client: In the Vault contract functions marked with the hasVaultAccess modifier are low-level system functions. They can only be called from other contracts that are allowed access. These contracts keep track of the correctness of function calls in Vault.*
  
 8\. [Vault.sol#L204](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L204)
  
