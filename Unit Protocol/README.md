@@ -229,7 +229,7 @@ We recommend storing collateral parameters in a token_address => parameter_struc
  
 *Acknowledged.*
  
-*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
+*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one.*
  
 2\. [UniswapOracle.sol#L35-L36](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/UniswapOracle.sol#L35-L36)
  
@@ -266,7 +266,7 @@ We recommend grouping 7 data structures that store information about a position 
  
 *Acknowledged.*
  
-*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one. *
+*Client: This solution would require redundant code to create interfaces for structure fields. Technically, the current implementation is not inferior to the proposed one.*
  
 7\. [Vault.sol#L100](https://github.com/unitprotocol/core/blob/746ea0c83e309b071d6d204bdd9a8e339713098f/contracts/Vault.sol#L100)
  
