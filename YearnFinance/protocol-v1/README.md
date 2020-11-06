@@ -1,11 +1,11 @@
 ![](MixBytes.png)
 
-# Yearn.Finance protocol v2 Smart Contracts Audit
+# Yearn.Finance protocol v1 Smart Contracts Audit
 
 ## Introduction
 
 ### General Provisions
-[Yearn.Finance](https://yearn.finance) is an experiment in using farming to bring stablecoins closer to their peg.
+[Yearn.Finance](https://yearn.finance) is a decentralized investment aggregator that leverages composability and uses automated strategies to earn high yield on crypto assets.
 
 ## Scope of audit
 https://github.com/iearn-finance/yearn-protocol/tree/9ff0dc0ea73642c529383d0675930a41bf033295/contracts
