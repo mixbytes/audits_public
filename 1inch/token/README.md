@@ -60,10 +60,10 @@ Not found
 
 ### WARNINGS
 
-#### 1. Potential front running attack or loosing of allowance
+#### 1. Potential front running attack or losing of allowance
 
 ##### Description
-At the line https://github.com/1inch-exchange/1inch-token/blob/99fd056f91005ca521a02a005f7bcd8f77e06afc/contracts/ERC20Permit.sol#L53 `_approve` method replaces the allowance, so there are two potential problems here
+At the line https://github.com/1inch-exchange/1inch-token/blob/99fd056f91005ca521a02a005f7bcd8f77e06afc/contracts/ERC20Permit.sol#L53 `_approve` method replaces the allowance, so there are two potential problems here:
 1. If a signer wants to increase the allowance from `A` to `B`, a receiver may withdraw `A+B` using the front-running attack.
 2. If a signer wants to send `A` and `B`, but a receiver forgot to withdraw `A`, the receiver will lose ability to withdraw `A`.
 
