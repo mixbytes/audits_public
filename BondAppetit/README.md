@@ -5,7 +5,7 @@
 ## Introduction
 
 ### Project overview
-The first DeFi protocol that connects real-world debt instruments with the Ethereum ecosystem.
+[BondAppetit](https://bondappetit.io) The first DeFi protocol that connects real-world debt instruments with the Ethereum ecosystem.
 
 ### Scope of the Audit
 The scope of the audit includes the following smart contracts at:
