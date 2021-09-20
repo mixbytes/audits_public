@@ -2,7 +2,7 @@
 
 # MixBytes Team public audits
 
-# Reports list
+## Reports list
 {REPORT_LIST}
 
 ## Refresh reports list
