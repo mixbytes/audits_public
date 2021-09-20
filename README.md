@@ -2,7 +2,7 @@
 
 # MixBytes Team public audits
 
-# Reports list
+## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
 | SpiritSwap Finance | SpiritSwap Finance | [link](https://github.com/mixbytes/audits_public/blob/master/SpiritSwap%20Finance/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/SpiritSwap%20Finance/SpiritSwap-Core%20Security%20Audit%20Report.pdf) | 2021-06-08 |
