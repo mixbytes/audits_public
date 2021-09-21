@@ -5,7 +5,7 @@
 ## Introduction
 
 ### Project overview
-The first DeFi protocol that connects real-world debt instruments with the Ethereum ecosystem.
+[BondAppetit](https://bondappetit.io) The first DeFi protocol that connects real-world debt instruments with the Ethereum ecosystem.
 
 ### Scope of the Audit
 The scope of the audit includes the following smart contracts at:
@@ -421,4 +421,19 @@ Audited scope includes contract which are the part of protocol that issue stable
 - "periphery" - meta-module that includes different helper contracts
 
 ### Conclusion
-Smart contracts have been audited and several suspicious places were found. During audit 8 major issues were identified as they could lead to some undesired behavior also several issues were marked as warning and comments. After working on audit report all issues were fixed or acknowledged(if issue is not critical or major) by client.
+Smart contracts have been audited and several suspicious places were found. During audit 8 major issues were identified as they could lead to some undesired behavior also several issues were marked as warning and comments. After working on audit report all issues were fixed or acknowledged(if issue is not critical or major) by client. <br><br>Some files of given project were forked from [compound protocol](https://github.com/compound-finance/compound-protocol), for these files was applied only diff checking(not an audit) between [9bcff3](https://github.com/compound-finance/compound-protocol/tree/9bcff34a5c9c76d51e51bcb0ca1139588362ef96) commit in original repository, see results below:
+- [GovernorAlpha.sol](https://github.com/bondappetit/bondappetit-protocol/blob/c131f5dacf02ff8b6008c4da7788b71d86b26427/contracts/GovernorAlpha.sol)
+Original file: [GovernorAlpha.sol](https://github.com/compound-finance/compound-protocol/blob/9bcff34a5c9c76d51e51bcb0ca1139588362ef96/contracts/Governance/GovernorAlpha.sol)
+Diff:
+  - Increased absolute amount of quorum votes and proposal threshold, but relative amounts to total supply remained the same.
+- [Timelock.sol](https://github.com/bondappetit/bondappetit-protocol/blame/c131f5dacf02ff8b6008c4da7788b71d86b26427/contracts/Timelock.sol)
+Original file: [Timelock.sol](https://github.com/compound-finance/compound-protocol/blob/9bcff34a5c9c76d51e51bcb0ca1139588362ef96/contracts/Timelock.sol)
+Diff:
+  - There are no changes in logic
+- [GovernanceToken.sol](https://github.com/bondappetit/bondappetit-protocol/blob/c131f5dacf02ff8b6008c4da7788b71d86b26427/contracts/GovernanceToken.sol)
+Original file: [Comp.sol](https://github.com/compound-finance/compound-protocol/blob/9bcff34a5c9c76d51e51bcb0ca1139588362ef96/contracts/Governance/Comp.sol)
+Diff:
+  - Increased total supply amount to 100 millions from 10.
+  - Changed token symbol and name.
+  - Enabled minting and burning functionality available only for owner. 
+  - Added transfers one-time locking mechanism that allowed only for owner.

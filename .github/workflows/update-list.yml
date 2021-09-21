@@ -1,0 +1,37 @@
+name: Update report list
+
+on: push
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Update reports list
+        run: |
+          (cd .scripts && npm i)
+          node .scripts/build_table.js
+          echo "::set-output name=diff::$(git diff --quiet README.md; echo $?)"
+        id: update_list
+
+      - name: Show diff
+        if: steps.update_list.outputs.diff == 1
+        run: |
+            echo "There are new updates\n"
+            git diff --color README.md | cat
+
+      - name: Push new readme
+        if: steps.update_list.outputs.diff == 1
+        run: |
+          git config --global user.name 'MixBytes audit'
+          git config --global user.email 'mixbytes-audit@users.noreply.github.com'
+          git add README.md
+          git commit -m "Update reports list"
+          git push
+
