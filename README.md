@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | Easy Track | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track/Lido%20Easy%20Track%20Security%20Audit%20Report.pdf) | 2021-09-06 |
 | SpiritSwap Finance | SpiritSwap Finance | [link](https://github.com/mixbytes/audits_public/blob/master/SpiritSwap%20Finance/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/SpiritSwap%20Finance/SpiritSwap-Core%20Security%20Audit%20Report.pdf) | 2021-06-08 |
 | Convex Platform | Convex Platform | [link](https://github.com/mixbytes/audits_public/blob/master/Convex%20Platform/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Convex%20Platform/Convex%20Platform%20Security%20Audit%20Report.pdf) | 2021-04-19 |
 | NuCypher | NuCypher | [link](https://github.com/mixbytes/audits_public/blob/master/NuCypher/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/NuCypher/NuCypher%20PoolingStakingContractV2%20Security%20Audit%20Report.pdf) | 2021-03-25 |
