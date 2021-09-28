@@ -1,0 +1,16 @@
+{
+  "name": "audit-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build_table.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "glob": "^7.1.7",
+    "moment": "^2.29.1",
+    "pdf-parse": "^1.1.1"
+  }
+}
