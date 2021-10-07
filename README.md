@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | 1inch Rewards Manager | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/Lido%201inch%20Rewards%20Manager%20Security%20Audit%20Report.pdf) | 2021-09-23 |
 | C.R.E.A.M. Finance | Liquidity Mining | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/C.R.E.A.M%20Finance%20Liquidity%20Mining%20Security%20Audit%20Report.pdf) | 2021-09-20 |
 | Lido | WstETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH/Lido%20WstETH%20Security%20Audit%20Report.pdf) | 2021-09-07 |
 | 1inch | Fee Collector | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Fee%20Collector/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Fee%20Collector/1Inch%20Fee%20Collector%20Security%20Audit%20Report.pdf) | 2021-09-06 |
