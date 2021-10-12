@@ -46,6 +46,7 @@
 | PieDAO | ExperiPie | [link](https://github.com/mixbytes/audits_public/blob/master/PieDAO/ExperiPie/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/PieDAO/ExperiPie/report.pdf) | 2020-12-11 |
 | AAVE | protocol v2 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/protocol%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/protocol%20v2/report.pdf) | 2020-12-03 |
 | DefiStarter | DefiStarter Smart Contracts | [link](https://github.com/mixbytes/audits_public/blob/master/DefiStarter/DefiStarter%20Smart%20Contracts/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DefiStarter/DefiStarter%20Smart%20Contracts/report.pdf) | 2020-11-06 |
+| YearnFinance | Yearn Protocol V1 | [link](https://github.com/mixbytes/audits_public/blob/master/YearnFinance/Yearn%20Protocol%20V1/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/YearnFinance/Yearn%20Protocol%20V1/Yearn%20Finance%20Protocol%20v.1%20Security%20Audit%20Report.pdf) | 2020-11-05 |
 | Akropolis | Vesting | [link](https://github.com/mixbytes/audits_public/blob/master/Akropolis/Vesting/README.md) | N/A | N/A |
 | Aragon | voting-connectors | [link](https://github.com/mixbytes/audits_public/blob/master/Aragon/voting-connectors/README.md) | N/A | N/A |
 | Curve Finance | DAO Voting Forwarder | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/DAO%20Voting%20Forwarder/README.md) | N/A | N/A |
@@ -64,7 +65,6 @@
 | TrustWallet | TrustWallet | [link](https://github.com/mixbytes/audits_public/blob/master/TrustWallet/README.md) | N/A | N/A |
 | UBCoinToken | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/UBCoinToken/README.md) | N/A | N/A |
 | YearnFinance | timeloans | [link](https://github.com/mixbytes/audits_public/blob/master/YearnFinance/timeloans/README.md) | N/A | N/A |
-| YearnFinance | Yearn Protocol V1 | [link](https://github.com/mixbytes/audits_public/blob/master/YearnFinance/Yearn%20Protocol%20V1/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
