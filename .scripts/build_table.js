@@ -45,7 +45,15 @@ audits = await Promise.all(audits.map(async (audit) => {
         }
     }
     else {
-        audit.push('N/A');
+        const files = glob.sync(`${audit[2]}/date.txt`);
+        if (files.length > 0) {
+            const date_raw = fs.readFileSync(files[0])
+            const date = moment(date_raw).format("YYYY-MM-DD");
+            audit.push(date);
+        }
+        else {
+            audit.push('N/A');
+        }
     }
     return audit;
 }));
