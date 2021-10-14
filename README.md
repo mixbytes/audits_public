@@ -5,7 +5,6 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| TrustWallet | TST Token | [link](https://github.com/mixbytes/audits_public/blob/master/TrustWallet/TST%20Token/README.md) | N/A | Invalid date |
 | Lido | 1inch Rewards Manager | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/Lido%201inch%20Rewards%20Manager%20Security%20Audit%20Report.pdf) | 2021-09-23 |
 | C.R.E.A.M. Finance | Liquidity Mining | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/C.R.E.A.M%20Finance%20Liquidity%20Mining%20Security%20Audit%20Report.pdf) | 2021-09-20 |
 | Lido | WstETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH/Lido%20WstETH%20Security%20Audit%20Report.pdf) | 2021-09-07 |
@@ -72,6 +71,7 @@
 | Akropolis | Token | [link](https://github.com/mixbytes/audits_public/blob/master/Akropolis/Token/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Akropolis/Token/Akropolis%20Token%20Smart%20Contract%20Audit%20Report.pdf) | 2019-07-07 |
 | Roobee | Roobee | [link](https://github.com/mixbytes/audits_public/blob/master/Roobee/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Roobee/Roobee%20Token%20Security%20Audit%20Report.pdf) | 2019-04-18 |
 | LTO Network | Token Sale | [link](https://github.com/mixbytes/audits_public/blob/master/LTO%20Network/Token%20Sale/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/LTO%20Network/Token%20Sale/LTO%20Network%20Token%20Sale%20Security%20Audit%20Report.pdf) | 2019-01-15 |
+| TrustWallet | TST Token | [link](https://github.com/mixbytes/audits_public/blob/master/TrustWallet/TST%20Token/README.md) | N/A | 2018-06-18 |
 | POA Network | POA PoPA | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20PoPA/README.md) | N/A | 2018-06-15 |
 | POA Network | POA Bridge | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Bridge/README.md) | N/A | 2018-05-02 |
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
