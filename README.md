@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Keep3r.Network | Keep3r.Network | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/keep3r%20Staking%20Rewards%20Security%20Audit%20Report.pdf) | 2021-11-11 |
 | 1inch | Aggregation Router | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Aggregation%20Router/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Aggregation%20Router/1Inch%20Aggregation%20Router%20V4%20Security%20Audit%20Report.pdf) | 2021-10-01 |
 | Lido | 1inch Rewards Manager | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/1inch%20Rewards%20Manager/Lido%201inch%20Rewards%20Manager%20Security%20Audit%20Report.pdf) | 2021-09-23 |
 | C.R.E.A.M. Finance | Liquidity Mining | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/C.R.E.A.M.%20Finance/Liquidity%20Mining/C.R.E.A.M%20Finance%20Liquidity%20Mining%20Security%20Audit%20Report.pdf) | 2021-09-20 |
