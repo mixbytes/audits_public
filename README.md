@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | Anchor Collateral stETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/Lido%20Anchor%20Collateral%20stETH%20Security%20Audit%20Report.pdf) | 2021-12-29 |
 | GearBox Protocol | GearBox Protocol | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/GearBox%20Protocol%20Security%20Audit%20Report.pdf) | 2021-12-23 |
 | Yearn Finance | Yearn Strategy SSB | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/Yearn%20Strategy%20SSB%20Security%20Audit%20Report.pdf) | 2021-12-23 |
 | Keep3r.Network | Keep3r.Network | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/keep3r%20Staking%20Rewards%20Security%20Audit%20Report.pdf) | 2021-11-11 |
