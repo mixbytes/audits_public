@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | In-protocol Coverage | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/In-protocol%20Coverage/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/In-protocol%20Coverage/Lido%20In-protocol%20%20Coverage%20Security%20Audit%20Report.pdf) | 2022-02-28 |
 | Lido | Lido KSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/LIDO%20KSM%20Security%20Audit%20Report.pdf) | 2022-02-08 |
 | GearBox Protocol | GearBox Protocol | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/GearBox%20Protocol%20Security%20Audit%20Report.pdf) | 2021-12-23 |
 | Yearn Finance | Yearn Strategy SSB | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/Yearn%20Strategy%20SSB%20Security%20Audit%20Report.pdf) | 2021-12-23 |
