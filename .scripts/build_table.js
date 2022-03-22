@@ -35,13 +35,25 @@ audits = await Promise.all(audits.map(async (audit) => {
         const file = fs.readFileSync(audit[4]);
         const data = await pdf(file, {max: 1});
         const text = data.text.replace(/\n/g, ' ');
-        const found = text.match(/([A-z]+)\s*(\d+),?\s*(\d+)/);
-        if (found) {
-            const date = moment(found[0]).format("YYYY-MM-DD");
+
+        // support new timeline format (e.g. 28.02.2022 - 13.03.2022)
+        const timeline = text.match(/\d+[./\\]\d+[./\\]\d+\s?[—–−-]\s?(\d+[./\\]\d+[./\\]\d+)/);
+        if (timeline && timeline.length === 2) {
+            const dateArray = timeline[1].split('.');
+            const date = moment(new Date(
+                parseInt(dateArray[2]),
+                dateArray[1] - 1,
+                parseInt(dateArray[0]))
+            ).format("YYYY-MM-DD");
             audit.push(date);
-        }
-        else {
-            audit.push('N/A');
+        } else {
+            const found = text.match(/([A-z]+)\s*(\d+),?\s*(\d+)/);
+            if (found) {
+                const date = moment(found[0]).format("YYYY-MM-DD");
+                audit.push(date);
+            } else {
+                audit.push('N/A');
+            }
         }
     }
     else {

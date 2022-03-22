@@ -7,6 +7,7 @@
 |---|---|---|---|---|
 | Lido | Deposit Security Module | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Deposit%20Security%20Module/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Deposit%20Security%20Module/Lido%20Deposit%20Security%20Module%20Security%20Audit%20Report.pdf) | 2022-02-28 |
 | Lido | In-protocol Coverage | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/In-protocol%20Coverage/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/In-protocol%20Coverage/Lido%20In-protocol%20%20Coverage%20Security%20Audit%20Report.pdf) | 2022-02-28 |
+| Yearn Finance | ySwaps | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/ySwaps/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/ySwaps/Yearn%20ySwaps%20Security%20Audit%20Report.pdf) | 2022-02-28 |
 | Lido | Lido KSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/LIDO%20KSM%20Security%20Audit%20Report.pdf) | 2022-02-08 |
 | Lido | Aave stETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Aave%20stETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Aave%20stETH/Lido%20Aave%20stETH%20Security%20Audit%20Report.pdf) | 2022-02-07 |
 | Lido | Anchor Collateral stETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/Lido%20Anchor%20Collateral%20stETH%20Security%20Audit%20Report.pdf) | 2022-01-25 |
@@ -89,7 +90,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Yearn Finance | ySwaps | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/ySwaps/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/ySwaps/Yearn%20ySwaps%20Security%20Audit%20Report.pdf) | 2001-10-01 |
 
 
 ## Refresh reports list
