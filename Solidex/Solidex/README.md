@@ -1,11 +1,11 @@
 
 
-**** FOR INTERNAL USE ONLY ****
+
 
 ---
 # Solidex Security Audit Report
 
-###### tags: `solidex`
+###### tags: `Solidex`
 
 ## 1. INTRODUCTION
 
@@ -34,7 +34,6 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the cients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
-***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -67,7 +66,6 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -96,7 +94,6 @@ Low/Informational | Other non-essential issues and recommendations reported to/a
 
 Based on the feedback received from the Customer regarding the list of findings discovered by the Contractor, they are assigned the following statuses:
 
-***
 
 Status | Description
 --- | ---
@@ -141,7 +138,6 @@ Date | Commit Hash | Note
 23.02.2022 | d35e07961a1df908bf733ff1dd432dbef777869b | Minor fixes supplied
 18.03.2022 | 8b420ed8bed4b714695d51de2a0f82e38a72e1b2 | Final commit at the public repository
 
-***
 
 #### Project Scope
 The audit covered the following files:
@@ -161,6 +157,13 @@ Whitelister.sol | https://github.com/solidex-fantom/solidex/blob/8b420ed8bed4b71
 
 
 ### 1.5 Summary of findings
+
+Severity | # of Findings
+--- | ---
+CRITICAL | 0
+HIGH| 0
+MEDIUM | 1
+LOW/INFORMATIONAL | 2
 
 ### 1.6 Conclusion
 During the audit process, 1 MEDIUM and 2 LOW/INFORMATIONAL severity findings were spotted and acknowledged by the developers. These findings do not affect security of the audited project.
@@ -200,7 +203,6 @@ The attacker can directly call `onERC721Received` and supply NFT id that was not
 
 Please note, this attack can only affect a contract at the initial stage, before the initial deposit was made. Spoofing attempts for any deposits except the initial deposit will be reverted or will not change the state of the contract. Thus a contract at the production stage (after the initial deposit) is not vulnerable anymore.
 
-***
 
 Location of the affected code:
 - https://github.com/solidex-fantom/solidex/blob/8b420ed8bed4b714695d51de2a0f82e38a72e1b2/contracts/SexPartners.sol#L95
@@ -231,7 +233,6 @@ Some numeric constants are used without comments. It decreases the readability o
 ##### Recommendation
 We recommend describing numeric constants in code and/or in comments.
 
-***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
