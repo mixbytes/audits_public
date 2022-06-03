@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| 1inch | Farming | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Farming/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Farming/1Inch%20Farming%20Security%20Audit%20Report.pdf) | 2022-06-01 |
 | Lido | Lido Protocol | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Protocol/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Protocol/Lido%20Protocol%20Security%20Audit%20Report.pdf) | 2022-05-24 |
 | Solidex | Solidex | [link](https://github.com/mixbytes/audits_public/blob/master/Solidex/Solidex/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Solidex/Solidex/Solidex-Security-Audit-Report.pdf) | 2022-03-21 |
 | Lido | Deposit Security Module | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Deposit%20Security%20Module/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Deposit%20Security%20Module/Lido%20Deposit%20Security%20Module%20Security%20Audit%20Report.pdf) | 2022-02-28 |
