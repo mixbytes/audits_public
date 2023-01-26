@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Fantium | Fantium | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/Fantium%20Security%20Audit%20Report.pdf) | 2023-01-10 |
 | P2P.org | P2P.org | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/P2P.org_ETH2%20Depositor%20&%20ETH%20Staking%20Fee%20Distributor%20Smart%20Contracts%20Audit%20Report.pdf) | 2022-12-29 |
 | 1inch | Aggregation Router V5 | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Aggregation%20Router%20V5/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Aggregation%20Router%20V5/1inch%20Aggregation%20Router%20V5%20Security%20Audit%20Report.pdf) | 2022-11-10 |
 | Iron Bank | Iron Bank | [link](https://github.com/mixbytes/audits_public/blob/master/Iron%20Bank/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Iron%20Bank/IronBank%20Security%20Audit%20Report.pdf) | 2022-09-05 |
