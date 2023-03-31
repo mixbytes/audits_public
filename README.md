@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Rubic | Rubic | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/Rubic%20Security%20Audit%20Report.pdf) | 2023-03-30 |
 | Barter DAO | Barter DAO | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20Security%20Audit%20Report.pdf) | 2023-03-15 |
 | Fantium | Fantium | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/Fantium%20Security%20Audit%20Report.pdf) | 2023-01-10 |
 | P2P.org | P2P.org | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/P2P.org_ETH2%20Depositor%20&%20ETH%20Staking%20Fee%20Distributor%20Smart%20Contracts%20Audit%20Report.pdf) | 2022-12-29 |
