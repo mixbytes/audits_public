@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Clearpool | Clearpool | [link](https://github.com/mixbytes/audits_public/blob/master/Clearpool/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Clearpool/Clearpool%20Security%20Audit%20Report.pdf) | 2023-03-31 |
 | Rubic | Rubic | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/Rubic%20Security%20Audit%20Report.pdf) | 2023-03-30 |
 | Barter DAO | Barter DAO | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20Security%20Audit%20Report.pdf) | 2023-03-15 |
 | Fantium | Fantium | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/Fantium%20Security%20Audit%20Report.pdf) | 2023-01-10 |
