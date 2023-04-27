@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| CloudWalk | CloudWalk | [link](https://github.com/mixbytes/audits_public/blob/master/CloudWalk/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/CloudWalk/CloudWalk%20Multisig%20Wallet%20Audit%20Report.pdf) | 2023-04-27 |
 | P2P.org | ETH2 Depositor & ETH Staking Fee Distributor (v.2) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH2%20Depositor%20&%20ETH%20Staking%20Fee%20Distributor%20(v.2)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH2%20Depositor%20&%20ETH%20Staking%20Fee%20Distributor%20(v.2)/ETH2%20Depositor%20&%20ETH%20Staking%20Fee%20Distributor%20Security%20Audit%20Report%20(v.2).pdf) | 2023-04-10 |
 | Clearpool | Clearpool | [link](https://github.com/mixbytes/audits_public/blob/master/Clearpool/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Clearpool/Clearpool%20Security%20Audit%20Report.pdf) | 2023-03-31 |
 | Rubic | Rubic | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Rubic/Rubic%20Security%20Audit%20Report.pdf) | 2023-03-30 |
