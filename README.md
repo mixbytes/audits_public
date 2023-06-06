@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Curve Finance | Curve Stablecoin (crvUSD) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Stablecoin%20(crvUSD)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Stablecoin%20(crvUSD)/Curve%20Stablecoin%20(crvUSD)%20Security%20Audit%20Report.pdf) | 2023-06-05 |
 | Algebra Finance | Periphery | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Periphery/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Periphery/Algebra%20Periphery%20Security%20Audit%20Report.pdf) | 2023-05-25 |
 | Algebra Finance | Farmings | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Farmings/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Farmings/Algebra%20Farmings%20Security%20Audit%20Report.pdf) | 2023-05-24 |
 | Fantium | Fantium v2 | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/Fantium%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Fantium/Fantium%20v2/Fantium%20v2%20Security%20Audit%20Report.pdf) | 2023-05-04 |
