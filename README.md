@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Algebra Finance | Core | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Core/Algebra%20Finance%20Core%20Security%20Audit%20Report.pdf) | 2023-08-25 |
 | Yearn Finance | yETH-bootstrap | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/yETH-bootstrap/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/yETH-bootstrap/Yearn%20Finance%20yETH-bootstrap%20Security%20Audit%20Report.pdf) | 2023-07-11 |
 | Vibe | Vibe | [link](https://github.com/mixbytes/audits_public/blob/master/Vibe/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Vibe/Vibe%20Security%20Audit%20Report.pdf) | 2023-06-30 |
 | Curve Finance | Curve Stablecoin (crvUSD) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Stablecoin%20(crvUSD)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Stablecoin%20(crvUSD)/Curve%20Stablecoin%20(crvUSD)%20Security%20Audit%20Report.pdf) | 2023-06-05 |
