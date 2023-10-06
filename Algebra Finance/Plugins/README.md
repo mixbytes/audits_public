@@ -110,7 +110,7 @@ Title | Description
 --- | ---
 Client             | Algebra
 Project name       | Farming & Plugins
-Timeline           | August 22 2023 - September 05 2023
+Timeline           | August 22 2023 - September 25 2023
 Number of Auditors | 4
 
 #### Project Log
@@ -119,6 +119,8 @@ Date | Commit Hash | Note
 --- | --- | ---
 22.08.2023 | 6f57b3e218630106a4d41aedefd38f9e83b41e2b | Commit for the audit
 05.09.2023 | 16e104c4ae072c071914fcfe680214c88a5cf9de | Commit for the re-audit
+19.09.2023 | 50d812716f34d254467eac3e78b0b470779f86dd | Commit for the re-audit 2
+25.09.2023 | 19175092a3b1542cda63cc828c7239df409aec33 | Commit for the re-audit 3
 
 #### Project Scope
 The audit covered the following files:
