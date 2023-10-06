@@ -5,7 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| Algebra Finance | Plugins | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Plugins/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Plugins/Algebra%20Plugins%20Security%20Audit%20Report.pdf) | 2023-09-06 |
+| Algebra Finance | Plugins | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Plugins/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Plugins/Algebra%20Plugins%20Security%20Audit%20Report.pdf) | 2023-09-25 |
 | Barter DAO | Barter DAO (diff) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20(diff)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20(diff)/Barter%20DAO%20Security%20Audit%20Report%20(diff).pdf) | 2023-09-05 |
 | Prisma Finance | Prisma Finance | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Prisma%20Finance%20Security%20Audit%20Report.pdf) | 2023-09-01 |
 | Algebra Finance | Core | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Core/Algebra%20Finance%20Core%20Security%20Audit%20Report.pdf) | 2023-08-25 |
