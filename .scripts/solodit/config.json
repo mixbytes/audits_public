@@ -1,0 +1,22 @@
+{
+    "index": "../../README.md",
+    "base_path": "../../",
+    "urgency_map": {
+        "critical": "HIGH",
+        "high": "HIGH",
+        "major": "HIGH",
+        "medium": "MEDIUM",
+        "low": "LOW",
+        "info": "LOW"
+    },
+    "fix": {
+        "https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md": {
+            "sub": {
+                "^### \\[CRITICAL\\]": "#### CRITICAL"
+            }
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/AAVE/protocol%20v2/README.md": {
+            "file": "AAVE_protocol_v2_README_fixed.md"
+        }
+    }
+}
