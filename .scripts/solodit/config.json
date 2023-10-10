@@ -3,20 +3,47 @@
     "base_path": "../../",
     "urgency_map": {
         "critical": "HIGH",
+        "criticals": "HIGH",
+        "highs": "HIGH",
         "high": "HIGH",
         "major": "HIGH",
+        "majors": "HIGH",
+        "mediums": "MEDIUM",
         "medium": "MEDIUM",
+        "lows": "LOW",
         "low": "LOW",
-        "info": "LOW"
+        "infos": "LOW",
+        "info": "LOW",
+        "comments": "LOW",
+        "comment": "LOW"
     },
     "fix": {
-        "https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md": {
-            "sub": {
-                "^### \\[CRITICAL\\]": "#### CRITICAL"
-            }
-        },
         "https://github.com/mixbytes/audits_public/blob/master/AAVE/protocol%20v2/README.md": {
             "file": "AAVE_protocol_v2_README_fixed.md"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/Lido/Aave%20stETH/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/AAVE/ParaSwap%20Adapter/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/Empower%20the%20DAO/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/Akropolis/Token/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/LTO%20Network/Token%20Sale/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Protocol%20V1/README.md": {
+            "file": "EMPTY"
+        },
+        "https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20PoPA/README.md": {
+            "file": "EMPTY"
         }
     }
 }

@@ -10,7 +10,8 @@ Options:
     --index=FILE    root md file with a table of reports
     --path=PATH     base path with reports
     --debug=FILE    run in debug mode over a single report
-
+    --list          list projects only
+    --list-errors   list only projects with parsing errors
 """
 from docopt import docopt
 import json
@@ -61,11 +62,16 @@ def parse(text, md_link="", pdf_link=None, protocol_name="", report_date=""):
                 finding_github_link = md_link + md.generate_hash_link(finding["title"])
                 debug_info = finding_github_link
 
+                if (
+                    re.match("^[0-9]+\. ?https://github.com/", finding["title"], flags=re.I)
+                    or
+                    re.match(r"^([0-9]+\. ?)?\[\w+\.sol\\?#?[L0-9-]+\]\(https://github.com/",
+                             finding["title"], flags=re.I)
+                ):
+                    raise Exception("Report '%s' have bad vulnerability title" % finding_github_link)
+
                 if not finding["subsections"] and finding["content"]:
                     content = md.to_md({**finding, "level": 0})
-
-                elif re.match("^[0-9]+\. https://github.com/", finding["title"]):
-                    raise Exception("Report '%s' have to be fixed" % finding_github_link)
 
                 else:
                     description = find(finding, "description")
@@ -118,7 +124,6 @@ def run_from_index(path):
 
         text = open(path).read()
         text = fix(text, md_link)
-
         outputs.extend(parse(
             text,
             md_link=md_link,
@@ -152,7 +157,42 @@ if __name__ == "__main__":
     args = docopt(__doc__)
     config = get_config(args)
 
-    if args["--debug"]:
+    if args["--list"]:
+        table = md.parse_table(open(config["index"]).read())
+        base_path = config.get("base_path", "")
+        outputs = []
+
+        for report in table:
+            md_link = extract_href_from_md_link(report["MD Report"])
+            print(md_link)
+
+    elif args["--list-errors"]:
+        table = md.parse_table(open(config["index"]).read())
+        base_path = config.get("base_path", "")
+        outputs = []
+
+        for report in table:
+            md_link = extract_href_from_md_link(report["MD Report"])
+            try:
+                path = extract_file_path_from_link(md_link)
+                path = os.path.join(base_path, path)
+
+                assert os.path.exists(path), f"Report '{md_link}' cannot be found in '{path}'"
+
+                text = open(path).read()
+                text = fix(text, md_link)
+                list(parse(
+                    text,
+                    md_link=md_link,
+                    protocol_name=report["Project"],
+                    report_date=report["Release Date (YYYY-MM-DD)"],
+                    pdf_link="",
+                ))
+            except:
+                print(md_link)
+
+    elif args["--debug"]:
         run_single_report(args["--debug"])
+
     else:
         run_from_index(config["index"])
