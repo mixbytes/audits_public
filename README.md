@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| AAVE | Voting Tokens | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/AAVE%20Voting%20Tokens%20Security%20Audit%20Report.pdf) | 2023-11-30 |
 | Mantle Network | Mantle Network | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/Mantle%20Network%20METH%20Secuity%20Audit%20Report.pdf) | 2023-11-21 |
 | Curve Finance | StableSwapNG | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/StableSwapNG/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/StableSwapNG/Curve%20Finance%20StableSwapNG%20Security%20Audit%20Report.pdf) | 2023-11-01 |
 | Yearn Finance | Vesting Escrow | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Vesting%20Escrow/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Vesting%20Escrow/Yearn%20Finance%20Vesting%20Escrow%20Security%20Audit%20Report.pdf) | 2023-10-13 |
