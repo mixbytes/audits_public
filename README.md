@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Aspida Network | Aspida Network | [link](https://github.com/mixbytes/audits_public/blob/master/Aspida%20Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Aspida%20Network/Aspida%20Network%20Contracts%20Security%20Audit%20Report.pdf) | 2024-01-31 |
 | Divergence Protocol | Divergence Protocol | [link](https://github.com/mixbytes/audits_public/blob/master/Divergence%20Protocol/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Divergence%20Protocol/Divergence%20Protocol%20Security%20Audit%20Report.pdf) | 2023-12-28 |
 | P2P.org | SSV Integration | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration/P2P.org%20SSV%20Integration%20Security%20Audit%20Report.pdf) | 2023-12-15 |
 | AAVE | Voting Tokens | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/AAVE%20Voting%20Tokens%20Security%20Audit%20Report.pdf) | 2023-11-30 |
