@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| KelpDAO | KelpDAO | [link](https://github.com/mixbytes/audits_public/blob/master/KelpDAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/KelpDAO/KelpDAO%20LRT-ETH%20Security%20Audit%20Report.pdf) | 2024-03-04 |
 | Threshold Network | BAMM | [link](https://github.com/mixbytes/audits_public/blob/master/Threshold%20Network/BAMM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Threshold%20Network/BAMM/Threshold-USD%20BAMM%20Security%20Audit%20Report.pdf) | 2024-02-13 |
 | Threshold Network | Threshold USD | [link](https://github.com/mixbytes/audits_public/blob/master/Threshold%20Network/Threshold%20USD/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Threshold%20Network/Threshold%20USD/Threshold-USD%20Security%20Audit%20Report.pdf) | 2024-02-13 |
 | Aspida Network | Aspida Network | [link](https://github.com/mixbytes/audits_public/blob/master/Aspida%20Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Aspida%20Network/Aspida%20Network%20Contracts%20Security%20Audit%20Report.pdf) | 2024-01-31 |
