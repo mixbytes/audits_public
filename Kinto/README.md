@@ -229,6 +229,8 @@ We recommend that in the `_validateSignature()` function, instead of checking th
 
 
 
+
+
 #### 2. Malicious bundler can steal funds from SponsorPaymaster
 ##### Status
 Fixed in https://github.com/KintoXYZ/kinto-core/commit/296b98d13b5e3fbb6d2e4c6883c0fab174b5fc22
@@ -255,6 +257,7 @@ We recommend implementing one of the following solutions:
 It's important to note that in the first and second methods, there is a risk of DOS for some users. If users cannot arbitrarily increase gas rewards, they cannot influence the priority of their transactions. Depending on how the bundler algorithm is implemented, this could result in some users' transactions constantly being stuck in the mempool and not getting executed.
 
 
+
 ##### Client's commentary
 > Client: 
 > Added three things:
@@ -268,6 +271,7 @@ It's important to note that in the first and second methods, there is a risk of 
 >New commit on our repo 698daa4e395e8d3c727b1dd66b4057a4a2d7453a
 >
 > MixBytes: Fixed, the damage can be limited if the introduced rate limits are used properly. 
+
 
 
 
@@ -513,7 +517,6 @@ We recommend:
 
 ##### Client's commentary
 > All the problems should be fixed by this commit 7105be6cd1cdee55c7ab94fba9663106bb160dd4.
-
 
 
 
@@ -895,7 +898,6 @@ We recommend replacing `unlockTokenDeposit();` with the direct `unlockBlock[_own
 
 
 
-
 #### 4. KintoID, Factory and SponsorPaymaster initialize frontrun
 ##### Status
 **Acknowledged**
@@ -1068,7 +1070,7 @@ We recommend replacing lines from:
         withdrawTo(payable(target), amount);
 ```
 
-***
+
 
 ##### Client's commentary
 > Fixed by 7105be6cd1cdee55c7ab94fba9663106bb160dd4
