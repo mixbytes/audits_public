@@ -134,7 +134,7 @@ contracts/zaps/MigrateTroveZap.sol | https://github.com/owsley3/prisma-contracts
 File name | Contract deployed on mainnet | Comment
 --- | --- | ---
 MigrateTroveZap | [0x5c15ceD59fD964fCFFF2d2F376b4a40b6D1Fce1c](https://etherscan.io/address/0x5c15ceD59fD964fCFFF2d2F376b4a40b6D1Fce1c) | 
-
+MigrateTroveZap | [0x1371c1DAE7D3ad43BB79eccE1B882aD9754f9047](https://etherscan.io/address/0x1371c1DAE7D3ad43BB79eccE1B882aD9754f9047) |
 
 
 ### 1.5 Summary of findings
@@ -155,7 +155,6 @@ During the audit process, no new findings have been spotted. The `MigrateTroveZa
 Additionally, we reviewed the code against an internal checklist that covers aspects such as business logic issues, common ERC-20 issues, debt calculation problems, attack vectors related to interactions with external contracts, calculations overflow, reentrancy attacks, and access control. **No issues were found.**
 
 The current scope is very well written regarding the ease of understanding and reading the code. All functions can be easily comprehended.
-
 
 
 ## 2. FINDINGS REPORT
