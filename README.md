@@ -51,7 +51,6 @@
 | Lido | Lido KSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20KSM/LIDO%20KSM%20Security%20Audit%20Report.pdf) | 2022-02-08 |
 | Lido | Aave stETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Aave%20stETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Aave%20stETH/Lido%20Aave%20stETH%20Security%20Audit%20Report.pdf) | 2022-02-07 |
 | Lido | Anchor Collateral stETH | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Anchor%20Collateral%20stETH/Lido%20Anchor%20Collateral%20stETH%20Security%20Audit%20Report.pdf) | 2022-01-25 |
-| GearBox Protocol | Gearbox Protocol v.1 | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/Gearbox%20Protocol%20v.1/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/Gearbox%20Protocol%20v.1/GearBox%20Protocol%20Security%20Audit%20Report.pdf) | 2021-12-23 |
 | Yearn Finance | Yearn Strategy SSB | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Yearn%20Strategy%20SSB/Yearn%20Strategy%20SSB%20Security%20Audit%20Report.pdf) | 2021-12-23 |
 | 1inch | Fixed Rate Swap | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Fixed%20Rate%20Swap/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/1inch/Fixed%20Rate%20Swap/1inch%20Fixed%20Rate%20Swap%20Security%20Audit%20Report.pdf) | 2021-11-29 |
 | Keep3r.Network | Keep3r.Network | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/keep3r%20Staking%20Rewards%20Security%20Audit%20Report.pdf) | 2021-11-11 |
@@ -130,6 +129,7 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
+| GearBox Protocol | Gearbox Protocol v.1 | [link](https://github.com/mixbytes/audits_public/blob/master/GearBox%20Protocol/Gearbox%20Protocol%20v.1/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
