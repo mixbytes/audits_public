@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v3.1.0%20Security%20Audit%20Report.pdf) | 2024-05-02 |
 | Swell | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/Swell%20Staking%20Security%20Audit%20Report.pdf) | 2024-04-10 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-04-09 |
 | Prisma Finance | Zap | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/Prisma%20Finance%20Zap%20Security%20Audit%20Report.pdf) | 2024-04-05 |
