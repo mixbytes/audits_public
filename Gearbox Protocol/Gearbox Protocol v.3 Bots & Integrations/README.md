@@ -144,7 +144,17 @@ contracts/adapters/curve/CurveV1_Base.sol | https://github.com/Gearbox-protocol/
 contracts/adapters/velodrome/VelodromeV2RouterAdapter.sol | https://github.com/Gearbox-protocol/integrations-v3/blob/8e30305e526e2420b99bf6add36784d759faaf29/contracts/adapters/velodrome/VelodromeV2RouterAdapter.sol
 
 #### Deployments
-Deployed contracts will be verified after the proposal is approved by the DAO.
+
+File name | Contract deployed on mainnet | Comment
+--- | --- | ---
+PartialLiquidationBotV3.sol | [0x0f06c2bD612Ee7D52d4bC76Ce3BD7E95247AF2a9](https://etherscan.io/address/0x0f06c2bD612Ee7D52d4bC76Ce3BD7E95247AF2a9) | 
+PartialLiquidationBotV3.sol | [0x53fDA9a509020Fc534EfF938Fd01dDa5fFe8560c](https://etherscan.io/address/0x53fDA9a509020Fc534EfF938Fd01dDa5fFe8560c) | 
+PartialLiquidationBotV3.sol | [0x82b0adfA8f09b20BB4ed066Bcd4b2a84BEf73D5E](https://etherscan.io/address/0x82b0adfA8f09b20BB4ed066Bcd4b2a84BEf73D5E) | 
+PartialLiquidationBotV3.sol | [0x519906cD00222b4a81bf14A7A11fA5FCF455Af42](https://etherscan.io/address/0x519906cD00222b4a81bf14A7A11fA5FCF455Af42) | 
+PartialLiquidationBotV3.sol | [0x538d66d6cA2607673ceC8af3cA3933476f361633](https://arbiscan.io/address/0x538d66d6cA2607673ceC8af3cA3933476f361633) | Arbitrum
+PartialLiquidationBotV3.sol | [0x8A35C229ff4f96e8b7A4f9168B22b9F7DF6b82f3](https://arbiscan.io/address/0x8A35C229ff4f96e8b7A4f9168B22b9F7DF6b82f3) | Arbitrum
+PartialLiquidationBotV3.sol | [0x938094B41dDaC7bD3f21fC962D424E1a84ac4a85](https://arbiscan.io/address/0x938094B41dDaC7bD3f21fC962D424E1a84ac4a85) | Arbitrum
+PartialLiquidationBotV3.sol | [0x44A9fDEF7307AE8C0997a1A339588a1C073930a7](https://arbiscan.io/address/0x44A9fDEF7307AE8C0997a1A339588a1C073930a7) | Arbitrum
 
 
 
@@ -223,7 +233,7 @@ We recommend using `safeTransferFrom` instead to ensure that various ERC-20 impl
 ##### Client's commentary
 > Fixed in https://github.com/Gearbox-protocol/bots-v3/pull/4.
 
-
+***
 #### 2. Incorrect conditions of enabling collateral tokens
 ##### Status
 Acknowledged
