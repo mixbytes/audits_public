@@ -5,7 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| Euler | Euler | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-05-16 |
+| Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-05-16 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-05-06 |
 | AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v3.1.0%20Security%20Audit%20Report.pdf) | 2024-05-02 |
 | Swell | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/Swell%20Staking%20Security%20Audit%20Report.pdf) | 2024-04-10 |
