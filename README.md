@@ -6,6 +6,7 @@
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
 | DeFi Money | Core | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/DeFi%20Money%20Core%20Security%20Audit%20Report.pdf) | 2024-06-19 |
+| Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
 | Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-05-16 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-05-06 |
 | AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v3.1.0%20Security%20Audit%20Report.pdf) | 2024-05-02 |
