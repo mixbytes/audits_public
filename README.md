@@ -5,7 +5,6 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Audit%20Report.pdf) | 2024-06-24 |
 | DeFi Money | Core | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/DeFi%20Money%20Core%20Security%20Audit%20Report.pdf) | 2024-06-19 |
 | Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
 | Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-05-16 |
@@ -136,6 +135,7 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
+| Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Audit%20Report.pdf) | N/A |
 
 
 ## Refresh reports list
