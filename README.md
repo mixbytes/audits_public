@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| dForce | Lending v2 | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/dForce%20Lending%20V2%20Security%20Audit%20Report.pdf) | 2024-06-25 |
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Audit%20Report.pdf) | 2024-06-24 |
 | DeFi Money | Core | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/DeFi%20Money%20Core%20Security%20Audit%20Report.pdf) | 2024-06-19 |
 | Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
