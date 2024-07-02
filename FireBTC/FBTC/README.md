@@ -1,9 +1,3 @@
-
-title: FireBTC FBTC Security Audit Report
-tags: [Mantle, fBTC]
-
----
-
 # FireBTC FBTC Security Audit Report
 
 ###### tags: `Mantle`, `fBTC`
