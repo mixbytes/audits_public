@@ -5,7 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| FireBTC | FireBTC | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/FireBTC%20FBTC%20Security%20Audit%20Report.pdf) | 2024-06-26 |
+| FireBTC | FBTC | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/FBTC/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/FBTC/FireBTC%20FBTC%20Security%20Audit%20Report.pdf) | 2024-06-26 |
 | dForce | Lending v2 | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/dForce%20Lending%20V2%20Security%20Audit%20Report.pdf) | 2024-06-25 |
 | Instadapp | Fluid | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/Instadapp%20Fluid%20Security%20Audit%20Report.pdf) | 2024-06-25 |
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Audit%20Report.pdf) | 2024-06-24 |
