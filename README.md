@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Stader Labs | ETHx | [link](https://github.com/mixbytes/audits_public/blob/master/Stader%20Labs/ETHx/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Stader%20Labs/ETHx/Stader%20Labs%20ETHx%20Security%20Audit%20Report.pdf) | 2024-07-11 |
 | Lido | a.DI | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/Lido%20a.DI%20Security%20Audit%20Report.pdf) | 2024-07-04 |
 | Napier Finance | Napier Pool | [link](https://github.com/mixbytes/audits_public/blob/master/Napier%20Finance/Napier%20Pool/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Napier%20Finance/Napier%20Pool/Napier%20Pool%20Security%20Audit%20Report.pdf) | 2024-07-03 |
 | Napier Finance | Napier v1 | [link](https://github.com/mixbytes/audits_public/blob/master/Napier%20Finance/Napier%20v1/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Napier%20Finance/Napier%20v1/Napier%20v1%20Security%20Audit%20Report.pdf) | 2024-07-03 |
