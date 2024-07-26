@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Curve Finance | Curve Lending | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/Curve%20Lending%20Security%20Audit%20Report.pdf) | 2024-07-26 |
 | Barter DAO | Barter DAO (diff v2) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20(diff%20v2)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Barter%20DAO%20(diff%20v2)/Barter%20DAO%20Security%20Audit%20Report%20(diff%20v2).pdf) | 2024-07-18 |
 | Stader Labs | ETHx | [link](https://github.com/mixbytes/audits_public/blob/master/Stader%20Labs/ETHx/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Stader%20Labs/ETHx/Stader%20Labs%20ETHx%20Security%20Audit%20Report.pdf) | 2024-07-11 |
 | Lido | a.DI | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/Lido%20a.DI%20Security%20Audit%20Report.pdf) | 2024-07-04 |
@@ -146,7 +147,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Curve Finance | Curve Lending | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
