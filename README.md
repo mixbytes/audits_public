@@ -21,7 +21,6 @@
 | Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
 | Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-05-16 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-05-06 |
-| AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v3.1.0%20Security%20Audit%20Report.pdf) | 2024-05-02 |
 | Swell | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/Swell%20Staking%20Security%20Audit%20Report.pdf) | 2024-04-10 |
 | Prisma Finance | Zap | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/Prisma%20Finance%20Zap%20Security%20Audit%20Report.pdf) | 2024-04-05 |
 | KelpDAO | KelpDAO | [link](https://github.com/mixbytes/audits_public/blob/master/KelpDAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/KelpDAO/KelpDAO%20LRT-ETH%20Security%20Audit%20Report.pdf) | 2024-03-04 |
@@ -147,6 +146,7 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
+| AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
