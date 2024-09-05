@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-09-05 |
 | dForce | sUSX | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/sUSX/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/sUSX/dForce%20sUSX%20Security%20Audit%20Report.pdf) | 2024-08-12 |
 | AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v.3.1.0%20Security%20Audit%20Report.pdf) | 2024-08-07 |
 | Lido | SanityChecker | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/SanityChecker/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/SanityChecker/Lido%20Sanity%20Checker%20Security%20Audit%20Report.pdf) | 2024-07-31 |
@@ -147,7 +148,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
