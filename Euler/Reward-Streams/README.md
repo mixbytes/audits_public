@@ -29,6 +29,7 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the clients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
+***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -61,7 +62,7 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-
+***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -99,11 +100,12 @@ Fixed        | Recommended fixes have been made to the project code and no longe
 Acknowledged | The Customer is aware of the finding. Recommendations for the finding are planned to be resolved in the future.
 
 
+***
 
 ### 1.3 Project Overview
 The `reward-streams` module of the Euler v2 protocol allows users to incentivize ANY token (including Euler v2 vault shares) with ANY token for a particular amount of time. The module facilitates a fully permissionless setup of rewards for any vault. Vault creators can choose between 2 options for vault share staking: shares can be staked manually by users by deposing shares to the protocol or by automatic hooks triggered for every balance update of a user in a vault.
 
-
+***
 
 ### 1.4 Project Dashboard
 
@@ -133,7 +135,9 @@ src/StakingRewardStreams.sol | https://github.com/euler-xyz/reward-streams/blob/
 src/TrackingRewardStreams.sol | https://github.com/euler-xyz/reward-streams/blob/95783173eff4668bb177eeefd9e8a9dc1a44669c/src/TrackingRewardStreams.sol
 
 #### Deployments
-Deployed contracts will be verified after the proposal is approved by the DAO.
+File name | Contract deployed on mainnet | Comment
+--- | --- | ---
+TrackingRewardStreams.sol | [0x0D52d06ceB8Dcdeeb40Cfd9f17489B350dD7F8a3](https://etherscan.io/address/0x0D52d06ceB8Dcdeeb40Cfd9f17489B350dD7F8a3) | 
 
 ### 1.5 Summary of findings
 
@@ -144,7 +148,7 @@ HIGH     | 0
 MEDIUM   | 0
 LOW      | 7
 
-
+***
 
 ### 1.6 Conclusion
 In this audit, our primary objective was to assess the system's robustness and reliability from both security and operational perspectives. The main goals were to verify the fairness of the reward distribution and ensure that no vulnerabilities exist that could block dependent components of Euler v2 Vaults. We also focused on ensuring the accurate handling of edge cases that may occur during reward distribution.
@@ -165,24 +169,24 @@ If a malicious user credits dirty money in a token with a blacklist (e.g., USDC)
 
 This project demonstrates a high level of security and operational integrity. The audit identified only low-level problems. Addressing these issues with the recommended improvements will enhance the protocol's efficiency and reliability. Overall, the contracts are well-designed to provide secure and accurate reward distribution, ensuring the smooth operation of the Euler protocol.
 
-
+***
 
 ## 2. FINDINGS REPORT
 
 ### 2.1 Critical
 Not found
 
-
+***
 
 ### 2.2 High
 Not found
 
-
+***
 
 ### 2.3 Medium
 Not found
 
-
+***
 
 ### 2.4 Low
 #### 1. Unprotected hook
@@ -284,7 +288,7 @@ We recommend emitting an event at the end of the function mentioned. It can log 
 > Fixed. The `Staked` and `Unstaked` events have been removed and replaced by a unified event called `BalanceUpdated`. This event is now emitted from the `stake`, `unstake`, and, as recommended, the `balanceTrackerHook` function. However, contrary to the recommendation, information about the total eligible amount is not logged because it depends on the enabled rewards set of the account.
 > https://github.com/euler-xyz/reward-streams/pull/18/commits/92b946d4a089f03ac56a0735b92f1270bab215da
 
-
+***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
