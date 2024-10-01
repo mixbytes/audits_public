@@ -20,7 +20,6 @@
 | FireBTC | FBTC | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/FBTC/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/FireBTC/FBTC/FireBTC%20FBTC%20Security%20Audit%20Report.pdf) | 2024-06-26 |
 | dForce | Lending v2 | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/dForce%20Lending%20V2%20Security%20Audit%20Report.pdf) | 2024-06-25 |
 | Instadapp | Fluid | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/Instadapp%20Fluid%20Security%20Audit%20Report.pdf) | 2024-06-25 |
-| Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Audit%20Report.pdf) | 2024-06-24 |
 | DeFi Money | Core | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/DeFi%20Money%20Core%20Security%20Audit%20Report.pdf) | 2024-06-19 |
 | Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-05-06 |
@@ -149,6 +148,7 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
+| Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
