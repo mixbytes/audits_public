@@ -29,7 +29,7 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the clients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
-
+***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -62,7 +62,7 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-
+***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -100,12 +100,12 @@ Fixed        | Recommended fixes have been made to the project code and no longe
 Acknowledged | The Customer is aware of the finding. Recommendations for the finding are planned to be resolved in the future.
 
 
-
+***
 
 ### 1.3 Project Overview
 Lido stETH on the Optimism protocol allows users to bridge not only non-rebasable wstETH tokens from Ethereum to Optimism-like rollups but also to transfer stETH from L1 to L2 via the bridge. Most importantly, stETH on L2 will continue to receive rebases, which means users will continue receiving rewards in the form of stETH balance rebases.
 
-
+***
 
 ### 1.4 Project Dashboard
 
@@ -157,9 +157,24 @@ contracts/utils/Versioned.sol | https://github.com/lidofinance/lido-l2-with-stet
 contracts/optimism/TokenRateAndUpdateTimestampProvider.sol | https://github.com/lidofinance/lido-l2-with-steth/blob/a31049ac8828d6d6a214b63279ff678101d55308/contracts/optimism/TokenRateAndUpdateTimestampProvider.sol
 
 #### Deployments
-Deployment verification will be conducted later after the DAO approves the deployment.
+**Ethereum:mainnet**
+File name | Contract deployed on mainnet | Comment
+--- | --- | ---
+TokenRateNotifier.sol | [0xe6793B9e4FbA7DE0ee833F9D02bba7DB5EB27823](https://etherscan.io/address/0xe6793B9e4FbA7DE0ee833F9D02bba7DB5EB27823)
+OpStackTokenRatePusher.sol | [0xd54c1c6413caac3477AC14b2a80D5398E3c32FfE](https://etherscan.io/address/0xd54c1c6413caac3477AC14b2a80D5398E3c32FfE)
+L1LidoTokensBridge.sol | [0x168Cfea1Ad879d7032B3936eF3b0E90790b6B6D4](https://etherscan.io/address/0x168Cfea1Ad879d7032B3936eF3b0E90790b6B6D4)
 
+**Optimism:mainnet**
+File name | Contract deployed on mainnet | Comment
+--- | --- | ---
+ERC20BridgedPermit.sol | [0xFe57042De76c8D6B1DF0E9E2047329fd3e2B7334](https://optimistic.etherscan.io/address/0xFe57042De76c8D6B1DF0E9E2047329fd3e2B7334)
+OssifiableProxy.sol | [0x76A50b8c7349cCDDb7578c6627e79b5d99D24138](https://optimistic.etherscan.io/address/0x76A50b8c7349cCDDb7578c6627e79b5d99D24138) | Proxy for the ERC20RebasableBridgedPermit
+ERC20RebasableBridgedPermit.sol | [0xe9b65dA5DcBe92f1b397991C464FF568Dc98D761](https://optimistic.etherscan.io/address/0xe9b65dA5DcBe92f1b397991C464FF568Dc98D761)
+OssifiableProxy.sol | [0x294ED1f214F4e0ecAE31C3Eae4F04EBB3b36C9d0](https://optimistic.etherscan.io/address/0x294ED1f214F4e0ecAE31C3Eae4F04EBB3b36C9d0) | Proxy for the TokenRateOracle
+TokenRateOracle.sol | [0x4bF0d419793d8722b8391efaD4c9cE78F460CEd3](https://optimistic.etherscan.io/address/0x4bF0d419793d8722b8391efaD4c9cE78F460CEd3)
+L2ERC20ExtendedTokensBridge.sol | [0x2734602C0CEbbA68662552CacD5553370B283E2E](https://optimistic.etherscan.io/address/0x2734602C0CEbbA68662552CacD5553370B283E2E)
 
+***
 
 ### 1.5 Summary of findings
 
@@ -170,7 +185,7 @@ HIGH     | 1
 MEDIUM   | 1
 LOW      | 18
 
-
+***
 
 ### 1.6 Conclusion
 During the audit, we checked that:
@@ -220,14 +235,23 @@ It is possible to initiate bridging with a small amount of tokens. If stETH is b
 15. `TokenRateOracle` can be **paused and resumed** securely:
 There is a functionality that allows `TokenRateOracle` to be set on pause by the address granted a special role. It can be resumed together with providing the new token rate, which will be used as the actual one. All necessary checks ensure that there is a correct new token rate and rate update timestamp.
 
+Besides conducting a security audit, the same team of auditors completed deployment verification. The following aspects were thoroughly checked:
 
+1. Deployed contracts' bytecode matches the audited contracts' source code.
+2. All the deployed contracts are initialized correctly following [the upgrade specification](https://docs.lido.fi/guides/verify-steth-on-optimism-upgrade-manual).
+3. It is impossible to initialize any of the used implementations for proxies due to the use of the `Versioned` contract, which sets the contract version to `type(uint256).max`.
+4. Contracts utilize the correct Optimism messenger contracts.
+5. `L1LidoTokensBridge` points to the proxy on the Optimism network side, which uses the `L2ERC20TokenBridge` implementation, which would be upgraded to the `L2ERC20ExtendedTokensBridge`.
+
+
+***
 
 ## 2. FINDINGS REPORT
 
 ### 2.1 Critical
 Not found
 
-
+***
 
 ### 2.2 High
 #### 1. stETH liquidity problem
@@ -246,7 +270,7 @@ We recommend minting wstETH on L2, locking them on the stETH contract, and subse
 ##### Client's commentary
 > Fixed
 
-
+***
 
 ### 2.3 Medium
 #### 1. Rounding errors
@@ -262,7 +286,7 @@ We recommend adding a method that allows users to unwrap stETH shares into wstET
 ##### Client's commentary
 > Fixed: unwrapShares() method was added.
 
-
+***
 
 ### 2.4 Low
 #### 1. `name` and `symbol` are not checked
@@ -561,7 +585,7 @@ uint256 roundedUpNumberOfDays =
 ##### Client's commentary
 > Fixed
 
-
+***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
