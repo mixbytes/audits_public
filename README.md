@@ -8,6 +8,7 @@
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Security%20Audit%20Report.pdf) | 2024-10-01 |
 | MetaLeX | LeXscrow | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/LeXscrow/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/LeXscrow/Metalex%20Lexscrow%20Security%20Audit%20Report.pdf) | 2024-09-10 |
 | Euler | Reward-Streams | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/Reward-Streams/Euler%20Reward-Streams%20Security%20Audit%20Report.pdf) | 2024-09-05 |
+| Curve Finance | Curve Lending | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/Curve%20Lending%20Security%20Audit%20Report.pdf) | 2024-09-02 |
 | dForce | sUSX | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/sUSX/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/sUSX/dForce%20sUSX%20Security%20Audit%20Report.pdf) | 2024-08-12 |
 | AAVE | Aave v 3.1.0 | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v%203.1.0/Aave%20v.3.1.0%20Security%20Audit%20Report.pdf) | 2024-08-07 |
 | Lido | SanityChecker | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/SanityChecker/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/SanityChecker/Lido%20Sanity%20Checker%20Security%20Audit%20Report.pdf) | 2024-07-31 |
@@ -149,7 +150,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Curve Finance | Curve Lending | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/Curve%20Lending/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
