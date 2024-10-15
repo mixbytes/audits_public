@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2024-10-15 |
 | Lido | a.DI | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/Lido%20Delivery%20Infrastructure%20Security%20Audit%20Report.pdf) | 2024-10-14 |
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Security%20Audit%20Report.pdf) | 2024-10-14 |
 | EYWA | CLP | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/CLP/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/CLP/Eywa%20CLP%20Security%20Audit%20Report.pdf) | 2024-10-10 |
