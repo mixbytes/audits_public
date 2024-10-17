@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | Lido Oracle | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/Lido%20Oracle%20Security%20Audit%20Report.pdf) | 2024-10-17 |
 | Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2024-10-15 |
 | Lido | a.DI | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/Lido%20Delivery%20Infrastructure%20Security%20Audit%20Report.pdf) | 2024-10-14 |
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Security%20Audit%20Report.pdf) | 2024-10-14 |
@@ -152,7 +153,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Lido | Lido Oracle | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
