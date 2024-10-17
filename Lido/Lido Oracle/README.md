@@ -1,4 +1,3 @@
-
 # Lido Oracle Security Audit Report
 
 ###### tags: `LIDO`, `Oracle`
@@ -30,7 +29,7 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the clients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
-
+***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -63,7 +62,7 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-
+***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -101,7 +100,7 @@ Fixed        | Recommended fixes have been made to the project code and no longe
 Acknowledged | The Customer is aware of the finding. Recommendations for the finding are planned to be resolved in the future.
 
 
-
+***
 
 ### 1.3 Project Overview
 
@@ -126,7 +125,7 @@ The Lido Oracle is a daemon for the Lido decentralized staking service, consisti
 
 These modules maintain the Lido staking service's integrity, ensuring accurate reward distribution, validator management, and performance tracking.
 
-
+***
 
 ### 1.4 Project Dashboard
 
@@ -147,6 +146,7 @@ Number of Auditors | 3
 | 23.09.2024 | f4ad6e006b8daf05ce2ce255e123eb9f923d8ef8 | Commit for the audit (oz-merkle-tree)
 | 08.10.2024 | f3b33f8e8281eb9f08ed396c8c84b4936f2be888 | Commit for the re-audit
 | 10.10.2024 | 93831435c5ca787f4f92dc9416788e0cdf5e3f4b | Commit with updates
+| 17.10.2024 | 3cc1193df61068f32504c2913f1f3da8bd179362 | Commit with updates
 
 #### Project Scope
 The audit covered the following files:
@@ -289,9 +289,9 @@ src/oz_merkle_tree/tree.py | https://github.com/lidofinance/oz-merkle-tree/blob/
 
 #### Deployments
 
-After the audit conducted, we verified that the Dockerfile used to build an image works correctly and uses the audited sorce code. Also, the published image with the digest `sha256:7d8d3ef9d0cc32691b68540a3c629bce61e8d41f12391b1c829a33d33c891c1d` corresponds to the audited scope.
+After the audit conducted, we verified that the Dockerfile used to build an image works correctly and uses the audited sorce code. Also, the published image with the digest `sha256:94b63501658c8eaa540d7d3221510354f8284803a1016c0577204dc7fc599e37` corresponds to the audited scope.
 
-
+***
 
 ### 1.5 Summary of findings
 
@@ -302,7 +302,7 @@ HIGH    | 0
 MEDIUM  | 0
 LOW     | 3
 
-
+***
 
 ### 1.6 Conclusion
 
@@ -319,7 +319,7 @@ During the audit, we thoroughly tested critical attack vectors and verified the 
 - When multiple frames are skipped, the CSM oracle correctly calculates rewards for the entire missed period;
 
 
-
+***
 
 ## 2. FINDINGS REPORT
 
@@ -327,19 +327,19 @@ During the audit, we thoroughly tested critical attack vectors and verified the 
 
 Not found
 
-
+***
 
 ### 2.2 High
 
 Not found
 
-
+***
 
 ### 2.3 Medium
 
 Not found
 
-
+***
 
 ### 2.4 Low
 
@@ -377,7 +377,7 @@ We recommend considering the case when the first slot of the justifying epoch is
 ##### Client's commentary
 > The proper handling of this edge case would require a more complex logic implementation. In this case, the current simplified algorithm might process the report with a delay of one epoch at worst. The simpler solution is easier to implement and easier to maintain.
 
-
+***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
