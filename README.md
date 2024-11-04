@@ -40,6 +40,7 @@
 | Divergence Protocol | Divergence Protocol | [link](https://github.com/mixbytes/audits_public/blob/master/Divergence%20Protocol/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Divergence%20Protocol/Divergence%20Protocol%20Security%20Audit%20Report.pdf) | 2023-12-28 |
 | P2P.org | SSV Integration | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration/P2P.org%20SSV%20Integration%20Security%20Audit%20Report.pdf) | 2023-12-15 |
 | AAVE | Voting Tokens | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Voting%20Tokens/AAVE%20Voting%20Tokens%20Security%20Audit%20Report.pdf) | 2023-11-30 |
+| Mantle Network | METH | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/METH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/METH/Mantle%20Network%20METH%20Secuity%20Audit%20Report.pdf) | 2023-11-21 |
 | Mantle Network | Mantle Network | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/Mantle%20Network%20METH%20Secuity%20Audit%20Report.pdf) | 2023-11-21 |
 | Curve Finance | StableSwapNG | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/StableSwapNG/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Curve%20Finance/StableSwapNG/Curve%20Finance%20StableSwapNG%20Security%20Audit%20Report.pdf) | 2023-11-01 |
 | Yearn Finance | Vesting Escrow | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Vesting%20Escrow/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yearn%20Finance/Vesting%20Escrow/Yearn%20Finance%20Vesting%20Escrow%20Security%20Audit%20Report.pdf) | 2023-10-13 |
@@ -154,7 +155,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Mantle Network | METH | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/METH/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
