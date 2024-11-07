@@ -135,7 +135,7 @@ Title | Description
 --- | ---
 Client             | Lido
 Project name       | Lido Oracle
-Timeline           | 23.09.2024 - 31.10.2024
+Timeline           | 23.09.2024 - 07.11.2024
 Number of Auditors | 3
 
 #### Project Log
@@ -148,6 +148,8 @@ Number of Auditors | 3
 | 10.10.2024 | 93831435c5ca787f4f92dc9416788e0cdf5e3f4b | Commit with updates
 | 17.10.2024 | 3cc1193df61068f32504c2913f1f3da8bd179362 | Commit with updates
 | 30.10.2024 | 2a0ecd103509814c99326d9a7a5bf9099d708504 | Commit with updates
+| 07.11.2024 | 34b0ce7fe3877193228c5dda2d1065c98fe58df7 | Commit with updates
+
 
 #### Project Scope
 The audit covered the following files:
@@ -290,7 +292,7 @@ src/oz_merkle_tree/tree.py | https://github.com/lidofinance/oz-merkle-tree/blob/
 
 #### Deployments
 
-After the audit conducted, we verified that the Dockerfile used to build an image works correctly and uses the audited sorce code. Also, the published image with the digest `sha256:5ab6398e68440c009dca372bac4de9a30c18b9afaa64e32d7a3ff4f7c6f0858c` corresponds to the audited scope.
+After the audit conducted, we verified that the Dockerfile used to build an image works correctly and uses the audited sorce code. Also, the published image with the digest `sha256:deb8d3650c809bf1e96c329ed421439967ab02de49fb6c5d748963ab8c159568` corresponds to the audited scope.
 
 ***
 
