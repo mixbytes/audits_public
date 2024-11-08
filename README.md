@@ -31,6 +31,7 @@
 | Instadapp | Fluid | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid/Instadapp%20Fluid%20Security%20Audit%20Report.pdf) | 2024-06-25 |
 | DeFi Money | Core | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DeFi%20Money/Core/DeFi%20Money%20Core%20Security%20Audit%20Report.pdf) | 2024-06-19 |
 | Resolv | Resolv | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
+| Resolv | stUSR | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/stUSR/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/stUSR/Resolv%20Security%20Audit%20Report.pdf) | 2024-06-14 |
 | Gearbox Protocol | Gearbox Protocol v.3 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations/Gearbox%20Protocol%20v.3%20Bots%20&%20Integrations%20Audit%20Report.pdf) | 2024-05-06 |
 | Swell | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Swell/Staking/Swell%20Staking%20Security%20Audit%20Report.pdf) | 2024-04-10 |
 | Prisma Finance | Zap | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Prisma%20Finance/Zap/Prisma%20Finance%20Zap%20Security%20Audit%20Report.pdf) | 2024-04-05 |
@@ -157,7 +158,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Resolv | stUSR | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/stUSR/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
