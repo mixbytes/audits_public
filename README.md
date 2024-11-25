@@ -6,6 +6,7 @@
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
 | Lido | Lido Oracle | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/Lido%20Oracle%20Security%20Audit%20Report.pdf) | 2024-11-23 |
+| MetaLeX | MetaVesT | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/MetaVesT/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/MetaVesT/MetaLeX%20MetaVesT%20Security%20Audit%20Report.pdf) | 2024-11-13 |
 | dForce | Lending v2 | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/dForce%20Lending%20V2%20Security%20Audit%20Report.pdf) | 2024-11-07 |
 | Mantle Network | cMETH | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/cMETH/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/cMETH/Mantle%20cMETH%20Security%20Audit%20Report.pdf) | 2024-11-04 |
 | P2P.org | ETH Allocation Share | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH%20Allocation%20Share/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH%20Allocation%20Share/P2P%20ETH%20Allocation%20Share%20Security%20Audit%20Report.pdf) | 2024-11-04 |
@@ -157,7 +158,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| MetaLeX | MetaVesT | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/MetaVesT/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
