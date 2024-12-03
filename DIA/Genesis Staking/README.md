@@ -139,7 +139,7 @@ prestaking/src/Prestaking.sol | https://github.com/diadata-org/prestaking-contra
 
 File name | Contract deployed on mainnet | Comment
 --- | --- | ---
-Prestaking.sol | [0xb20ecd6195f45e9244051fc4749c9e5e229fbf21](https://etherscan.io/address/0xb20ecd6195f45e9244051fc4749c9e5e229fbf21) | 
+Prestaking.sol | [0x96DB120A7E0A5d91d32BAFa5c7857930Ba172142](https://etherscan.io/address/0x96DB120A7E0A5d91d32BAFa5c7857930Ba172142) | 
 
 ***
 
