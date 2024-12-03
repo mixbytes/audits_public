@@ -5,7 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
-| DIA | Genesis Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/DIA%20Genesis%20Staking%20Security%20Audit%20Report.pdf) | 2024-12-02 |
+| DIA | Genesis Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/DIA%20Genesis%20Staking%20Security%20Audit%20Report.pdf) | 2024-12-03 |
 | Lido | Lido Oracle | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20Oracle/Lido%20Oracle%20Security%20Audit%20Report.pdf) | 2024-11-23 |
 | MetaLeX | MetaVesT | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/MetaVesT/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/MetaVesT/MetaLeX%20MetaVesT%20Security%20Audit%20Report.pdf) | 2024-11-13 |
 | dForce | Lending v2 | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/dForce/Lending%20v2/dForce%20Lending%20V2%20Security%20Audit%20Report.pdf) | 2024-11-07 |
