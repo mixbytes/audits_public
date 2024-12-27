@@ -5,6 +5,8 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Resolv | PoR Oracles | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/PoR%20Oracles/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/PoR%20Oracles/Resolv%20PoR%20Oracles%20Security%20Audit%20Report.pdf) | 2024-12-26 |
+| Resolv | Treasury Extension | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Extension/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Extension/Resolv%20Treasury%20Extension%20Security%20Audit%20Report.pdf) | 2024-12-26 |
 | AAVE | Stata Token (watoken) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Stata%20Token%20(watoken)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Stata%20Token%20(watoken)/Aave%20Stata%20Token%20(watoken)%20Security%20Audit%20Report.pdf) | 2024-12-05 |
 | Instadapp | Fluid DEX | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20DEX/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20DEX/Instadapp%20Fluid%20DEX%20Security%20Audit%20Report.pdf) | 2024-12-04 |
 | DIA | Genesis Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Genesis%20Staking/DIA%20Genesis%20Staking%20Security%20Audit%20Report.pdf) | 2024-12-03 |
