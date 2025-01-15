@@ -116,7 +116,7 @@ Title | Description
 --- | ---
 Client             | Eywa
 Project name       | DAO
-Timeline           | 14.11.2024 - 24.12.2024
+Timeline           | 14.11.2024 - 13.01.2025
 Number of Auditors | 3
 
 #### Project Log
@@ -129,6 +129,8 @@ Number of Auditors | 3
 18.12.2024 | 4f2b045c507ec910a963cc516e0bc36b183a15cc | Commit for the re-audit
 23.12.2024 | 17c17b25a2780eefc3d37270d86c638487fde450 | Commit for the re-audit
 24.12.2024 | 466580f502e6ddf99b942f83535b09a18d232eb5 | Commit for the re-audit
+30.12.2024 | 697af2f9edc4405a64c8dd0b935214d66f77c7e7 | Commit for the re-audit
+13.01.2025 | 4541a4269ef93307f1e4c7812302a9bc62abfaff | Commit for the re-audit
 
 #### Project Scope
 The audit covered the following files:
@@ -151,6 +153,7 @@ contracts/super/RewardsDistributor.sol| https://gitlab.ubertech.dev/blockchainla
 contracts/CalldataHelperV1.sol | https://gitlab.ubertech.dev/blockchainlaboratory/eywa-dao/blob/bfffddc307376c39ee969ea14234c40ec3fba2c5/contracts/CalldataHelperV1.sol
 contracts/MetadataProviderV1.sol | https://gitlab.ubertech.dev/blockchainlaboratory/eywa-dao/blob/bfffddc307376c39ee969ea14234c40ec3fba2c5/contracts/MetadataProviderV1.sol
 contracts/libraries/VotingPowerHelper.sol | https://gitlab.ubertech.dev/blockchainlaboratory/eywa-dao/blob/bfffddc307376c39ee969ea14234c40ec3fba2c5/contracts/libraries/VotingPowerHelper.sol
+contracts/Treasury.sol | https://gitlab.ubertech.dev/blockchainlaboratory/eywa-dao/blob/697af2f9edc4405a64c8dd0b935214d66f77c7e7/contracts/Treasury.sol
 
 #### Deployments
 
@@ -160,6 +163,7 @@ ERC1967Proxy.sol | [0xC33e9CEc16Ed5E1A216F9355A26D88a95e16F8C3](https://arbiscan
 BondEmissionDistributorV1.sol | [0xF856b7EA7bAF6E41BFBfAcc3A015dA0e47665794](https://arbiscan.io/address/0xF856b7EA7bAF6E41BFBfAcc3A015dA0e47665794)
 ERC1967Proxy.sol | [0xFe56E3B15e9c15c3824C0F411d40032fB685D7BF](https://arbiscan.io/address/0xFe56E3B15e9c15c3824C0F411d40032fB685D7BF) | Proxy for EmissionManagerV1
 EmissionManagerV1.sol | [0x00562A758Cf0f6b6c8737a35a222229f8b1f6c45](https://arbiscan.io/address/0x00562A758Cf0f6b6c8737a35a222229f8b1f6c45)
+EmissionManagerV1.sol | [0xAC021Fa2196C642DE2F5FE8bBCBbF12c4E086966](https://arbiscan.io/address/0xAC021Fa2196C642DE2F5FE8bBCBbF12c4E086966) | New implementation after re-audit
 ERC1967Proxy.sol | [0xBF1669030AE89eA509BF578502002A0238B60EF7](https://arbiscan.io/address/0xBF1669030AE89eA509BF578502002A0238B60EF7) | Proxy for EscrowVoteManagerV1
 EscrowVoteManagerV1.sol | [0x987c25D2BF63004a34b81cC71DD61887eA674a30](https://arbiscan.io/address/0x987c25D2BF63004a34b81cC71DD61887eA674a30)
 ERC1967Proxy.sol | [0x0A1806ccA3B71a257177FE227F30b52fe72E200a](https://arbiscan.io/address/0x0A1806ccA3B71a257177FE227F30b52fe72E200a) | Proxy for GaugeFactoryV1
@@ -182,6 +186,7 @@ CalldataHelperV1.sol | [0x0cfE482070c8894e1AD68aD78fa3FB5B824D26B4](https://arbi
 ERC1967Proxy.sol | [0xF362150651473e41B1fC2B384AB8D3eA33E07199](https://arbiscan.io/address/0xF362150651473e41B1fC2B384AB8D3eA33E07199) | Proxy for MetadataProviderV1
 MetadataProviderV1.sol | [0x82057d2f1a4024AC9E864f93B078322ed2Bd06b9](https://arbiscan.io/address/0x82057d2f1a4024AC9E864f93B078322ed2Bd06b9) |
 VotingPowerHelper.sol | [0x3107Ced24abC0E1f7906853B26F30D1072Edf20c](https://arbiscan.io/address/0x3107Ced24abC0E1f7906853B26F30D1072Edf20c)
+Treasury.sol | [0x95903Cd6b46B3e4aF9f16A527153bA83324c9f34](https://arbiscan.io/address/0x95903Cd6b46B3e4aF9f16A527153bA83324c9f34)
 
 
 ***
@@ -204,6 +209,7 @@ In this audit, we went through our detailed checklist, covering other aspects su
 All vulnerabilities that were found during the audit of the Eywa DAO have been fixed.
 
 Final notes:
+* EmissionManagerV1 accumulates minor dust over time during the emission calculations. However, if a significant amount accumulates in the future, it can be withdrawn by upgrading the contract.
 * The Eywa DAO token governs rewards and proposals. Hypothetically, it could face a vampire attack, similar to the Curve-Convex example. To mitigate this risk, the team added a blacklist of proposal signatures in the ProposalManager, preventing the DAO from executing malicious calls.
 * Given the complexity and size of the project, as well as the significant number of issues identified during our audit, we strongly recommend conducting an additional audit with another team. This step would mitigate the risk of human error, provide a broader and deeper analysis, and further enhance community trust by demonstrating a commitment to transparency and security. An independent review could help identify any overlooked issues, ensuring the project’s security and reinforcing its reputation in the market.
 
