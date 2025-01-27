@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| P2P.org | Lending Proxy | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Lending%20Proxy/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Lending%20Proxy/P2P.org%20Lending%20Proxy%20Security%20Audit%20Report.pdf) | 2025-01-24 |
 | EYWA | DAO | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/DAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/DAO/Eywa%20DAO%20Security%20Audit%20Report.pdf) | 2025-01-15 |
 | Resolv | PoR Oracles | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/PoR%20Oracles/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/PoR%20Oracles/Resolv%20PoR%20Oracles%20Security%20Audit%20Report.pdf) | 2024-12-26 |
 | Resolv | Treasury Extension | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Extension/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Extension/Resolv%20Treasury%20Extension%20Security%20Audit%20Report.pdf) | 2024-12-26 |
