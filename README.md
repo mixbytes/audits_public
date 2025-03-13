@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Enjoyoors | Enjoyoors | [link](https://github.com/mixbytes/audits_public/blob/master/Enjoyoors/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Enjoyoors/Enjoyoors%20EVM%20Vaults%20Security%20Audit%20Report.pdf) | 2025-03-11 |
 | Liquorice | Liquorice | [link](https://github.com/mixbytes/audits_public/blob/master/Liquorice/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Liquorice/Liquorice%20Security%20Audit%20Report.pdf) | 2025-02-26 |
 | Ozean Finance | Ozean Finance | [link](https://github.com/mixbytes/audits_public/blob/master/Ozean%20Finance/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Ozean%20Finance/Ozean%20Finance%20Security%20Audit%20Report.pdf) | 2025-02-20 |
 | P2P.org | Lending Proxy | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Lending%20Proxy/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Lending%20Proxy/P2P.org%20Lending%20Proxy%20Security%20Audit%20Report.pdf) | 2025-01-24 |
