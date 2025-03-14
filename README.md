@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Resolv | Treasury Escrow | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Escrow/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Escrow/Resolv%20Treasury%20Escrow%20Security%20Audit%20Report.pdf) | 2025-03-14 |
 | Enjoyoors | EVM Vaults | [link](https://github.com/mixbytes/audits_public/blob/master/Enjoyoors/EVM%20Vaults/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Enjoyoors/EVM%20Vaults/Enjoyoors%20EVM%20Vaults%20Security%20Audit%20Report.pdf) | 2025-03-11 |
 | Liquorice | Liquorice | [link](https://github.com/mixbytes/audits_public/blob/master/Liquorice/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Liquorice/Liquorice%20Security%20Audit%20Report.pdf) | 2025-02-26 |
 | Ozean Finance | Ozean Finance | [link](https://github.com/mixbytes/audits_public/blob/master/Ozean%20Finance/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Ozean%20Finance/Ozean%20Finance%20Security%20Audit%20Report.pdf) | 2025-02-20 |
