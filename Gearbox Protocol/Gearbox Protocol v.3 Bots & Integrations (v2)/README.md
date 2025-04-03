@@ -1,4 +1,4 @@
-# GearBox Protocol v.3 Bots & Integrations Security Audit Report
+# GearBox Protocol v.3.1 Bots & Integrations Security Audit Report
 
 ###### tags: `Gearbox`
 
@@ -113,7 +113,7 @@ The Gearbox project enables leveraged trading and integrates with leading DeFi p
 Title | Description
 --- | ---
 Client             | GearBox Protocol
-Project name       | v.3 Bots & Integrations
+Project name       | v.3.1 Bots & Integrations
 Timeline           | 07.03.2024 - 01.04.2025
 Number of Auditors | 3
 
