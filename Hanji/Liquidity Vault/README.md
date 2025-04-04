@@ -104,7 +104,7 @@ Acknowledged | The Customer is aware of the finding. Recommendations for the fin
 
 ### 1.3 Project Overview
 
-This Hanji Derivatives Engine provides a liquidity management system controlled by a market maker for a decentralized exchange that utilizes on-chain limit order books. The main contract, **LPManager**, manages liquidity addition and removal, applies dynamic fees, and collects protocol revenues based on fees collected from connected DEXs and the market maker's activity. Another key component, **RfqProxyLOB**, facilitates the matching of off-chain signed RFQ orders on-chain, enhancing flexibility for market makers. Overall, the system incorporates a Pyth oracle for pricing, robust fee logic, and advanced liquidity controls.
+This Hanji Liquidity Vault provides a liquidity management system controlled by a market maker for a decentralized exchange that utilizes on-chain limit order books. The main contract, **LPManager**, manages liquidity addition and removal, applies dynamic fees, and collects protocol revenues based on fees collected from connected DEXs and the market maker's activity. Another key component, **RfqProxyLOB**, facilitates the matching of off-chain signed RFQ orders on-chain, enhancing flexibility for market makers. Overall, the system incorporates a Pyth oracle for pricing, robust fee logic, and advanced liquidity controls.
 
 ***
 
