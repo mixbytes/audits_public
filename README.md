@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2025-04-09 |
 | Hanji | Liquidity Vault | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/Hanji%20Liquidity%20Vault%20Security%20Audit%20Report.pdf) | 2025-04-04 |
 | Hanji | OnchainCLOB | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/OnchainCLOB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/OnchainCLOB/Hanji%20Protocol%20Security%20Audit%20Report.pdf) | 2025-04-04 |
 | Gearbox Protocol | Gearbox Protocol v.3.1 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/GearBox%20Protocol%20v.3.1%20Bots%20&%20Integrations%20Security%20Audit%20Report.pdf) | 2025-04-03 |
@@ -27,7 +28,6 @@
 | P2P.org | ETH Allocation Share | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH%20Allocation%20Share/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/ETH%20Allocation%20Share/P2P%20ETH%20Allocation%20Share%20Security%20Audit%20Report.pdf) | 2024-11-04 |
 | Resolv | Treasury | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury/Resolv%20Treasury%20Security%20Audit%20Report.pdf) | 2024-11-04 |
 | MetaLeX | Borg | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/Borg/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/Borg/Metalex%20Borg%20Security%20Audit%20Report.pdf) | 2024-10-21 |
-| Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2024-10-15 |
 | Lido | a.DI | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/a.DI/Lido%20Delivery%20Infrastructure%20Security%20Audit%20Report.pdf) | 2024-10-14 |
 | Lido | stETH on Optimism | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/stETH%20on%20Optimism/Lido%20stETH%20on%20Optimism%20Security%20Audit%20Report.pdf) | 2024-10-14 |
 | EYWA | CLP | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/CLP/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/EYWA/CLP/Eywa%20CLP%20Security%20Audit%20Report.pdf) | 2024-10-10 |
