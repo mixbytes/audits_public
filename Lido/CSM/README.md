@@ -1,4 +1,3 @@
-
 # Lido CSM Security Audit Report
 
 ###### tags: `LIDO`, `CSM`
@@ -30,7 +29,7 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the clients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
-
+***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -63,7 +62,7 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-
+***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -101,13 +100,13 @@ Fixed        | Recommended fixes have been made to the project code and no longe
 Acknowledged | The Customer is aware of the finding. Recommendations for the finding are planned to be resolved in the future.
 
 
-
+***
 
 ### 1.3 Project Overview
 
 The Community Staking Module (CSM) is a permissionless staking module designed to onboard community stakers as Node Operators within the Lido on Ethereum protocol. The primary objective of CSM is to democratize the participation in staking activities by minimizing entry barriers and fostering a decentralized network of validators.
 
-
+***
 
 ### 1.4 Project Dashboard
 
@@ -117,7 +116,7 @@ Title | Description
 --- | ---
 Client             | Lido
 Project name       | CSM
-Timeline           | 23.07.2024 - 07.10.2024
+Timeline           | 23.07.2024 - 23.01.2025
 Number of Auditors | 3
 
 #### Project Log
@@ -134,6 +133,7 @@ Date | Commit Hash | Note
 26.09.2024 | cdc6e335ae907a5ba1160091824ce2ebe2e0842f | Commit for the re-audit 2 (Community Staking Module)
 01.10.2024 | 9c7d014844395b37a64b3ca4ed5dc27de0af23a5 | Commit for the re-audit 3 (Community Staking Module)
 07.10.2024 | 347496df916c3b987a7f3fe8b0bd85c9b62ad730 | Commit with the update (Community Staking Module)
+23.01.2025 | 3469910c0d29a54b37d0c4de3cf527a3e7be2099 | Commit with the update (Community Staking Module)
 
 #### Project Scope
 The audit covered the following files:
@@ -181,7 +181,7 @@ File name | Contract deployed on mainnet | Comment
 --- | --- | ---
 OssifiableProxy.sol | [0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F](https://etherscan.io/address/0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F) | Proxy for CSModule.sol
 CSModule.sol | [0x8daEa53b17a629918CDFAB785C5c74077c1D895B](https://etherscan.io/address/0x8daEa53b17a629918CDFAB785C5c74077c1D895B) | 
-CSVerifier.sol | [0x3Dfc50f22aCA652a0a6F28a0F892ab62074b5583](https://etherscan.io/address/0x3Dfc50f22aCA652a0a6F28a0F892ab62074b5583) | 
+CSVerifier.sol | [0x0c345dfa318f9f4977cdd4f33d80f9d0ffa38e8b](https://etherscan.io/address/0x0c345dfa318f9f4977cdd4f33d80f9d0ffa38e8b) | 
 CSEarlyAdoption.sol | [0x3D5148ad93e2ae5DedD1f7A8B3C19E7F67F90c0E](https://etherscan.io/address/0x3D5148ad93e2ae5DedD1f7A8B3C19E7F67F90c0E) | 
 OssifiableProxy.sol | [0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da](https://etherscan.io/address/0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da) | Proxy for CSAccounting.sol
 CSAccounting.sol | [0x71FCD2a6F38B644641B0F46c345Ea03Daabf2758](https://etherscan.io/address/0x71FCD2a6F38B644641B0F46c345Ea03Daabf2758) | 
@@ -202,7 +202,7 @@ OracleReportSanityChecker.sol | [0x6232397ebac4f5772e53285B26c47914E9461E75](htt
 UpdateTargetValidatorLimits.sol | [0x161a4552A625844c822954C5AcBac928ee0f399B](https://etherscan.io/address/0x161a4552A625844c822954C5AcBac928ee0f399B)
 CSMSettleElStealingPenalty.sol | [0xF6B6E7997338C48Ea3a8BCfa4BB64a315fDa76f4](https://etherscan.io/address/0xF6B6E7997338C48Ea3a8BCfa4BB64a315fDa76f4)
 
-
+***
 
 ### 1.5 Summary of findings
 
@@ -213,7 +213,7 @@ HIGH     | 0
 MEDIUM   | 10
 LOW      | 31
 
-
+***
 
 ### 1.6 Conclusion
 
@@ -245,7 +245,7 @@ During the audit, we thoroughly tested critical attack vectors and verified the 
 
 - Each operation that changes the number of validator keys leads to a staking module nonce increment. All functions that lead to a change in the number of validator keys were thoroughly checked to update the module nonce, so that off-chain services and the Deposit Security Module can check it against the tracked value.
 
-
+***
 
 ## 2. FINDINGS REPORT
 
@@ -253,13 +253,13 @@ During the audit, we thoroughly tested critical attack vectors and verified the 
 
 Not found
 
-
+***
 
 ### 2.2 High
 
 Not found
 
-
+***
 
 ### 2.3 Medium
 
@@ -412,7 +412,7 @@ We recommend implementing a mechanism to ensure that the status of all validator
 ##### Client's Commentary
 > It is assumed that operators in the curated modules receive only half of the rewards and do not receive a new stake if they do not exit keys in the time specified in the policy. This feature is intended to incentivize operators to exit keys on time, but is not a security tool to limit the new stake on an operator. To limit the stake on a particular operator, DAO has another tool: target limit.
 
-
+***
 
 ### 2.4 Low
 
@@ -857,7 +857,7 @@ The issue is classified as **Low** severity because it could result in inconsist
 ##### Recommendation
 We recommend adding a call to the `_increaseValidatorsKeysNonce()` function after updating the `REFUNDED_VALIDATORS_COUNT_OFFSET` variable to ensure that all state changes are properly tracked and the nonce remains consistent.
 
-
+***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
