@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Euler | EVK Periphery | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/Euler%20EVK%20Periphery%20Security%20Audit%20Report.pdf) | 2025-04-22 |
 | DIA | Multi Scope | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Multi%20Scope/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Multi%20Scope/DIA%20Multi%20Scope%20Security%20Audit%20Report.pdf) | 2025-04-15 |
 | Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2025-04-09 |
 | Hanji | Liquidity Vault | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/Hanji%20Liquidity%20Vault%20Security%20Audit%20Report.pdf) | 2025-04-04 |
