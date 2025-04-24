@@ -152,18 +152,7 @@ contracts/adapters/equalizer/EqualizerRouterAdapter.sol (v3.1) | https://github.
 contracts/adapters/equalizer/EqualizerRouterAdapter.sol (v3.0) | https://github.com/Gearbox-protocol/integrations-v3/blob/799c30c366f0c03950c47b25fb32972449e94f58/contracts/adapters/equalizer/EqualizerRouterAdapter.sol
 
 #### Deployments
-Deployment verification of another part of the scope will be conducted later, after the proposal is accepted by the DAO.
-
-File name | Contract deployed on mainnet | Comment
---- | --- | ---
-PartialLiquidationBotV3.sol | [0x0f06c2bD612Ee7D52d4bC76Ce3BD7E95247AF2a9](https://etherscan.io/address/0x0f06c2bD612Ee7D52d4bC76Ce3BD7E95247AF2a9) | 
-PartialLiquidationBotV3.sol | [0x53fDA9a509020Fc534EfF938Fd01dDa5fFe8560c](https://etherscan.io/address/0x53fDA9a509020Fc534EfF938Fd01dDa5fFe8560c) | 
-PartialLiquidationBotV3.sol | [0x82b0adfA8f09b20BB4ed066Bcd4b2a84BEf73D5E](https://etherscan.io/address/0x82b0adfA8f09b20BB4ed066Bcd4b2a84BEf73D5E) | 
-PartialLiquidationBotV3.sol | [0x519906cD00222b4a81bf14A7A11fA5FCF455Af42](https://etherscan.io/address/0x519906cD00222b4a81bf14A7A11fA5FCF455Af42) | 
-PartialLiquidationBotV3.sol | [0x538d66d6cA2607673ceC8af3cA3933476f361633](https://arbiscan.io/address/0x538d66d6cA2607673ceC8af3cA3933476f361633) | Arbitrum
-PartialLiquidationBotV3.sol | [0x8A35C229ff4f96e8b7A4f9168B22b9F7DF6b82f3](https://arbiscan.io/address/0x8A35C229ff4f96e8b7A4f9168B22b9F7DF6b82f3) | Arbitrum
-PartialLiquidationBotV3.sol | [0x938094B41dDaC7bD3f21fC962D424E1a84ac4a85](https://arbiscan.io/address/0x938094B41dDaC7bD3f21fC962D424E1a84ac4a85) | Arbitrum
-PartialLiquidationBotV3.sol | [0x44A9fDEF7307AE8C0997a1A339588a1C073930a7](https://arbiscan.io/address/0x44A9fDEF7307AE8C0997a1A339588a1C073930a7) | Arbitrum
+Deployment verification will be conducted via https://permissionless.gearbox.foundation/bytecode/.
 
 ***
 
@@ -174,7 +163,7 @@ Severity | # of Findings
 CRITICAL| 0
 HIGH    | 0
 MEDIUM  | 5
-LOW | 5
+LOW     | 5
 
 ***
 
