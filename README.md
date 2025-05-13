@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | Easy Track (2) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(2)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(2)/Lido%20EasyTrack%20Security%20Audit%20Report.pdf) | 2025-05-13 |
 | Gearbox Protocol | Gearbox Protocol v.3.1 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/GearBox%20Protocol%20v.3.1%20Bots%20&%20Integrations.pdf) | 2025-04-24 |
 | Euler | EVK Periphery | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/Euler%20EVK%20Periphery%20Security%20Audit%20Report.pdf) | 2025-04-22 |
 | Euler | HookTargetStakeDelegator | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/HookTargetStakeDelegator/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/HookTargetStakeDelegator/Euler%20StakeDelegator%20Security%20Audit%20Report.pdf) | 2025-04-22 |
