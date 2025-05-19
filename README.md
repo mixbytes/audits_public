@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-05-19 |
 | XPress | Liquidity Vault | [link](https://github.com/mixbytes/audits_public/blob/master/XPress/Liquidity%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/XPress/Liquidity%20Vault/XPress%20Liquidity%20Vault%20Security%20Audit%20Report.pdf) | 2025-05-14 |
 | XPress | OnchainCLOB | [link](https://github.com/mixbytes/audits_public/blob/master/XPress/OnchainCLOB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/XPress/OnchainCLOB/XPress%20Protocol%20Security%20Audit%20Report.pdf) | 2025-05-14 |
 | Lido | Easy Track (2) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(2)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(2)/Lido%20EasyTrack%20Security%20Audit%20Report.pdf) | 2025-05-13 |
