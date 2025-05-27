@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Resolv | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/Resolv%20Staking%20Security%20Audit%20Report.pdf) | 2025-05-27 |
 | AAVE | Umbrella | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Umbrella/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/AAVE/Umbrella/Aave%20Umbrella%20Security%20Audit%20Report.pdf) | 2025-05-19 |
 | Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-05-19 |
 | P2P.org | Staking Lending Proxy (2) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Staking%20Lending%20Proxy%20(2)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Staking%20Lending%20Proxy%20(2)/P2P%20Staking%20Lending%20Proxy%20Security%20Audit%20Report.pdf) | 2025-05-19 |
