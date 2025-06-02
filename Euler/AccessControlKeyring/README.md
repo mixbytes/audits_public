@@ -44,7 +44,7 @@ Client  Name| Euler
 Project Name| AccessControlKeyring
 Type| Solidity
 Platform| EVM
-Timeline| 24.04.2025 - 15.05.2025
+Timeline| 24.04.2025 - 20.05.2025
     
 #### Scope of Audit
 
@@ -58,12 +58,13 @@ Date                                      | Commit Hash | Note
 -------------------------------------------| --- | ---
 24.04.2025 | 5e4ed9e3ed1fd406c9987a9c1257290fef29a4e9 | Initial Commit
 15.05.2025 | e9fa4bd2ce21d0746cdeacb94ec089d8ac6118a0 | Commit with Updates
+20.05.2025 | 8000f7ef4e6999a5bf118bdf4702ba554405c429 | Commit with Updates
     
 #### Mainnet Deployments
 
 File| Address | Blockchain
 --- | --- | ---
-HookTargetAccessControlKeyring.sol | [0x5E70cEC5a92103e8eB087DDa1f1cAAfae8775032](https://snowtrace.io/address/0x5E70cEC5a92103e8eB087DDa1f1cAAfae8775032) | Avalanche
+HookTargetAccessControlKeyring.sol | [0xeC375fc7498d0A882ab7d3f6ebBCfd24da0f1c6a](https://snowtrace.io/address/0xeC375fc7498d0A882ab7d3f6ebBCfd24da0f1c6a) | Avalanche
     
 ### 1.4 Security Assessment Methodology
     
