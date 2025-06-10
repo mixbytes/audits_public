@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Mellow Finance | Simple-LRT Vault | [link](https://github.com/mixbytes/audits_public/blob/master/Mellow%20Finance/Simple-LRT%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mellow%20Finance/Simple-LRT%20Vault/Mellow%20Finance%20Simple-LRT%20Vault%20Security%20Audit%20Report.pdf) | 2025-06-09 |
 | Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-06-02 |
 | Mantle Network | FBTC Timelock | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/FBTC%20Timelock/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/FBTC%20Timelock/Mantle%20Network%20fBTC%20Timelock%20Security%20Audit%20Report.pdf) | 2025-05-28 |
 | Keep3r.Network | Sunset | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/Sunset/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Keep3r.Network/Sunset/Keep3r%20Sunset%20Security%20Audit%20Report.pdf) | 2025-05-27 |
