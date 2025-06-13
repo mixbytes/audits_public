@@ -5,8 +5,7 @@
 ## 1. INTRODUCTION
 
 ### 1.1 Disclaimer
-The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. The audit documentation is for discussion purposes only. The information presented in this report is confidential and privileged. If you are reading this report, you agree to keep it confidential, not to copy, disclose or disseminate without the agreement of the Client. If you are not the intended recipient(s) of this document, please note that any disclosure, copying or dissemination of its content is strictly forbidden.
-
+The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. 
 
 ### 1.2 Security Assessment Methodology
 
@@ -114,7 +113,7 @@ Title | Description
 --- | ---
 Client             | GearBox Protocol
 Project name       | v.3.1 Bots & Integrations
-Timeline           | 07.03.2024 - 01.04.2025
+Timeline           | 07.03.2024 - 12.06.2025
 Number of Auditors | 3
 
 #### Project Log
@@ -134,6 +133,7 @@ Date | Commit Hash | Note
 12.12.2024 | 02474b8bdbff11b8ee24b0f04cf1408dcf46fc3d | commit with EqualizerRouterAdapter (v3.1)
 19.03.2025 | 3d56f6ccfc202e52487ec9651babdd4fe5cb5788 | commit for the diff audit (bot)
 01.04.2025 | 9e56cb66d59ab27bad0c04339d3b401c230e7ae2 | commit with minor changes (integrations v3.1)
+12.06.2025 | 08e8106c03f8bf6b8bedcb751cf243a979d272ec | curve adapter adjustment commit (integrations v3.1.1)
 
 
 #### Project Scope
