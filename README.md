@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| DIA | Lumina Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/DIA%20Lumina%20Staking%20Security%20Audit%20Report.pdf) | 2025-06-20 |
 | Gearbox Protocol | Gearbox Protocol v.3.1 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/GearBox%20Protocol%20v.3.1%20Bots%20&%20Integrations%20Security%20Audit%20Report.pdf) | 2025-06-12 |
 | Mellow Finance | Simple-LRT Vault | [link](https://github.com/mixbytes/audits_public/blob/master/Mellow%20Finance/Simple-LRT%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mellow%20Finance/Simple-LRT%20Vault/Mellow%20Finance%20Simple-LRT%20Vault%20Security%20Audit%20Report.pdf) | 2025-06-09 |
 | Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-06-02 |
