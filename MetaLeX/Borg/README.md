@@ -5,7 +5,7 @@
 ## 1. INTRODUCTION
 
 ### 1.1 Disclaimer
-The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. The audit documentation is for discussion purposes only. The information presented in this report is confidential and privileged. If you are reading this report, you agree to keep it confidential, not to copy, disclose or disseminate without the agreement of the Client. If you are not the intended recipient(s) of this document, please note that any disclosure, copying or dissemination of its content is strictly forbidden.
+The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. 
 
 
 ### 1.2 Security Assessment Methodology
@@ -115,7 +115,7 @@ Title | Description
 --- | ---
 Client             | MetaLeX
 Project name       | Borg-core
-Timeline           | 28.05.2024 - 07.10.2024
+Timeline           | 28.05.2024 - 18.06.2025
 Number of Auditors | 3
 
 #### Project Log
@@ -129,6 +129,8 @@ Date | Commit Hash | Note
 03.09.2024 | 32a32c40be50afbfc4dd00d66ff8e8b34a511152 | Commit for the re-audit 3
 03.10.2024 | ea40541219fb6dbedc63e7eb6760ab2059709204 | Commit with updates 2
 07.10.2024 | 2cc22ab162299e9678e8eaea01519b53bf650a5f | Commit for the re-audit 4
+17.06.2025 | b1a796a1da21fb5ecbc58ca84cfa39beb2aa2e21 | Commit with updates 3
+18.06.2025 | b9d43386429e9fdd79fc4982678b88b39e3593fb | Commit for the re-audit 5
 
 #### Project Scope
 The audit covered the following files:
@@ -161,9 +163,20 @@ src/libs/hooks/exampleRecoveryHookRevert.sol | https://github.com/MetaLex-Tech/b
 src/libs/conditions/multiUseSignCondition.sol | https://github.com/MetaLex-Tech/borg-core/blob/4fe452f5e0f9ffe610840c4d650ca38cbb772f5d/src/libs/conditions/multiUseSignCondition.sol
 src/implants/daoVoteImplant.sol | https://github.com/MetaLex-Tech/borg-core/blob/ea40541219fb6dbedc63e7eb6760ab2059709204/src/implants/daoVoteImplant.sol
 src/implants/daoVetoImplant.sol | https://github.com/MetaLex-Tech/borg-core/blob/ea40541219fb6dbedc63e7eb6760ab2059709204/src/implants/daoVetoImplant.sol
+src/implants/sudoImplant.sol | https://github.com/MetaLex-Tech/borg-projects/blob/b1a796a1da21fb5ecbc58ca84cfa39beb2aa2e21/src/implants/sudoImplant.sol
+src/libs/governance/snapShotExecutor.sol | https://github.com/MetaLex-Tech/borg-projects/blob/b1a796a1da21fb5ecbc58ca84cfa39beb2aa2e21/src/libs/governance/snapShotExecutor.sol
 
 #### Deployments
-Deployment verification will be conducted later after the complete deployment of the protocol.
+
+File name | Contract deployed on mainnet | Comment
+--- | --- | ---
+borgCore.sol | [0x0c05BF611b4f3769e8BF3714C0AEedb965BEA40C](https://basescan.org/address/0x0c05BF611b4f3769e8BF3714C0AEedb965BEA40C) |
+ejectImplant.sol | [0xb368BDF178c6F45a7836044EB5c1261e57D8FE3e](https://basescan.org/address/0xb368BDF178c6F45a7836044EB5c1261e57D8FE3e) |
+sudoImplant.sol | [0x957774e2589d5cF6EB545eD9F5A9b44fb4554804](https://basescan.org/address/0x957774e2589d5cF6EB545eD9F5A9b44fb4554804) |
+snapShotExecutor.sol | [0xE050BD5F29EaDf9F0e52B8430c470533Dd4e1bA2](https://basescan.org/address/0xE050BD5F29EaDf9F0e52B8430c470533Dd4e1bA2) |
+auth.sol | [0x3068979C38F387D9AbDa98143645f5061aBdeB3d](https://basescan.org/address/0x3068979C38F387D9AbDa98143645f5061aBdeB3d) | Auth for BorgCore
+auth.sol | [0xE7cF64D44243511C93DC75B1d268B144b69bc45D](https://basescan.org/address/0xE7cF64D44243511C93DC75B1d268B144b69bc45D) | Auth for snapShotExecutor
+auth.sol | [0x2Ff67d49f33a73c6A0c81df49269722D983Ef23B](https://basescan.org/address/0x2Ff67d49f33a73c6A0c81df49269722D983Ef23B) | Auth for ejectImplant and sudoImplant
 
 ***
 
@@ -173,8 +186,8 @@ Severity | # of Findings
 --- | ---
 CRITICAL | 4
 HIGH     | 7
-MEDIUM   | 23
-LOW      | 70
+MEDIUM   | 24
+LOW      | 72
 
 ***
 
@@ -706,6 +719,22 @@ The issue is classified as **Medium** severity because it could allow users to b
 We recommend updating the `lastProposalTime` variable to the current `block.timestamp` immediately after a proposal is successfully created.
 ##### Client's Commentary
 > We have addresed this with the recommended fix of setting the lastProposalTime in proposeTransaction.
+
+#### 24. Expired Proposal Can Still Be Executed
+##### Status
+Fixed in https://github.com/MetaLex-Tech/borg-projects/commit/b9d43386429e9fdd79fc4982678b88b39e3593fb
+##### Description
+The `execute` function of the `SnapShotExecutor` contract does not verify whether the proposal has expired based on the `proposalExpirySeconds` parameter. As a result, proposals may be executed long after their intended lifespan, even if they are eligible for cancellation due to expiry. This undermines the expiration logic defined in the `cancel` function and weakens the governance control over outdated or potentially malicious proposals.
+##### Recommendation
+We recommend adding an expiration check to the `execute` function using the `proposal.executableAfter` timestamp. A proposal should only be executable if the current timestamp is greater than `executableAfter` and less than `executableAfter + proposalExpirySeconds`.
+
+```solidity=
+if (p.executableAfter + proposalExpirySeconds <= block.timestamp) {
+    revert ProposalExpired();
+}
+```
+##### Client's Commentary
+> We plan to stick with the more flexible approach to proposal deadlines, but recognize that `expiry` is misleading and will rename it to `cancelWaitingPeriod` instead
 
 ***
 
@@ -1664,6 +1693,24 @@ The constructor does not validate the input parameters `_quorum` and `_threshold
 We recommend adding input validation checks to ensure that `_quorum` and `_threshold` are within appropriate ranges (e.g., between 0 and 100).
 ##### Client's Commentary
 > We did not add validation checks for the suggested parameters as we may support many governance types that require # of votes instead of percentages or other formats.
+
+#### 71. Missing Zero Address Check in Proposal Creation
+##### Status
+Fixed in https://github.com/MetaLex-Tech/borg-projects/commit/b9d43386429e9fdd79fc4982678b88b39e3593fb
+##### Description
+This issue has been identified within the `propose` function of the `SnapShotExecutor` contract.
+The function does not validate that the `target` address is not the zero address (`address(0)`). As a result, it is possible to create a proposal with a zero address as the target, which cannot be subsequently removed or managed properly.
+The issue is classified as **Low** severity because, while it does not directly compromise security, it can lead to proposals being stuck and unremovable. This, in turn, reduces the available limit for creating valid proposals.
+##### Recommendation
+We recommend adding a check to ensure that the `target` address is not equal to `address(0)` when creating a new proposal.
+
+#### 72. Typo in Error Name: `SnapShotExeuctor_InvalidParams`
+##### Status
+Fixed in https://github.com/MetaLex-Tech/borg-projects/commit/b9d43386429e9fdd79fc4982678b88b39e3593fb
+##### Description
+There is a typo in the name of the custom error `SnapShotExeuctor_InvalidParams` defined in the `SnapShotExecutor` contract. The correct spelling of the contract name is `SnapShotExecutor`, but the error name mistakenly uses `SnapShotExeuctor` (note the transposition of 'e' and 'c').
+##### Recommendation
+We recommend renaming the mentioned error.
 
 ***
 
