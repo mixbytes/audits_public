@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Algebra Finance | Limit Order Plugin | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/Algebra%20Limit%20Order%20Plugin%20Security%20Audit%20Report.pdf) | 2025-06-25 |
 | DIA | Lumina Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/DIA%20Lumina%20Staking%20Security%20Audit%20Report.pdf) | 2025-06-20 |
 | MetaLeX | Borg | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/Borg/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/MetaLeX/Borg/Metalex%20Borg%20Security%20Audit%20Report.pdf) | 2025-06-20 |
 | Gearbox Protocol | Gearbox Protocol v.3.1 Bots & Integrations | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Protocol%20v.3.1%20Bots%20&%20Integrations/GearBox%20Protocol%20v.3.1%20Bots%20&%20Integrations%20Security%20Audit%20Report.pdf) | 2025-06-12 |
