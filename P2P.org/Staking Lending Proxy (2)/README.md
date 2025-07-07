@@ -66,7 +66,7 @@ Project Name| Staking Lending Proxy
 Type| Solidity
 Platform| EVM
 Timeline| 06.05.2025 - 13.05.2025
-    
+***
 #### Scope of Audit
 
 File | Link
