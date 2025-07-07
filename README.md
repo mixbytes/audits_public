@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-07-07 |
 | Resolv | Utils | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/Resolv%20Security%20Audit%20Report.pdf) | 2025-07-04 |
 | Algebra Finance | Limit Order Plugin | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/Algebra%20Limit%20Order%20Plugin%20Security%20Audit%20Report.pdf) | 2025-06-25 |
 | DIA | Lumina Staking | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Lumina%20Staking/DIA%20Lumina%20Staking%20Security%20Audit%20Report.pdf) | 2025-06-20 |
