@@ -5,7 +5,7 @@
 ## 1. INTRODUCTION
 
 ### 1.1 Disclaimer
-The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. The audit documentation is for discussion purposes only. The information presented in this report is confidential and privileged. If you are reading this report, you agree to keep it confidential, not to copy, disclose or disseminate without the agreement of the Client. If you are not the intended recipient(s) of this document, please note that any disclosure, copying or dissemination of its content is strictly forbidden.
+The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. 
 
 
 ### 1.2 Security Assessment Methodology
@@ -116,7 +116,7 @@ Title | Description
 --- | ---
 Client             | Lido
 Project name       | CSM
-Timeline           | 23.07.2024 - 23.01.2025
+Timeline           | 23.07.2024 - 08.07.2025
 Number of Auditors | 3
 
 #### Project Log
@@ -134,6 +134,7 @@ Date | Commit Hash | Note
 01.10.2024 | 9c7d014844395b37a64b3ca4ed5dc27de0af23a5 | Commit for the re-audit 3 (Community Staking Module)
 07.10.2024 | 347496df916c3b987a7f3fe8b0bd85c9b62ad730 | Commit with the update (Community Staking Module)
 23.01.2025 | 3469910c0d29a54b37d0c4de3cf527a3e7be2099 | Commit with the update (Community Staking Module)
+08.07.2025 | d29a0bf4dac8d78550016beb82dbf16431db5ced | Commit with the update (Community Staking Module)
 
 #### Project Scope
 The audit covered the following files:
@@ -143,7 +144,7 @@ File name | Link
 src/CSFeeDistributor.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSFeeDistributor.sol
 src/CSAccounting.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSAccounting.sol
 src/CSFeeOracle.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSFeeOracle.sol
-src/CSVerifier.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSVerifier.sol
+src/CSVerifier.sol | https://github.com/lidofinance/community-staking-module/blob/d29a0bf4dac8d78550016beb82dbf16431db5ced/src/CSVerifier.sol
 src/CSModule.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSModule.sol
 src/CSEarlyAdoption.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/CSEarlyAdoption.sol
 src/lib/base-oracle/HashConsensus.sol | https://github.com/lidofinance/community-staking-module/blob/a898d045b63303294752d1a60ad9dfe8d8ba69ca/src/lib/base-oracle/HashConsensus.sol
@@ -181,7 +182,7 @@ File name | Contract deployed on mainnet | Comment
 --- | --- | ---
 OssifiableProxy.sol | [0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F](https://etherscan.io/address/0xdA7dE2ECdDfccC6c3AF10108Db212ACBBf9EA83F) | Proxy for CSModule.sol
 CSModule.sol | [0x8daEa53b17a629918CDFAB785C5c74077c1D895B](https://etherscan.io/address/0x8daEa53b17a629918CDFAB785C5c74077c1D895B) | 
-CSVerifier.sol | [0x0c345dfa318f9f4977cdd4f33d80f9d0ffa38e8b](https://etherscan.io/address/0x0c345dfa318f9f4977cdd4f33d80f9d0ffa38e8b) | 
+CSVerifier.sol | [0xeC6Cc185f671F627fb9b6f06C8772755F587b05d](https://etherscan.io/address/0xec6cc185f671f627fb9b6f06c8772755f587b05d) | 
 CSEarlyAdoption.sol | [0x3D5148ad93e2ae5DedD1f7A8B3C19E7F67F90c0E](https://etherscan.io/address/0x3D5148ad93e2ae5DedD1f7A8B3C19E7F67F90c0E) | 
 OssifiableProxy.sol | [0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da](https://etherscan.io/address/0x4d72BFF1BeaC69925F8Bd12526a39BAAb069e5Da) | Proxy for CSAccounting.sol
 CSAccounting.sol | [0x71FCD2a6F38B644641B0F46c345Ea03Daabf2758](https://etherscan.io/address/0x71FCD2a6F38B644641B0F46c345Ea03Daabf2758) | 
