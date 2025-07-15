@@ -400,7 +400,9 @@ A role is granted to a user during the `SignatureRoleTimelock.setRoleAccounts` c
 1. The admin cannot remove this user from `roleAccounts` using `SignatureRoleTimelock.setRoleAccounts` due to a [hasRole](https://github.com/CryptoCust/cryptolegacy-contracts/blob/e409929501d5b78941bc78411f1fa3da36249a94/contracts/SignatureRoleTimelock.sol#L169-L170) check. This causes a temporary denial of service in role management. The admin must first call [AccessControl.grantRole](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/d00acef4059807535af0bd0dd0ddf619747a044b/contracts/access/AccessControl.sol#L144-L146) before the user can be removed.
 2. The admin may **mistakenly** add a user to the **roleAccounts** after they have renounced their role, leading to duplicated entries. Removing the user clears only one instance, requiring extra steps to fully clean up.
 <br/>
+
 ##### Recommendation
+
 We recommend restricting users from calling `AccessControl.renounceRole`.
 
 > **Client's Commentary:**
@@ -735,7 +737,9 @@ This issue identifies minor inefficiencies in several functions:
 * In **LibCryptoLegacyPlugins**, the `_findFacetBySelector` function iterates through all facets even if a match is found early instead of returning immediately.
 * In **LibCryptoLegacy** `_transferTreasuryTokensToLegacy` uses a nested `for` loop. It's better to skip the iteration if the balance is zero and avoid unnecessary transfers.
 <br/>
+
 ##### Recommendation
+
 We recommend refactoring the identified code sections for minor gas savings, primarily by returning early from search loops once an item is found.
 > **Client's Commentary:**
 > https://github.com/CryptoCust/cryptolegacy-contracts/commit/4558f24ad5c9aecf41751643e7e2ce9b1686092e
@@ -835,7 +839,9 @@ There are two issues in the fee payment mechanism for beneficiaries when calling
 1. Beneficiaries can completely avoid paying fees when claiming tokens if the distribution has already started. This can happen because, when [\_isDistributionStarted](https://github.com/CryptoCust/cryptolegacy-contracts/blob/e409929501d5b78941bc78411f1fa3da36249a94/contracts/libraries/LibCryptoLegacy.sol#L210-L212) returns **true**, the function updates `lastFeePaidAt`, and inside `LibCryptoLegacy._sendFeeByTransfer`, there's an early exit if [msg.value == 0](https://github.com/CryptoCust/cryptolegacy-contracts/blob/e409929501d5b78941bc78411f1fa3da36249a94/contracts/libraries/LibCryptoLegacy.sol#L270-L272). As a result, beneficiaries can call `CryptoLegacyBasePlugin.beneficiaryClaim` with zero payment and still receive their tokens.
 2. Even when beneficiaries do provide payment, they can redirect 100% of the fee to a referral address instead of the protocol by using the maximum **\_refShare** value (SHARE_BASE = 10000).
 <br/>
+
 ##### Recommendation
+
 We recommend making the following changes:
 
 1. Add proper fee validation in the `LibCryptoLegacy._sendFeeByTransfer` function to ensure that beneficiaries cannot claim without paying the required fee.
@@ -858,7 +864,9 @@ As a result, the following problematic scenarios may occur:
 - Invoking `LegacyRecoveryPlugin.lrConfirm` with an arbitrary proposal ID that does not exist in the array may result in the creation and immediate execution of a phantom proposal, especially if the threshold is set to 1.
 - Combining a call to `LegacyRecoveryPlugin.lrConfirm` followed by `LegacyRecoveryPlugin.lrCancel` may allow setting the status of a non-existent proposal to `CANCELED`, manipulating internal state and potentially causing inconsistencies.
 <br/>
+
 ##### Recommendation
+
 We recommend allowing confirmation and cancellation operations only for proposals that exist and have a `PENDING` status.
 
 
@@ -909,7 +917,9 @@ However, this implementation has several flaws:
 2. If a proposal that required payment is subsequently cancelled, the transferred funds remain locked in the contract with no withdrawal mechanism.
 3. Voters can send funds when proposing operations that do not require payment (e.g., `lrTransferTreasuryTokensToLegacy`, `lrWithdrawTokensFromLegacy`).
 <br/>
+
 ##### Recommendation
+
 We recommend the following:
 1. Implement a mechanism that allows voters to reclaim their funds if a proposal has been cancelled.
 2. Remove the `payable` modifier from the `lrConfirm` function.
