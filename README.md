@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2025-07-10 |
 | Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-07-07 |
 | Resolv | Utils | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/Resolv%20Security%20Audit%20Report.pdf) | 2025-07-04 |
 | Algebra Finance | Limit Order Plugin | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Limit%20Order%20Plugin/Algebra%20Limit%20Order%20Plugin%20Security%20Audit%20Report.pdf) | 2025-06-25 |
@@ -23,7 +24,6 @@
 | Euler | EVK Periphery | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/EVK%20Periphery/Euler%20EVK%20Periphery%20Security%20Audit%20Report.pdf) | 2025-04-22 |
 | Euler | HookTargetStakeDelegator | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/HookTargetStakeDelegator/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/HookTargetStakeDelegator/Euler%20StakeDelegator%20Security%20Audit%20Report.pdf) | 2025-04-22 |
 | DIA | Multi Scope | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Multi%20Scope/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/DIA/Multi%20Scope/DIA%20Multi%20Scope%20Security%20Audit%20Report.pdf) | 2025-04-15 |
-| Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2025-04-09 |
 | Hanji | Liquidity Vault | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/Liquidity%20Vault/Hanji%20Liquidity%20Vault%20Security%20Audit%20Report.pdf) | 2025-04-04 |
 | Hanji | OnchainCLOB | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/OnchainCLOB/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Hanji/OnchainCLOB/Hanji%20Protocol%20Security%20Audit%20Report.pdf) | 2025-04-04 |
 | P2P.org | Staking Lending Proxy | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Staking%20Lending%20Proxy/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Staking%20Lending%20Proxy/P2P%20Staking%20Lending%20Proxy.pdf) | 2025-03-20 |
