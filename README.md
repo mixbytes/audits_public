@@ -6,6 +6,7 @@
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
 | CryptoLegacy | CryptoLegacy | [link](https://github.com/mixbytes/audits_public/blob/master/CryptoLegacy/CryptoLegacy/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/CryptoLegacy/CryptoLegacy/CryptoLegacy%20Security%20Audit%20Report.pdf) | 2025-07-15 |
+| Gearbox Protocol | Mellow Adapters | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Mellow%20Adapters/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Mellow%20Adapters/Gearbox%20Protocol%20Mellow%20Adapters%20Security%20Audit%20Report.pdf) | 2025-07-15 |
 | Lido | CSM | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM/Lido%20CSM%20Security%20Audit%20Report.pdf) | 2025-07-10 |
 | Euler | AccessControlKeyring | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Euler/AccessControlKeyring/Euler%20AccessControlKeyring%20Security%20Audit%20Report.pdf) | 2025-07-07 |
 | Resolv | Utils | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Utils/Resolv%20Security%20Audit%20Report.pdf) | 2025-07-04 |
