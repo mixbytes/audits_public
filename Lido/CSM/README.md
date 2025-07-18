@@ -246,6 +246,11 @@ During the audit, we thoroughly tested critical attack vectors and verified the 
 
 - Each operation that changes the number of validator keys leads to a staking module nonce increment. All functions that lead to a change in the number of validator keys were thoroughly checked to update the module nonce, so that off-chain services and the Deposit Security Module can check it against the tracked value.
 
+**CSVerifier contract update (presented in the commit [`d29a0bf4dac8d78550016beb82dbf16431db5ced`](https://github.com/lidofinance/community-staking-module/blob/d29a0bf4dac8d78550016beb82dbf16431db5ced/src/CSVerifier.sol))**:
+
+The voting script presented in [this pull request](https://github.com/lidofinance/scripts/pull/435/files) rotates the `CSVerifier` contract configured in the Community Staking Module (CSM) from the old implementation ([0x0c345dFa318f9F4977cdd4f33d80F9D0ffA38e8B](https://etherscan.io/address/0x0c345dFa318f9F4977cdd4f33d80F9D0ffA38e8B)) to the new one ([0xeC6Cc185f671F627fb9b6f06C8772755F587b05d](https://etherscan.io/address/0xeC6Cc185f671F627fb9b6f06C8772755F587b05d)). The script was reviewed, and it was confirmed that the rotation is performed correctly by transferring the `VERIFIER_ROLE` from the old address to the new one, as seen in steps 17–18 of the script.
+
+
 ***
 
 ## 2. FINDINGS REPORT
