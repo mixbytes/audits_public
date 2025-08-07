@@ -241,7 +241,8 @@ This allows an attacker to double their effective balance by doing a self-to-sel
 3. Distributor deposits 10 000 Rewards; attacker share = 2 000 / 11 000 ≈ 18 % ⇒ 1 800 Rewards.
 4. Execute `claim()` to collect 1 800 Rewards.
 5. Repeat step 2 before every new reward deposit to keep the boost.
-<br/>
+
+
 ##### Recommendation
 
 We recommend skipping all logic when `_from == _to`.
@@ -292,7 +293,7 @@ reward.token.balanceOf(address(this)) > reward.rewardRate * duration
 fails when the balance is exactly sufficient. Since the multiplication could be precise, `>=` should be used.
 
 - https://github.com/resolv-im/resolv-contracts/blob/6dc09abb178de6173b92c7961396e409e131c355/contracts/staking/ResolvStaking.sol#L172
-<br/>
+
 ##### Recommendation
 We recommend replacing `>` with `>=` to allow exact-match balances.
 
