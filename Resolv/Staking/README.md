@@ -20,7 +20,9 @@ The code is secure; a previously discovered vulnerability affecting withdrawals 
 Key notes and recommendations:
 - **No reward token removal**. The `ResolvStaking` contract allows adding reward tokens but lacks functionality to remove or disable them.
 - **Incentivization of frequent user interaction with the protocol**. The boost is based on WAHP (Weighted Average Holding Period) and updates only when the user interacts with the protocol. If the user is inactive, the boost stays the same. This is a deliberate design choice to encourage regular engagement.
+- The `withdraw(claim, receiver)` function reverts when `claim==true` and the global `claimEnabled==false`, due to a check in `checkpoint()`; while not a vulnerability, this may lead to unexpected behavior in integrations that always pass `claim = true`, unless they account for the paused state — one option to improve robustness is to skip the reward claim instead of reverting when `claimEnabled` is `false`.
 
+***
 ### 1.3 Project Overview
 
 #### Summary
@@ -31,7 +33,7 @@ Client Name| Resolv
 Project Name| Resolv Staking
 Type| Solidity
 Platform| EVM
-Timeline| 08.04.2025 - 14.05.2025
+Timeline| 08.04.2025 - 06.08.2025
     
 #### Scope of Audit
 
@@ -44,7 +46,9 @@ contracts/staking/libraries/ResolvStakingErrors.sol| https://github.com/resolv-i
 contracts/staking/libraries/ResolvStakingEvents.sol| https://github.com/resolv-im/resolv-contracts/blob/771e82ae7e487d1740a85d80ce96a6f764471419/contracts/staking/libraries/ResolvStakingEvents.sol
 contracts/staking/libraries/ResolvStakingStructs.sol| https://github.com/resolv-im/resolv-contracts/blob/771e82ae7e487d1740a85d80ce96a6f764471419/contracts/staking/libraries/ResolvStakingStructs.sol
 contracts/airdrop/StakedTokenDistributor.sol| https://github.com/resolv-im/resolv-contracts/blob/771e82ae7e487d1740a85d80ce96a6f764471419/contracts/airdrop/StakedTokenDistributor.sol
-    
+contracts/staking/ResolvStakingV2.sol | https://github.com/resolv-im/resolv-contracts/blob/f7d7fee7ca456a564fb24b2db5b3f740ef7fa525/contracts/staking/ResolvStakingV2.sol
+contracts/ResolvToken.sol | https://github.com/resolv-im/resolv-contracts/blob/f7d7fee7ca456a564fb24b2db5b3f740ef7fa525/contracts/ResolvToken.sol
+***
 #### Versions Log
 
 Date                                      | Commit Hash | Note
@@ -53,6 +57,8 @@ Date                                      | Commit Hash | Note
 11.04.2025 | 8eac98d46a46f25303d4832f605e270081bc8322 | Commit for re-audit
 29.04.2025 | f1d45d1835c9f61e279a50bae6953f58280dc343 | Commit for re-audit
 14.05.2025 | 49969c0e55cdf40236c8530d6b4cbbfa4bf780c9 | Commit for re-audit
+24.07.2025 | f7d7fee7ca456a564fb24b2db5b3f740ef7fa525 | Commit for re-audit
+28.07.2025 | 2f71574f8d57d9ecac9cbf30dc38064394796f60 | Commit for re-audit
 
 
 #### Mainnet Deployments
@@ -65,6 +71,7 @@ ProxyAdmin.sol | [0x1400e080850C611920f12D19804e4d2427f85b4D](https://etherscan.
 ResolvStakingCheckpoints.sol | [0x253C6e08dB15E2912Cf3aFE5a89F2a7a4d8F2784](https://etherscan.io/address/0x253C6e08dB15E2912Cf3aFE5a89F2a7a4d8F2784) | Ethereum
 ResolvStakingSilo.sol | [0x502f9F85770437d102B767D6e311A4560eC88D4f](https://etherscan.io/address/0x502f9F85770437d102B767D6e311A4560eC88D4f) | Ethereum
 ResolvStakingHelpers.sol | [0x948AdEd191e90B94fCB94E0e2Aa6775786f17970](https://etherscan.io/address/0x948AdEd191e90B94fCB94E0e2Aa6775786f17970) | Ethereum
+ResolvStakingV2.sol | [0xD1062547981471b821755c13CaFa0F13D099705A](https://etherscan.io/address/0xD1062547981471b821755c13CaFa0F13D099705A) | Ethereum
 
 ### 1.4 Security Assessment Methodology
     
@@ -121,7 +128,7 @@ ResolvStakingHelpers.sol | [0x948AdEd191e90B94fCB94E0e2Aa6775786f17970](https://
 | Severity  | Count |
 |-----------|-------|
 | **Critical** | 0 |
-| **High**     | 1 |
+| **High**     | 2 |
 | **Medium**   | 0 |
 | **Low**      | 2 |
 
@@ -167,6 +174,80 @@ https://github.com/resolv-im/resolv-contracts/blob/530d997b010b803691abab53835ad
 
 > **Client's Commentary:**
 > https://github.com/resolv-im/resolv-contracts/commit/56f2fe95f87a4e1f51221a366efb4fa697fdb2d0
+
+---
+
+#### 2. Self‑transfer inflates effective balance
+
+##### Status
+Fixed in https://github.com/resolv-im/resolv-contracts/commit/2f71574f8d57d9ecac9cbf30dc38064394796f60
+
+##### Description
+
+`ResolvStakingV2._update()` calls `checkpoint()` two times *before* the user balance is changed.
+
+For a `transfer(user, user, v)` the first checkpoint sets effective balance to `balanceOf(user) - v`, while the second checkpoint updates the effective balance to `balanceOf(user) + v`. Note that the `balanceOf(user)` stays the same.
+
+This is because both calls  to `updateEffectiveBalance()` use the real balance of the same user which isn't changed:
+```
+updateEffectiveBalance(
+    ...
+    userStakedBalance: balanceOf(_user)
+    ...
+);
+```
+https://github.com/resolv-im/resolv-contracts/blob/f7d7fee7ca456a564fb24b2db5b3f740ef7fa525/contracts/staking/ResolvStakingV2.sol#L403
+
+The first call to `updateEffectiveBalance()` subtracts the transferred amount `delta` from the `userStakedBalance` (which is `balanceOf(user)`):
+```
+newStakedBalance = 
+    _params.userStakedBalance 
+    - SafeCast.toUint256(- _params.delta);
+...
+newEffectiveBalance = newStakedBalance 
+    * boostFactor 
+    / ResolvStakingStructs.BOOST_FIXED_POINT;
+```
+https://github.com/resolv-im/resolv-contracts/blob/f7d7fee7ca456a564fb24b2db5b3f740ef7fa525/contracts/staking/libraries/ResolvStakingCheckpoints.sol#L148-L149
+
+The second call to `updateEffectiveBalance()` adds the transferred amount `delta` to the `userStakedBalance` (which is still `balanceOf(user)`):
+```
+newStakedBalance = 
+    _params.userStakedBalance +      
+    SafeCast.toUint256(_params.delta)
+...
+newEffectiveBalance = 
+    newStakedBalance 
+    * boostFactor 
+    / ResolvStakingStructs.BOOST_FIXED_POINT;
+```
+https://github.com/resolv-im/resolv-contracts/blob/f7d7fee7ca456a564fb24b2db5b3f740ef7fa525/contracts/staking/libraries/ResolvStakingCheckpoints.sol#L147
+
+This allows an attacker to double their effective balance by doing a self-to-self transfer.
+
+**Example:**
+
+*Case 1. Without attack:*
+
+1. Attacker stakes 1 000 RESOLV → Effective Balance 1 000.
+2. Others hold Effective Balance 9 000.
+3. Total Effective Balance 10 000.
+4. Distributor adds 10 000 Rewards.
+5. Attacker share = 1 000 / 10 000 = 10 % → receives 1 000 Rewards.
+
+*Case 2. With attack:*
+1. Stake 1 000 RESOLV.
+2. Call `transfer(msg.sender, msg.sender, 1_000)` → Effective Balance jumps to 2 000.
+3. Distributor deposits 10 000 Rewards; attacker share = 2 000 / 11 000 ≈ 18 % ⇒ 1 800 Rewards.
+4. Execute `claim()` to collect 1 800 Rewards.
+5. Repeat step 2 before every new reward deposit to keep the boost.
+<br/>
+##### Recommendation
+
+We recommend skipping all logic when `_from == _to`.
+
+> **Client's Commentary:**
+> https://github.com/resolv-im/resolv-contracts/pull/383
 
 ---
 
