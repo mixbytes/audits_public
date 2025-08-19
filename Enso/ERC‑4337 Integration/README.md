@@ -1,4 +1,4 @@
-# Enso Finance ERC‑4337 Integration Security Audit Report
+# Enso  ERC‑4337 Integration Security Audit Report
 
 ###### tags: `enso`, `erc4337`
 
@@ -33,7 +33,7 @@ Key notes:
     
 Title | Description
 --- | ---
-Client Name| Enso Finance
+Client Name| Enso Build
 Project Name| ERC‑4337 Integration
 Type| Solidity
 Platform| EVM
