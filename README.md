@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Enso Finance | ERC‑4337 Integration | [link](https://github.com/mixbytes/audits_public/blob/master/Enso%20Finance/ERC%E2%80%914337%20Integration/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Enso%20Finance/ERC%E2%80%914337%20Integration/Enso%20ERC%E2%80%914337%20Integration%20Security%20Audit%20Report.pdf) | 2025-08-18 |
 | Yield Basis | DAO | [link](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/DAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/DAO/Yield%20Basis%20DAO%20Security%20Audit%20Report.pdf) | 2025-08-11 |
 | Resolv | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/Resolv%20Staking%20Security%20Audit%20Report.pdf) | 2025-08-06 |
 | Gearbox Protocol | Kodiak & Mellow Adapters | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/Gearbox%20Kodiak%20&%20Mellow%20Adapters%20Security%20Audit%20Report.pdf) | 2025-07-30 |
