@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | WstETH Staker | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH%20Staker/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH%20Staker/Lido%20WstETH%20Staker%20Security%20Audit%20Report.pdf) | 2025-09-10 |
 | Barter DAO | InchFusionBarterResolver | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/InchFusionBarterResolver/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/InchFusionBarterResolver/BarterDAO%20InchFusionBarterResolver%20Security%20Audit%20Report.pdf) | 2025-09-05 |
 | Yield Basis | DAO | [link](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/DAO/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/DAO/Yield%20Basis%20DAO%20Security%20Audit%20Report.pdf) | 2025-08-11 |
 | Resolv | Staking | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Resolv/Staking/Resolv%20Staking%20Security%20Audit%20Report.pdf) | 2025-08-06 |
