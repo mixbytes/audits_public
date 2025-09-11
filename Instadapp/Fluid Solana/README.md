@@ -268,7 +268,7 @@ Several code quality issues were identified in the codebase:
     The error codes incorrectly use "CPY" instead of "CPI" (Cross Program Invocation), which is the standard Solana terminology.
 
     These are code quality issues that don't affect functionality but reduce code clarity and maintainability. The misleading comment could confuse developers about the expected account initialization behavior.
-<br/>
+
 ##### Recommendation
 1. Update the comment in `context.rs` to accurately reflect that `init_if_needed` is used and explain why it's necessary
 2. Fix the typo `is_iquidate` → `is_liquidate` in `oracle.rs`
@@ -290,7 +290,7 @@ Fixed in https://github.com/Instadapp/fluid-contracts-solana/commit/9170ece98c09
 The `Operate` struct [requires](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/context.rs#L309-L317) `signer_supply_token_account` to be already initialized. As a result, if the position NFT is transferred or delegated to an account that does not already have an associated token account for the supply token, the `operate` call will revert during account validation. This creates a denial-of-service condition for legitimate ownership/delegation flows. To overcome this problem, manual creation of an ATA is required.
 
 The issue is classified as **Low** severity because it can block position operations under common scenarios (transfer/delegation) without directly risking loss of funds.
-<br/>
+
 ##### Recommendation
 We recommend adding `init_if_needed` to `signer_supply_token_account` or making it optional.
 
@@ -309,7 +309,7 @@ This issue has been identified within the `absorb` function.
 The function can revert if the branch account with id == 0 is not supplied in the instruction context. When the current branch is the base branch, `connected_minima_tick` [may initially be](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/admin.rs#L209) `i32::MIN`, which causes the logic to set `branch_data.id` to 0 and later attempt to load the branch with id 0 from the provided accounts ([1](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs#L931), [2](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs#L967)). If that account is not included, the call fails and the absorption flow reverts. Normally branch numbers start with 1, so to bypass the problem it will be required to create a separate dummy account.
 
 The issue is classified as **Low** severity because it can cause a denial-of-service for the absorption process (potentially blocking liquidation progress) without directly compromising funds.
-<br/>
+
 ##### Recommendation
 We recommend normalizing base-branch initialization, setting `connected_minima_tick` to `i32::MIN` in the `reset_branch_data` function.
 
