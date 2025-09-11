@@ -1,6 +1,6 @@
-# Fluid on Solana Security Audit Report
+# Jupiter Lend Vaults on Solana Security Audit Report
 
-###### tags: `Fluid`
+###### tags: `Fluid`, `JupiterLend`
 
 ## 1. INTRODUCTION
 
@@ -8,7 +8,7 @@
 The audit makes no statements or warranties regarding the utility, safety, or security of the code, the suitability of the business model, investment advice, endorsement of the platform or its products, the regulatory regime for the business model, or any other claims about the fitness of the contracts for a particular purpose or their bug-free status. 
     
 ### 1.2 Executive Summary
-The Fluid Vaults program enables collateralized borrowing on Solana through a sophisticated debt position management system. Users can create positions by supplying collateral tokens and borrowing against them, managed through a tick-based system for precise position tracking. The program includes liquidation mechanisms that can be triggered when positions exceed risk thresholds, configurable parameters like collateral factors and liquidation penalties, and integrates with the liquidity and oracle programs for seamless borrowing and real-time price feeds.
+The Jupiter Lend Vaults program enables collateralized borrowing on Solana through a sophisticated debt position management system. Users can create positions by supplying collateral tokens and borrowing against them, managed through a tick-based system for precise position tracking. The program includes liquidation mechanisms that can be triggered when positions exceed risk thresholds, configurable parameters like collateral factors and liquidation penalties, and integrates with the liquidity and oracle programs for seamless borrowing and real-time price feeds.
 
 The audit was conducted over 26 days by 3 auditors, using a combination of manual review and automated tooling.
 
@@ -45,7 +45,7 @@ During the audit, the following attack vectors were checked:
   - Cross-chain wrapped tokens with unusual value relationships
   - Future token innovations that operate outside conventional price ranges
 
-The audit scope was specifically limited to the vaults module of the Fluid Protocol, focusing exclusively on the collateralized debt position management system.
+The audit scope was specifically limited to the vaults module of the Jupiter Lend Protocol, focusing exclusively on the collateralized debt position management system.
 
 During the audit, we conducted a comprehensive comparison between the EVM implementation and the current Solana scope, thoroughly going through main components of the original EVM codebase to ensure functional parity and identify potential migration-related vulnerabilities.
 
@@ -57,7 +57,7 @@ The codebase demonstrates high-quality engineering with strong security practice
     
 Title | Description
 --- | ---
-Client Name| Fluid
+Client Name| Jupiter Lend
 Project Name| Vault
 Type     | Rust
 Platform | SVM
