@@ -1,6 +1,6 @@
 # Gearbox Kodiak & Mellow Adapters Security Audit Report
 
-###### tags: `Gearbox`, `Adapters`, `Mellow`, `Kodiak`
+###### tags: `Gearbox`, `Adapters`, `Mellow`, `Kodiak`, `Migrator`
 
 ## 1. INTRODUCTION
 
@@ -52,7 +52,7 @@ Client Name| Gearbox
 Project Name| Kodiak & Mellow Adapters
 Type| Solidity
 Platform| EVM
-Timeline| 22.07.2025 - 30.07.2025
+Timeline| 22.07.2025 - 12.09.2025
 ***    
 #### Scope of Audit
 
@@ -64,14 +64,17 @@ contracts/helpers/mellow/MellowWithdrawalPhantomToken.sol | https://github.com/G
 contracts/adapters/kodiak/KodiakIslandGatewayAdapter.sol | https://github.com/Gearbox-protocol/integrations-v3/blob/ba55ede78d351695b20624714f51aa49843b4f4c/contracts/adapters/kodiak/KodiakIslandGatewayAdapter.sol
 contracts/helpers/kodiak/KodiakIslandGateway.sol | https://github.com/Gearbox-protocol/integrations-v3/blob/ba55ede78d351695b20624714f51aa49843b4f4c/contracts/helpers/kodiak/KodiakIslandGateway.sol
 contracts/oracles/kodiak/KodiakIslandPriceFeed.sol | https://github.com/Gearbox-protocol/oracles-v3/blob/4220625c6f46fdb816f3eb52396d8d62c2b96afe/contracts/oracles/kodiak/KodiakIslandPriceFeed.sol
+contracts/migration/LiquidityMigrator.sol | https://github.com/Gearbox-protocol/periphery-v3/blob/cc8723b148eb6fbc9e6a0c13169fc3929449824d/contracts/migration/LiquidityMigrator.sol
     
 #### Versions Log
 
 Date                                      | Commit Hash | Note
 -------------------------------------------| --- | ---
-22.07.2025 | ba55ede78d351695b20624714f51aa49843b4f4c | Initial Commit (integrations-v3)
-22.07.2025 | 4220625c6f46fdb816f3eb52396d8d62c2b96afe | Initial Commit (oracles-v3)
-29.07.2025 | 0d992f9d01f4f936b13ba242e7b6ffaf2a88a976 | Re-audit Commit (integrations-v3)
+22.07.2025 | ba55ede78d351695b20624714f51aa49843b4f4c | Initial commit (integrations-v3)
+22.07.2025 | 4220625c6f46fdb816f3eb52396d8d62c2b96afe | Initial commit (oracles-v3)
+29.07.2025 | 0d992f9d01f4f936b13ba242e7b6ffaf2a88a976 | Re-audit commit (integrations-v3)
+11.09.2025 | cc8723b148eb6fbc9e6a0c13169fc3929449824d | Audit scope commit for LiquidityMigrator
+12.09.2025 | 974034013e36853e5d001b762cc3a74a36037149 | Re-audit commit for LiquidityMigrator
 
 #### Mainnet Deployments
 Deployment verification will be conducted via https://permissionless.gearbox.foundation/bytecode/.
@@ -133,7 +136,7 @@ Deployment verification will be conducted via https://permissionless.gearbox.fou
 | **Critical** | 0 |
 | **High**     | 0 |
 | **Medium**   | 1 |
-| **Low**      | 5 |
+| **Low**      | 8 |
 
 ## 2. Findings Report
 
@@ -170,7 +173,7 @@ In `KodiakIslandGatewayAdapter.setIslandStatusBatch` if a `configurator` attempt
 ```
 
 This issue is classified as **Medium** severity because while funds are not at risk, the bug blocks legitimate swap operations, causing significant disruption to protocol functionality and user experience.
-<br/>
+
 ##### Recommendation  
 We recommend assigning the correct status:
 ```diff
@@ -182,8 +185,6 @@ We recommend assigning the correct status:
 --  _islandStatus[islands[i].island] = IslandStatus.EXIT_ONLY;
 ++  _islandStatus[islands[i].island] = IslandStatus.SWAP_AND_EXIT_ONLY;
 ```
-
-
 
 ---
 
@@ -206,7 +207,7 @@ if (balance0 == 0) {
 ```
 
 As a result, `lpAmount` is never updated in these cases, and the function always returns the default value (zero). This leads to incorrect LP token estimation and may break integrations or UI logic relying on this calculation.
-<br/>
+
 ##### Recommendation  
 We recommend replacing the `==` operator with the assignment operator `=` in both branches to ensure `lpAmount` is correctly set:
 
@@ -219,8 +220,6 @@ if (balance0 == 0) {
 ++  lpAmount = depositAmount0 * totalSupply / balance0;
 }
 ```
-
-
 
 ---
 
@@ -268,7 +267,6 @@ function setIslandStatusBatch(
 
 This unified approach fixes the missing mask check and also reduces code duplication and improves readability and maintainability.
 
-
 ---
 
 #### 3. Use of Revert Strings Instead of Custom Errors  
@@ -288,10 +286,9 @@ if (amountOut < minAmountOut) {
 Using revert strings increases gas costs because the entire error string is stored in the contract bytecode and included in the revert data.
 
 Switching to custom errors is more gas efficient as they encode errors with selectors and optional parameters, reducing deployment and runtime costs.
-<br/>
+
 ##### Recommendation
 We recommend replacing strings with custom errors.
-
 
 ---
 
@@ -320,10 +317,9 @@ struct Ratios {
 ```
 
 This discrepancy between the comment and the code may lead to confusion and misunderstanding for developers reading or maintaining the contract.
-<br/>
+
 ##### Recommendation  
 We recommend updating the NatSpec comment to accurately reflect all fields returned by the `Ratios` struct, listing all five values to ensure clarity and correctness.
-
 
 ---
 
@@ -334,9 +330,55 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/0d992f9d01f4
 
 ##### Description  
 The functions `setIslandStatusBatch` in `KodiakIslandGatewayAdapter` and `setMultiVaultStatusBatch` in `MellowClaimerAdapter` do not emit any events when configuration changes are made. As a result, off-chain systems and monitoring tools cannot reliably track changes to allowed islands or multi-vaults, which may hinder transparency and auditing.
-<br/>
+
 ##### Recommendation  
 We recommend emitting appropriate events in both `setIslandStatusBatch` and `setMultiVaultStatusBatch` functions.
+
+---
+
+#### 6. Contract Deployment Will Revert If Asset Is USDT Due To `approve` Usage
+##### Status  
+Fixed in https://github.com/Gearbox-protocol/periphery-v3/commit/974034013e36853e5d001b762cc3a74a36037149
+
+##### Description  
+The `LiquidityMigrator` contract will fail to deploy if the underlying asset of `poolTo` is USDT (or other tokens that don’t return a `bool` from `approve`). This happens because the contract uses direct `IERC20.approve()` calls, which expect a `bool` return value, while USDT’s `approve()` function does not return any value.
+
+##### Recommendation  
+We recommend using the `forceApprove()` function from the **SafeERC20** library by OpenZeppelin.
+
+
+---
+
+#### 7. Typo In Code Comment
+##### Status  
+Fixed in https://github.com/Gearbox-protocol/periphery-v3/commit/974034013e36853e5d001b762cc3a74a36037149
+
+##### Description  
+There is a typo in the code comment on line 40 of the `LiquidityMigrator` contract. 
+
+```solidity
+// Shares are redeemedfrom `poolFrom`,
+// which returns the amount of assets withdrawn
+```
+The word `redeemedfrom` should be corrected to `redeemed from`.
+
+##### Recommendation  
+We recommend fixing the typo.
+
+
+
+---
+
+#### 8. Asset Compatibility Not Verified Between Source and Destination Pools
+##### Status  
+Fixed in https://github.com/Gearbox-protocol/periphery-v3/commit/974034013e36853e5d001b762cc3a74a36037149
+
+##### Description  
+The `LiquidityMigrator` contract does not verify that the underlying assets of `poolFrom` and `poolTo` are the same during construction.
+
+##### Recommendation  
+We recommend adding validation in the constructor to ensure that both pools use the same underlying asset.
+
 
 
 ---
