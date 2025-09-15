@@ -1,11 +1,11 @@
-# P2P.org SSV Integration Diff Audit Report
+# P2P.org SSV Integration Security Audit Report
 
 ###### tags: `P2P.org`
 
 ## 1. INTRODUCTION
 
 ### 1.1 Disclaimer
-The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. The audit documentation is for discussion purposes only. The information presented in this report is confidential and privileged. If you are reading this report, you agree to keep it confidential, not to copy, disclose or disseminate without the agreement of the Client. If you are not the intended recipient(s) of this document, please note that any disclosure, copying or dissemination of its content is strictly forbidden.
+The audit makes no statements or warranties about utility of the code, safety of the code, suitability of the business model, investment advice, endorsement of the platform or its products, regulatory regime for the business model, or any other statements about fitness of the contracts to purpose, or their bug free status. 
 
 
 ### 1.2 Security Assessment Methodology
@@ -29,7 +29,7 @@ A group of auditors are involved in the work on the audit. The security engineer
 * Manual code check for vulnerabilities listed on the Contractor's internal checklist. The Contractor's checklist is constantly updated based on the analysis of hacks, research, and audit of the clients' codes.
 * Code check with the use of static analyzers (i.e Slither, Mythril, etc).
 
-
+***
 
 ##### Stage goal 
 Eliminate typical vulnerabilities (e.g. reentrancy, gas limit, flash loan attacks etc.).
@@ -62,7 +62,7 @@ Detect inconsistencies with the desired model.
 * Upon completion of the bug fixing, the auditors double-check each fix and assign it a specific status, providing a proof link to the fix.
 * A re-audited report is issued. 
 
-
+***
 
 ##### Stage goals
 * Verify the fixed code version with all the recommendations and its statuses.
@@ -100,12 +100,12 @@ Fixed        | Recommended fixes have been made to the project code and no longe
 Acknowledged | The Customer is aware of the finding. Recommendations for the finding are planned to be resolved in the future.
 
 
-
+***
 
 ### 1.3 Project Overview
 The audited scope encompasses several smart contracts designed to deposit ETH to validators and integrate with the SSV Network project. The P2pSsvProxyFactory is responsible for deploying the P2pSsvProxy contract, serving as the entry point for creating the initial deposit of validator stakes and their registration in the SSV Network. Meanwhile, the P2pSsvProxy contract is dedicated to interacting with the SSV Network's functions and managing operator clusters.
 
-
+***
 
 ### 1.4 Project Dashboard
 
@@ -115,7 +115,7 @@ Title | Description
 --- | ---
 Client             | P2P.org
 Project name       | SSV Integration
-Timeline           | November 14 2023 - July 02 2024
+Timeline           | November 14 2023 - September 12 2025
 Number of Auditors | 3
 
 #### Project Log
@@ -126,6 +126,7 @@ Date | Commit Hash | Note
 27.11.2023 | 88e3ecae57e70410ef0ea482ba10d8f541aeac59 | Commit for the re-audit
 19.06.2024 | cfd0a114c760bc4d87121b1c38893f2110f0d474 | Commit for the diff-audit
 28.06.2024 | dfc3e024a3f0779642b43d39ca321cbcf0eb8605 | Commit for the re-audit #2
+12.09.2025 | 44cf9bed8625f594495e8ec3526f6bf5f68bc515 | Commit with updates
 
 #### Project Scope
 The audit covered the following files:
@@ -153,15 +154,22 @@ Contract | Address | Comment
 P2pSsvProxyFactory | [0x10f4ec919e3e692cb79301e58a7055c783630dfc](https://etherscan.io/address/0x10f4ec919e3e692cb79301e58a7055c783630dfc) | 
 P2pSsvProxy | [0xbd057f7778485da79c40b252bb09cf1f163d2365](https://etherscan.io/address/0xbd057f7778485da79c40b252bb09cf1f163d2365) | 
 
-**Commit dfc3e024a3f0779642b43d39ca321cbcf0eb8605** (latest version)
+**Commit dfc3e024a3f0779642b43d39ca321cbcf0eb8605** (previous version)
 
 Contract | Address | Comment
  -- | -- | --
 P2pSsvProxyFactory | [0xcb924D4BE3Ff04B2d2116fE116138950373111d9](https://etherscan.io/address/0xcb924D4BE3Ff04B2d2116fE116138950373111d9) | 
 P2pSsvProxy | [0xec17A02B2A8b0C291C0DddE2a00Ca24477c17ED5](https://etherscan.io/address/0xec17A02B2A8b0C291C0DddE2a00Ca24477c17ED5) | 
 
+**Commit 44cf9bed8625f594495e8ec3526f6bf5f68bc515** (latest version)
+
+Contract | Address | Comment
+ -- | -- | --
+P2pSsvProxyFactory | [0x5ed861aec31cCB496689FD2E0A1a3F8e8D7B8824](https://etherscan.io/address/0x5ed861aec31cCB496689FD2E0A1a3F8e8D7B8824) | 
+P2pSsvProxy | [0xfdA97AA834c7b65B2AE6e358BE8B11cC28F6CA3f](https://etherscan.io/address/0xfdA97AA834c7b65B2AE6e358BE8B11cC28F6CA3f) |
 
 
+***
 
 ### 1.5 Summary of findings
 
@@ -172,7 +180,7 @@ HIGH    | 1
 MEDIUM  | 1
 LOW     | 9
 
-
+***
 
 ### 1.6 Conclusion
 During the audit, 1 high, 1 medium, and 4 low severity findings have been discovered, confirmed, and either fixed or acknowledged by the developers. An acknowledged finding does not impact the overall security of the project.
@@ -191,7 +199,7 @@ During the additional diff audit (comparing commit `cfd0a114c760bc4d87121b1c3889
 
 The code review during the diff audit confirms that the examined components and integrations are secure and implemented correctly according to the specified standards. No critical, high or medium severity vulnerabilities were identified during the analysis. Only findings affecting code optimization and readability, but not security, were found.
 
-
+***
 
 ## 2. FINDINGS REPORT
 
@@ -210,7 +218,7 @@ This vulnerability is classified as `high` severity due to its potential to bloc
 ##### Recommendation
 We recommend limiting the maximum value of `SSVToken` tokens transferred to a reasonable amount to prevent system block due to actions of unprivileged users and to enhance the system's overall security.
 
-
+***
 
 
 ### 2.3 Medium
@@ -225,7 +233,7 @@ This issue is classified as `medium` due to the risks associated with the irreve
 ##### Recommendation
 To mitigate this risk, it is recommended to introduce `onlyOwner` functions that enable the revocation of rights for both the `client` and `operator` in invoking specific functions of the `SsvNetwork` through `P2pSsvProxy`.
 
-
+***
 
 ### 2.4 Low
 #### 1. Redundant event emission in `P2pSsvProxy.fallback`
@@ -238,7 +246,7 @@ The current implementation emits an event before a `revert` operation. However, 
 ##### Recommendation
 We recommend removing this event emission.
 
-
+***
 
 #### 2. Redundant parameter in `P2pSsvProxy.registerValidators` function
 ##### Status
@@ -250,7 +258,7 @@ This function, which is only accessible from the `factory`, is invoked within th
 ##### Recommendation
 We recommend removing the `feeDistributor` parameter from the `registerValidators` function and utilizing the existing `s_feeDistributor` storage variable instead.
 
-
+***
 
 #### 3. Repeated assignment of the same value in the loop
 ##### Status
@@ -262,7 +270,7 @@ The problem arises because the `withdrawCredentials` variable is repeatedly assi
 ##### Recommendation
 We recommend moving the declaration of the `withdrawCredentials` variable outside the loop.
 
-
+***
 
 #### 4. Mitigating error risks in setting `SsvToken` exchange rate
 ##### Status
@@ -350,7 +358,7 @@ We recommend developing a more optimal solution to save gas.
 ##### Client's commentary
 > Fixed in https://github.com/p2p-org/p2p-ssv-proxy/commit/dfc3e024a3f0779642b43d39ca321cbcf0eb8605.
 
-
+***
 
 ## 3. ABOUT MIXBYTES
 MixBytes is a team of blockchain developers, auditors and analysts keen on decentralized systems. We build opensource solutions, smart contracts and blockchain protocols, perform security audits, work on benchmarking and software testing solutions, do research and tech consultancy.
