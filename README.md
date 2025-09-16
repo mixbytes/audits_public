@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Instadapp | Jupiter Lend Vaults | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/Jupiter%20Lend%20Vaults%20on%20Solana%20Security%20Audit%20Report.pdf) | 2025-09-16 |
 | Gearbox Protocol | Kodiak & Mellow Adapters | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/Gearbox%20Kodiak%20&%20Mellow%20Adapters%20Security%20Audit%20Report.pdf) | 2025-09-12 |
 | P2P.org | SSV Integration Diff Audit (v1) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration%20Diff%20Audit%20(v1)/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration%20Diff%20Audit%20(v1)/P2P.org%20SSV%20Integration%20Security%20Audit%20Report.pdf) | 2025-09-12 |
 | Lido | WstETH Staker | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH%20Staker/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/WstETH%20Staker/Lido%20WstETH%20Staker%20Security%20Audit%20Report.pdf) | 2025-09-10 |
@@ -196,7 +197,6 @@
 | POA Network | POA Consensus | [link](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | N/A | 2018-05-02 |
 | Ubcoin | UBCoinToken | [link](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | N/A | 2018-02-21 |
 | KickICO | KickICO | [link](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | N/A | 2017-09-04 |
-| Instadapp | Jupiter Lend Vaults | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/README.md) | N/A | N/A |
 
 
 ## Refresh reports list
