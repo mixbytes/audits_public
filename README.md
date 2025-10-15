@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Lido | Lido EasyTrack CSM v2 | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20EasyTrack%20CSM%20v2/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20EasyTrack%20CSM%20v2/Lido%20Easy%20Track%20CSM%20v2%20Security%20Audit%20Report.pdf) | 2025-09-19 |
 | NUTS Finance | Tapio | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Tapio/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Tapio/NUTS%20Tapio%20Security%20Audit%20Report.pdf) | 2025-09-19 |
 | NUTS Finance | Pike | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025-09-18 |
 | Instadapp | Jupiter Lend Vaults | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/Jupiter%20Lend%20Vaults%20on%20Solana%20Security%20Audit%20Report.pdf) | 2025-09-16 |
