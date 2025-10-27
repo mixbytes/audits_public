@@ -61,39 +61,39 @@ Client Name| Jupiter Lend
 Project Name| Vault
 Type     | Rust
 Platform | SVM
-Timeline | 28.07.2025 - 10.09.2025
+Timeline | 28.07.2025 - 14.10.2025
     
 #### Scope of Audit
 
 File | Link
 --- | ---
-programs/vaults/src/events.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/events.rs
-programs/vaults/src/constants.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/constants.rs
-programs/vaults/src/module/user.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs
-programs/vaults/src/module/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/mod.rs
-programs/vaults/src/module/admin.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/admin.rs
-programs/vaults/src/lib.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/lib.rs
-programs/vaults/src/invokes/liquidity_layer.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/liquidity_layer.rs
-programs/vaults/src/invokes/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/mod.rs
-programs/vaults/src/invokes/oracle.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/oracle.rs
-programs/vaults/src/invokes/mint.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/mint.rs
-programs/vaults/src/utils/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/mod.rs
-programs/vaults/src/utils/validate.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/validate.rs
-programs/vaults/src/utils/operate.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/operate.rs
-programs/vaults/src/utils/liquidate.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/liquidate.rs
-programs/vaults/src/state/branch.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/branch.rs
-programs/vaults/src/state/vault_state.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/vault_state.rs
-programs/vaults/src/state/tick_has_debt.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/tick_has_debt.rs
-programs/vaults/src/state/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/mod.rs
-programs/vaults/src/state/state.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/state.rs
-programs/vaults/src/state/seeds.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/seeds.rs
-programs/vaults/src/state/position.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/position.rs
-programs/vaults/src/state/tick.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/tick.rs
-programs/vaults/src/state/structs.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/structs.rs
-programs/vaults/src/state/vault_config.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/vault_config.rs
-programs/vaults/src/state/context.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/context.rs
-programs/vaults/src/errors.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/errors.rs
-programs/vaults/src/module/view.rs | https://github.com/Instadapp/fluid-contracts-solana/commit/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/view.rs
+programs/vaults/src/events.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/events.rs
+programs/vaults/src/constants.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/constants.rs
+programs/vaults/src/module/user.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs
+programs/vaults/src/module/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/mod.rs
+programs/vaults/src/module/admin.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/admin.rs
+programs/vaults/src/lib.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/lib.rs
+programs/vaults/src/invokes/liquidity_layer.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/liquidity_layer.rs
+programs/vaults/src/invokes/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/mod.rs
+programs/vaults/src/invokes/oracle.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/oracle.rs
+programs/vaults/src/invokes/mint.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/invokes/mint.rs
+programs/vaults/src/utils/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/mod.rs
+programs/vaults/src/utils/validate.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/validate.rs
+programs/vaults/src/utils/operate.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/operate.rs
+programs/vaults/src/utils/liquidate.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/utils/liquidate.rs
+programs/vaults/src/state/branch.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/branch.rs
+programs/vaults/src/state/vault_state.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/vault_state.rs
+programs/vaults/src/state/tick_has_debt.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/tick_has_debt.rs
+programs/vaults/src/state/mod.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/mod.rs
+programs/vaults/src/state/state.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/state.rs
+programs/vaults/src/state/seeds.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/seeds.rs
+programs/vaults/src/state/position.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/position.rs
+programs/vaults/src/state/tick.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/tick.rs
+programs/vaults/src/state/structs.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/structs.rs
+programs/vaults/src/state/vault_config.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/vault_config.rs
+programs/vaults/src/state/context.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/context.rs
+programs/vaults/src/errors.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/errors.rs
+programs/vaults/src/module/view.rs | https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/view.rs
     
 #### Versions Log
 
@@ -101,9 +101,18 @@ Date                                      | Commit Hash | Note
 -------------------------------------------| --- | ---
 28.07.2025 | ea55b3f63a345889228d30feb19a4e7f681f9435 | Initial Commit
 09.09.2025 | 9170ece98c09d52b437e6bc44ff48a8edbbb9d94 | Commit for Re-audit
+13.10.2025 | 7158d7c45f6ee5253b0aede1c54a8de16ecda483 | Commit for Re-audit
+24.10.2025 | 64f8528b8a778d2a13c89843bfa289c6c31c19e2 | Commit with Updates
+
 ***    
 #### Mainnet Deployments
-The deployment verification will be conducted later after the full deployment of the protocol into the mainnet.
+
+Program| Address | Blockchain
+--- | --- | ---
+Jupiter Lend Borrow | [jupr81YtYssSyPt8jbnGuiWon5f6x9TcDEFxYe3Bdzi](https://solscan.io/account/jupr81YtYssSyPt8jbnGuiWon5f6x9TcDEFxYe3Bdzi) | Solana Mainnet
+
+The deployed program hash matches the locally built executable from the audited commit. 
+Hash: `0f51637ce74f4d0089154840b53424ae48585bc17744796fb959ec0508a10a31`.
     
 ### 1.4 Security Assessment Methodology
     
@@ -268,7 +277,7 @@ Several code quality issues were identified in the codebase:
     The error codes incorrectly use "CPY" instead of "CPI" (Cross Program Invocation), which is the standard Solana terminology.
 
     These are code quality issues that don't affect functionality but reduce code clarity and maintainability. The misleading comment could confuse developers about the expected account initialization behavior.
-
+<br/>
 ##### Recommendation
 1. Update the comment in `context.rs` to accurately reflect that `init_if_needed` is used and explain why it's necessary
 2. Fix the typo `is_iquidate` → `is_liquidate` in `oracle.rs`
@@ -290,7 +299,7 @@ Fixed in https://github.com/Instadapp/fluid-contracts-solana/commit/9170ece98c09
 The `Operate` struct [requires](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/state/context.rs#L309-L317) `signer_supply_token_account` to be already initialized. As a result, if the position NFT is transferred or delegated to an account that does not already have an associated token account for the supply token, the `operate` call will revert during account validation. This creates a denial-of-service condition for legitimate ownership/delegation flows. To overcome this problem, manual creation of an ATA is required.
 
 The issue is classified as **Low** severity because it can block position operations under common scenarios (transfer/delegation) without directly risking loss of funds.
-
+<br/>
 ##### Recommendation
 We recommend adding `init_if_needed` to `signer_supply_token_account` or making it optional.
 
@@ -309,7 +318,7 @@ This issue has been identified within the `absorb` function.
 The function can revert if the branch account with id == 0 is not supplied in the instruction context. When the current branch is the base branch, `connected_minima_tick` [may initially be](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/admin.rs#L209) `i32::MIN`, which causes the logic to set `branch_data.id` to 0 and later attempt to load the branch with id 0 from the provided accounts ([1](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs#L931), [2](https://github.com/Instadapp/fluid-contracts-solana/blob/ea55b3f63a345889228d30feb19a4e7f681f9435/programs/vaults/src/module/user.rs#L967)). If that account is not included, the call fails and the absorption flow reverts. Normally branch numbers start with 1, so to bypass the problem it will be required to create a separate dummy account.
 
 The issue is classified as **Low** severity because it can cause a denial-of-service for the absorption process (potentially blocking liquidation progress) without directly compromising funds.
-
+<br/>
 ##### Recommendation
 We recommend normalizing base-branch initialization, setting `connected_minima_tick` to `i32::MIN` in the `reset_branch_data` function.
 
