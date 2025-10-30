@@ -52,7 +52,7 @@ Client Name| Gearbox
 Project Name| Kodiak & Mellow Adapters
 Type| Solidity
 Platform| EVM
-Timeline| 22.07.2025 - 12.09.2025
+Timeline| 22.07.2025 - 30.10.2025
 ***    
 #### Scope of Audit
 
@@ -75,6 +75,7 @@ Date                                      | Commit Hash | Note
 29.07.2025 | 0d992f9d01f4f936b13ba242e7b6ffaf2a88a976 | Re-audit commit (integrations-v3)
 11.09.2025 | cc8723b148eb6fbc9e6a0c13169fc3929449824d | Audit scope commit for LiquidityMigrator
 12.09.2025 | 974034013e36853e5d001b762cc3a74a36037149 | Re-audit commit for LiquidityMigrator
+30.10.2025 | 386a53c09899d4cddd44a678b1fcf789f521eac3 | Commit with updates for the KodiakIslandPriceFeed (oracles-v3)
 
 #### Mainnet Deployments
 Deployment verification will be conducted via https://permissionless.gearbox.foundation/bytecode/.
@@ -173,7 +174,7 @@ In `KodiakIslandGatewayAdapter.setIslandStatusBatch` if a `configurator` attempt
 ```
 
 This issue is classified as **Medium** severity because while funds are not at risk, the bug blocks legitimate swap operations, causing significant disruption to protocol functionality and user experience.
-
+<br/>
 ##### Recommendation  
 We recommend assigning the correct status:
 ```diff
@@ -207,7 +208,7 @@ if (balance0 == 0) {
 ```
 
 As a result, `lpAmount` is never updated in these cases, and the function always returns the default value (zero). This leads to incorrect LP token estimation and may break integrations or UI logic relying on this calculation.
-
+<br/>
 ##### Recommendation  
 We recommend replacing the `==` operator with the assignment operator `=` in both branches to ensure `lpAmount` is correctly set:
 
@@ -286,7 +287,7 @@ if (amountOut < minAmountOut) {
 Using revert strings increases gas costs because the entire error string is stored in the contract bytecode and included in the revert data.
 
 Switching to custom errors is more gas efficient as they encode errors with selectors and optional parameters, reducing deployment and runtime costs.
-
+<br/>
 ##### Recommendation
 We recommend replacing strings with custom errors.
 
@@ -317,7 +318,7 @@ struct Ratios {
 ```
 
 This discrepancy between the comment and the code may lead to confusion and misunderstanding for developers reading or maintaining the contract.
-
+<br/>
 ##### Recommendation  
 We recommend updating the NatSpec comment to accurately reflect all fields returned by the `Ratios` struct, listing all five values to ensure clarity and correctness.
 
@@ -330,7 +331,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/0d992f9d01f4
 
 ##### Description  
 The functions `setIslandStatusBatch` in `KodiakIslandGatewayAdapter` and `setMultiVaultStatusBatch` in `MellowClaimerAdapter` do not emit any events when configuration changes are made. As a result, off-chain systems and monitoring tools cannot reliably track changes to allowed islands or multi-vaults, which may hinder transparency and auditing.
-
+<br/>
 ##### Recommendation  
 We recommend emitting appropriate events in both `setIslandStatusBatch` and `setMultiVaultStatusBatch` functions.
 
@@ -342,7 +343,7 @@ Fixed in https://github.com/Gearbox-protocol/periphery-v3/commit/974034013e36853
 
 ##### Description  
 The `LiquidityMigrator` contract will fail to deploy if the underlying asset of `poolTo` is USDT (or other tokens that don’t return a `bool` from `approve`). This happens because the contract uses direct `IERC20.approve()` calls, which expect a `bool` return value, while USDT’s `approve()` function does not return any value.
-
+<br/>
 ##### Recommendation  
 We recommend using the `forceApprove()` function from the **SafeERC20** library by OpenZeppelin.
 
@@ -361,7 +362,7 @@ There is a typo in the code comment on line 40 of the `LiquidityMigrator` contra
 // which returns the amount of assets withdrawn
 ```
 The word `redeemedfrom` should be corrected to `redeemed from`.
-
+<br/>
 ##### Recommendation  
 We recommend fixing the typo.
 
@@ -375,7 +376,7 @@ Fixed in https://github.com/Gearbox-protocol/periphery-v3/commit/974034013e36853
 
 ##### Description  
 The `LiquidityMigrator` contract does not verify that the underlying assets of `poolFrom` and `poolTo` are the same during construction.
-
+<br/>
 ##### Recommendation  
 We recommend adding validation in the constructor to ensure that both pools use the same underlying asset.
 
