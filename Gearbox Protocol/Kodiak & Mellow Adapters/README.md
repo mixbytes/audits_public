@@ -52,7 +52,7 @@ Client Name| Gearbox
 Project Name| Kodiak & Mellow Adapters
 Type| Solidity
 Platform| EVM
-Timeline| 22.07.2025 - 30.10.2025
+Timeline| 22.07.2025 - 31.10.2025
 ***    
 #### Scope of Audit
 
@@ -75,7 +75,7 @@ Date                                      | Commit Hash | Note
 29.07.2025 | 0d992f9d01f4f936b13ba242e7b6ffaf2a88a976 | Re-audit commit (integrations-v3)
 11.09.2025 | cc8723b148eb6fbc9e6a0c13169fc3929449824d | Audit scope commit for LiquidityMigrator
 12.09.2025 | 974034013e36853e5d001b762cc3a74a36037149 | Re-audit commit for LiquidityMigrator
-30.10.2025 | 386a53c09899d4cddd44a678b1fcf789f521eac3 | Commit with updates for the KodiakIslandPriceFeed (oracles-v3)
+31.10.2025 | 64a386a25d24ad5984926a3f624c93c7c32c92c9 | Commit with updates for the KodiakIslandPriceFeed (oracles-v3)
 
 #### Mainnet Deployments
 Deployment verification will be conducted via https://permissionless.gearbox.foundation/bytecode/.
