@@ -146,7 +146,7 @@ If the Midas vault admin calls `rejectRequest()` on a pending redemption request
 Additionally, if mTokens are sent to the credit account or any address other than the Gateway, `MidasRedemptionVaultGateway.pendingTokenOutAmount()` will continue to show a non-zero result despite the request being rejected, inflating the phantom token's balance and the credit account's collateral value.
 
 This issue is classified as **High** severity because, despite being caused by the Midas admin, it can lead to several serious consequences: permanently blocked user funds, inability to recover mTokens from the Gateway, and inflated collateral calculations.
-<br/>
+
 ##### Recommendation
 We recommend implementing functionality to handle such cases, allowing the system to clear rejected requests and transfer tokens out of the Gateway.
 
@@ -168,7 +168,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/cd8f68dd72cc
 
 ##### Description
 `MidasRedemptionVaultAdapter.withdrawPhantomToken(token, amount)` only checks that a phantom is registered for `token` and does not verify that the pending redemption’s `tokenOut` matches the expected underlying. Integration may receive a different token than expected.
-<br/>
+
 ##### Recommendation
 We recommend additionally checking that the redemption’s `tokenOut` in Midas equals `phantomTokenToOutputToken[token]`; on mismatch, revert with a custom error.
 
@@ -188,7 +188,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/cd8f68dd72cc
 Both `MidasIssuanceVaultAdapter._convertToE18()` and `MidasRedemptionVaultAdapter._convertToE18()` perform unnecessary multiplication and division operations when the token already has 18 decimals. For tokens that use 18 decimals, the calculation `amount * WAD / tokenUnit` becomes `amount * 1e18 / 1e18 = amount`, which is redundant.
 
 Similarly, `MidasRedemptionVaultGateway._calculateTokenOutAmount()` performs unnecessary operations when the output token has 18 decimals. 
-<br/>
+
 ##### Recommendation
 We recommend adding an early return for 18-decimal tokens to skip unnecessary calculations.
 
@@ -206,7 +206,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/cd8f68dd72cc
 `MidasRedemptionVaultGateway.withdraw()` lacks a zero-amount check, allowing users to call the function with `amount = 0` as a no-op. When called with zero, the function will still validate the pending redemption, fetch request data from Midas vault, check status, calculate `availableAmount`, and transfer 0 tokens, all while consuming gas unnecessarily.
 
 Adding input validation would prevent accidental zero-amount calls and make the function's intent clearer. 
-<br/>
+
 ##### Recommendation
 We recommend adding a zero-amount check at the beginning of the `withdraw()` function:
 
@@ -231,7 +231,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/cd8f68dd72cc
 `MidasRedemptionVaultGateway` contract uses string-based revert messages in multiple places.
 
 Since the contract uses Solidity ^0.8.23, which supports custom errors introduced in 0.8.4, these should be replaced with custom errors for gas efficiency and better developer experience. String revert messages consume more gas and are less type-safe compared to custom errors.
-<br/>
+
 ##### Recommendation
 We recommend replacing string-based revert messages with custom errors.
 
@@ -249,7 +249,7 @@ Fixed in https://github.com/Gearbox-protocol/integrations-v3/commit/cd8f68dd72cc
 Some files contain unused imports:
 - contracts/adapters/midas/MidasIssuanceVaultAdapter.sol: ICreditManagerV3
 - contracts/adapters/midas/MidasRedemptionVaultAdapter.sol: IMidasRedemptionVault
-<br/>
+
 ##### Recommendation
 We recommend removing unused imports.
 
@@ -268,7 +268,7 @@ In `MidasRedemptionVaultAdapter.redeemInstantDiff()`, the `rateMinRAY` parameter
 - `rateMinRAY = amountOut(tokenOut_decimals) / amountIn(mToken_decimals) * 1e27`, i.e., it must account for decimal differences.
 
 This ambiguity can lead integrators to supply a wrongly scaled `rateMinRAY` (e.g., without adjusting for decimals), causing excessive slippage rejections or unexpected reverts.
-<br/>
+
 ##### Recommendation
 We recommend clarifying NatSpec in Midas adapters
 
