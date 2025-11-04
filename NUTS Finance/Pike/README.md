@@ -169,11 +169,11 @@ src/oracles/ChainlinkOracleComposite.sol | https://github.com/nutsfinance/pike-l
 File name| Contract deployed on mainnet | Comment
 --- | --- | ---
 ERC1967Proxy.sol | [0xcB53d44FF0b466daebCcE311A8F7bB1DF569AceD](https://sonicscan.org/address/0xcB53d44FF0b466daebCcE311A8F7bB1DF569AceD) |
-Factory.sol | [0xe8F5164fA1B59587003744E3b96738a4248530B1](https://sonicscan.org/address/0xe8F5164fA1B59587003744E3b96738a4248530B1) |
+Factory.sol | [0xe8F5164fA1B59587003744E3b96738a4248530B1](https://sonicscan.org/address/0xe8F5164fA1B59587003744E3b96738a4248530B1) | 
 BeaconProxy.sol | [0x069917BfCda2411B74b8adc228de016dAd8Cbd12](https://sonicscan.org/address/0x069917BfCda2411B74b8adc228de016dAd8Cbd12) | OracleEngine Proxy
-OracleEngine.sol | [0x65D6c833e36B5C47f194A68C4bA138b4019D17a0](https://sonicscan.org/address/0x65D6c833e36B5C47f194A68C4bA138b4019D17a0) |
+OracleEngine.sol | [0x65D6c833e36B5C47f194A68C4bA138b4019D17a0](https://sonicscan.org/address/0x65D6c833e36B5C47f194A68C4bA138b4019D17a0) | 
 BeaconProxy.sol | [0x46f5AEB237219A08d7eD6B71aE5518253EEDa952](https://sonicscan.org/address/0x46f5AEB237219A08d7eD6B71aE5518253EEDa952) | RiskEngine Proxy
-RiskEngineModule.sol | [0x0dF841a828eaa095BeD77BBe75c7eae2438dD28b](https://sonicscan.org/address/0x0dF841a828eaa095BeD77BBe75c7eae2438dD28b) |
+RiskEngineModule.sol | [0x0dF841a828eaa095BeD77BBe75c7eae2438dD28b](https://sonicscan.org/address/0x0dF841a828eaa095BeD77BBe75c7eae2438dD28b) | 
 BeaconProxy.sol | [0x13E795d0cb62E9E23116F10B27E029ef447F4801](https://sonicscan.org/address/0x13E795d0cb62E9E23116F10B27E029ef447F4801) | Timelock Proxy
 Timelock.sol | [0xa008cB665F7dc3024F58B59d69cc0b003b7caf02](https://sonicscan.org/address/0xa008cB665F7dc3024F58B59d69cc0b003b7caf02) |
 InitialModuleBeacon.sol | [0x5e8A804089619FfC417a6814728082Ddd1E7BE88](https://sonicscan.org/address/0x5e8A804089619FfC417a6814728082Ddd1E7BE88) |
@@ -183,6 +183,27 @@ PTokenModule.sol | [0xc7DbBC3304286489721308ed60b5D5EA62743E79](https://sonicsca
 BeaconProxy.sol | [0xDcE5e506086E510d0f30Be0A37e5CdfbD305d725](https://sonicscan.org/address/0xDcE5e506086E510d0f30Be0A37e5CdfbD305d725) | psts market
 BeaconProxy.sol | [0x9A2d3d3B45496049290EA8C2Fa57aE8DB888bB99](https://sonicscan.org/address/0x9A2d3d3B45496049290EA8C2Fa57aE8DB888bB99) | pws market
 BeaconProxy.sol | [0xbb2b89a15c50df1b997155284CC135A1FE8C01Ee](https://sonicscan.org/address/0xbb2b89a15c50df1b997155284CC135A1FE8C01Ee) | pwspa_ws_sts market
+
+**Ethereum: mainnet**
+File name| Contract deployed on mainnet | Comment
+--- | --- | ---
+ERC1967Proxy.sol | [0xcBa3d3A0935eeA5AEB23BbF3144bA8b343d28fC3](https://etherscan.io/address/0xcBa3d3A0935eeA5AEB23BbF3144bA8b343d28fC3) | Factory Proxy
+BeaconProxy.sol | [0xD872aCCE0D3200f511772BE3dAfe75790A5d08e9](https://etherscan.io/address/0xD872aCCE0D3200f511772BE3dAfe75790A5d08e9) | RiskEngine Diamond Proxy
+BeaconProxy.sol | [0xd54834A464afF7bb7f19B42aa815742a1e87964b](https://etherscan.io/address/0xd54834A464afF7bb7f19B42aa815742a1e87964b) | Timelock Proxy
+BeaconProxy.sol | [0x64163EAe4D38CCf66502d0402348960A5E1D0d22](https://etherscan.io/address/0x64163EAe4D38CCf66502d0402348960A5E1D0d22) | pjrUSDe market
+BeaconProxy.sol | [0xA4760B6EDA34E065eD8bD16a8F6D56852f4865e0](https://etherscan.io/address/0xA4760B6EDA34E065eD8bD16a8F6D56852f4865e0) | pliquidUSD market
+BeaconProxy.sol | [0x60169b1a3fB9C3781BE462D75E7F2a9d19c1cC35](https://etherscan.io/address/0x60169b1a3fB9C3781BE462D75E7F2a9d19c1cC35) | pmHYPER market
+BeaconProxy.sol | [0x2fAb9cD79072CbB5FA7Fb5d605d29308D9Cae6F5](https://etherscan.io/address/0x2fAb9cD79072CbB5FA7Fb5d605d29308D9Cae6F5) | pPT-srUSDe-15JAN2026 market
+BeaconProxy.sol | [0x6BE700DB6350E60632226759E36b1789E192f064](https://etherscan.io/address/0x6BE700DB6350E60632226759E36b1789E192f064) | pRLP market
+BeaconProxy.sol | [0xCca1FE2c971c2fEF4DCb305bd7b912Ea260f9a63](https://etherscan.io/address/0xCca1FE2c971c2fEF4DCb305bd7b912Ea260f9a63) | pstcUSD market
+BeaconProxy.sol | [0xda8a60E9e5908fCd099720e53815790b8DC74c13](https://etherscan.io/address/0xda8a60E9e5908fCd099720e53815790b8DC74c13) | pUSDC market
+BeaconProxy.sol | [0x4C3f260b92c1A26F14dF1873634CE2efd585F3b8](https://etherscan.io/address/0x4C3f260b92c1A26F14dF1873634CE2efd585F3b8) | pwsrUSD market
+Factory.sol | [0x130f99dce1ab753b171c99e9107ce7b52274355b](https://etherscan.io/address/0x130f99dce1ab753b171c99e9107ce7b52274355b)
+RBACModule.sol | [0xa6349caf69cc0bfcf5697f9b3047bccb6777a97c](https://etherscan.io/address/0xa6349caf69cc0bfcf5697f9b3047bccb6777a97c)
+InitialModuleBeacon.sol | [0xb2312e9671a22f4ecbd93bab0915c57d43df1826](https://etherscan.io/address/0xb2312e9671a22f4ecbd93bab0915c57d43df1826)
+RiskEngineModule.sol | [0xd2554be41ab0205a8514e0efe05f94e48e495637](https://etherscan.io/address/0xd2554be41ab0205a8514e0efe05f94e48e495637)
+PTokenModule.sol | [0x0f660826bcab933a22bc2088584d1adb65d169a1](https://etherscan.io/address/0x0f660826bcab933a22bc2088584d1adb65d169a1)
+DoubleJumpRateModel.sol | [0x86c7f6c3b00368105cc4f2355febb3592496b3f7](https://etherscan.io/address/0x86c7f6c3b00368105cc4f2355febb3592496b3f7)
 
 ***
 
