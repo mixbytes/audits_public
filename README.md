@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Velodrome | CLGaugeFactory | [link](https://github.com/mixbytes/audits_public/blob/master/Velodrome/CLGaugeFactory/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Velodrome/CLGaugeFactory/Velodrome%20CLGaugeFactory%20Security%20Audit%20Report.pdf) | 2025-11-05 |
 | NUTS Finance | Pike | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025-11-04 |
 | Gearbox Protocol | Kodiak & Mellow Adapters | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/Gearbox%20Kodiak%20&%20Mellow%20Adapters%20Security%20Audit%20Report.pdf) | 2025-10-31 |
 | Gearbox Protocol | Gearbox Midas Integration | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Midas%20Integration/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Midas%20Integration/Gearbox%20Midas%20Integration%20Security%20Audit%20Report.pdf) | 2025-10-30 |
