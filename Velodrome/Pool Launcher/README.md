@@ -167,7 +167,7 @@ Fixed in https://github.com/velodrome-finance/pool-launcher/commit/9b340a16356d4
 `Locker.claimFees()` is protected by the `onlyLocked` modifier, which requires `lockedUntil != 0`. Inside `V2Locker.unlock()`, the contract sets `lockedUntil = 0` before transferring the LP tokens to the recipient. During the transfer, the underlying pool credits all accumulated fees to the locker contract. Once the LP tokens are transferred out, the locker can no longer call `claimFees()` because it is no longer locked, leaving those fees permanently stranded.  
 
 A user who forgets to call `claimFees()` before unlocking will lose the entire fee balance earned up to that moment.
-<br/>
+
 ##### Recommendation  
 We recommend claiming swap fees within the `V2Locker.unlock()` function.
 
@@ -185,7 +185,7 @@ Acknowledged
 
 ##### Description  
 Both `CLLockerFactory.lock()` and `V2LockerFactory.lock()` accept a `uint32 _lockUntil` argument but do not validate it against a maximum lock duration. Since `uint32` can represent values up to `type(uint32).max`, a user may inadvertently set the unlock time far in the future. Once the locker is created, the protocol provides no mechanism to accelerate or cancel the unlock. Any LP tokens deposited into such a locker become effectively irretrievable for a very long time.  
-<br/>
+
 ##### Recommendation  
 We recommend introducing a constant (e.g., `MAX_LOCK_DURATION = 4 * 365 days`) and enforcing the following check: 
 
@@ -213,7 +213,7 @@ Fixed in https://github.com/velodrome-finance/pool-launcher/commit/9b340a16356d4
 `V2LockerFactory.lock()` accepts a raw `address _pool` parameter and never verifies that the address is an authentic Velodrome V2 pool produced by the authorised `v2Factory`. A user can therefore pass any ERC-20 contract (or even a non-ERC-20 contract) as `_pool` together with an arbitrary `_lp` amount. 
 
 Although no vulnerabilities have been detected, validating user supplied addresses remains best practice and reduces the chance of hidden issues surfacing later.
-<br/>
+
 ##### Recommendation  
 We recommend validating that `_pool` is registered in the `v2Factory` during locker creation in `V2LockerFactory.lock()` function.
 
@@ -229,7 +229,7 @@ Acknowledged
 
 ##### Description  
 Both `CLLockerFactory.lock()` and `V2LockerFactory.lock()` functions allow creating lockers without enforcing minimum liquidity requirements. Users can lock positions for other owners with minimal or zero liquidity amount. This enables malicious actors to spam the system by creating numerous lockers with dust amounts, potentially overwhelming user interfaces, degrading performance of off-chain indexing systems, and making it difficult for legitimate users to navigate through meaningful positions. The attack cost is minimal as it only requires small amounts of liquidity and gas fees.
-<br/>
+
 ##### Recommendation 
 We recommend implementing minimum liquidity thresholds in both factory contracts to prevent spam attacks. 
 
@@ -252,7 +252,7 @@ IERC20(pool).safeTransfer({ to: _recipient, value: _lp });
 Because the locker has no tokens, the transfer fails and the whole tx reverts. The user is left with a cryptic error and may not understand that they must first call `unstake()`.
 
 The same flaw is present in `CLLocker.unlock()`, where the contract calls `nfpManager.transferFrom()` to move the NFT position while the liquidity remains staked in the gauge. With the position unavailable inside the locker, this transfer likewise reverts and obscures the real cause to the user.
-<br/>
+
 ##### Recommendation  
 We recommend adding an explicit guard at the top of `unlock()`:
 ```solidity
@@ -321,7 +321,7 @@ Fixed in https://github.com/velodrome-finance/pool-launcher/commit/9b340a16356d4
 
 ##### Description  
 The protocol assumes wallets will interact via EIP-7702, wrapping `approve()`, `safeTransferFrom()`, and the `lock()` call into one atomic transaction. If a user does not use this flow (e.g., they pre-transfer LP tokens to the factory and only then call `lock()`), a front-runner can observe the pending tx, call `lock()` first, and capture the tokens. The victim’s transaction then reverts or creates an empty locker while their funds are stolen.
-<br/>
+
 ##### Recommendation  
 We recommend implementing a pull-based pattern where `lock()` performs the `safeTransferFrom()` itself – allowing users to batch `approve() + lock()` in a single wallet action and eliminating the vulnerable intermediate state.
 
@@ -356,7 +356,7 @@ if (bribeAmount1 > 0) {
 ```
 
 When `bribeAmount0 == 0` and / or `bribeAmount1 == 0`, `_bribe` is correctly skipped, but the corresponding `safeTransfer()` is also skipped, leaving the claimed fees in the locker until unlock.
-<br/>
+
 ##### Recommendation  
 We recommend transferring the `claimed` amounts to the owner, regardless of the bribe amount:
 
@@ -397,7 +397,7 @@ share = (_amount * beneficiaryShare) / MAX_BPS;
 This truncation causes small residual amounts to be systematically retained by the locker and not sent to the beneficiary, accumulating error over time in favor of the locker and against the beneficiary. 
 
 In the extreme, frequent calls on small amounts can result in persistent rounding to zero, effectively starving the beneficiary and yielding no rewards to them.
-<br/>
+
 ##### Recommendation
 We recommend tracking and carrying forward rounding remainders per token to ensure the beneficiary eventually receives the exact pro‑rata amount. For example, accumulate the remainder `(_amount * beneficiaryShare) % MAX_BPS` in a per‑token variable and add it to the next calculation, paying out when it crosses 1 unit.
 
@@ -417,7 +417,7 @@ Multiple files include unused imports or redundant `using` directives, which inc
 - `src/extensions/v2/V2Locker.sol`: unused `IV2LockerFactory` import
 - `src/extensions/v2/V2LockerFactory.sol`: unused `EnumerableSet` import and redundant `using` directive
 - `src/extensions/cl/CLLockerFactory.sol`: unused `EnumerableSet` import and redundant `using` directive
-<br/>
+
 ##### Recommendation
 We recommend removing unused imports and redundant `using` directives in the listed files to improve clarity and avoid accidental coupling.
 
@@ -467,7 +467,7 @@ Fixed in https://github.com/velodrome-finance/pool-launcher/commit/9b340a16356d4
 
 ##### Description  
 In the `Locker._claimFees()` function, the contract performs token transfers even when the claimed amounts are zero. This results in unnecessary gas consumption and emits transfer events for zero amounts.
-<br/>
+
 ##### Recommendation 
 We recommend adding zero checks before performing transfers to avoid unnecessary operations.
 
@@ -485,7 +485,7 @@ Fixed in https://github.com/velodrome-finance/pool-launcher/commit/9b340a16356d4
 
 ##### Description  
 The `CLLocker.increaseLiquidity()` function lacks the `nonReentrant` modifier, while other critical functions in the contract properly implement reentrancy protection. This function performs multiple external calls including token transfers via `_fundLocker()`, interactions with the gauge contract for unstaking/restaking, and calls to the NFT position manager for increasing liquidity. The absence of reentrancy protection could allow malicious ERC-20 contracts to re-enter the function during token transfers, potentially leading to unexpected state changes or exploitation of the staking/unstaking logic.
-<br/>
+
 ##### Recommendation 
 We recommend adding the `nonReentrant` modifier to the `increaseLiquidity()` function to maintain consistency with other state-changing functions and prevent potential reentrancy attacks.
 
