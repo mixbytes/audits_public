@@ -302,6 +302,28 @@ audits = await Promise.all(audits.map(async (audit) => {
             audit.push('N/A');
         }
     }
+    
+    // Extract Category from markdown file if it exists
+    let categoryFromMd = 'N/A';
+    if (audit[3] != null) {
+        try {
+            const mdContent = fs.readFileSync(audit[3], 'utf8');
+            // Look for Summary section
+            const summaryMatch = mdContent.match(/####\s+Summary\s+([\s\S]*?)(?=####|$)/i);
+            if (summaryMatch) {
+                const summaryContent = summaryMatch[1];
+                // Look for Category line in the table (format: Category| value or Category | value)
+                const categoryMatch = summaryContent.match(/Category\s*\|\s*([^\n|]+)/i);
+                if (categoryMatch && categoryMatch[1]) {
+                    categoryFromMd = categoryMatch[1].trim();
+                }
+            }
+        } catch (error) {
+            // If file doesn't exist or can't be read, keep 'N/A'
+        }
+    }
+    audit.push(categoryFromMd);
+    
     return audit;
 }));
 
@@ -323,7 +345,8 @@ audits.forEach(audit => {
     const pdfPath = audit[4] != null ? `[📄](${encodeURI(BASE_URL + audit[4])})` : `[📄](${encodeURI(BASE_URL + audit[3])})`;
     const key = audit[0] + ":" + audit[1];
     const category = CATEGORY_MAP[key] ?? '-';
-    const finalCategory = category !== '-' ? ("![" + category + "]" + UNIQUE_CATEGORIES[category]) : category;
+    const categoryFinal = category !== '-' ? category : audit[6];
+    const finalCategory = categoryFinal !== 'N/A' ? ("![" + categoryFinal + "]" + UNIQUE_CATEGORIES[categoryFinal]) : categoryFinal;
 
     table += `| ${audit[0]} | ${audit[1]} | ${finalCategory} | ${pdfPath} | ${audit[5]} |\n`;
 });
