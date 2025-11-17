@@ -5,6 +5,7 @@
 ## Reports list
 | Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |
 |---|---|---|---|---|
+| Mantle Network | mETH x Aave Integration | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/mETH%20x%20Aave%20Integration/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/mETH%20x%20Aave%20Integration/Mantle%20mETH%20x%20Aave%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-13 |
 | Velodrome | Pool Launcher | [link](https://github.com/mixbytes/audits_public/blob/master/Velodrome/Pool%20Launcher/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Velodrome/Pool%20Launcher/Velodrome%20Pool%20Launcher%20Security%20Audit%20Report.pdf) | 2025-11-10 |
 | Barter DAO | Superposition | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/BarterDAO%20Superposition%20Security%20Audit%20Report.pdf) | 2025-11-07 |
 | Notional Finance | Notional v4 | [link](https://github.com/mixbytes/audits_public/blob/master/Notional%20Finance/Notional%20v4/README.md) | [link](https://github.com/mixbytes/audits_public/blob/master/Notional%20Finance/Notional%20v4/Notional%20v4%20Security%20Audit%20Report.pdf) | 2025-11-05 |
