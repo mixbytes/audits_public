@@ -197,14 +197,14 @@ Security audit reports performed by the MixBytes team and released with client a
 | Aragon | Voting Connectors | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Aragon/Voting%20Connectors/Aragon%20Voting%20Connectors%20Security%20Audit%20Report.pdf) | 2020-01-13 |
 | Aragon | Open Enterprise | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Aragon/Open%20Enterprise/Aragon%20Open%20Enterprise%20Security%20Audit%20Report.pdf) | 2019-11-05 |
 | Empower the DAO | Empower the DAO | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Empower%20the%20DAO/Empower%20the%20DAO%20Security%20Audit%20Report.pdf) | 2019-10-24 |
-| Ubcoin | UBCoinToken | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | 2019-09-02 |
 | Akropolis | Vesting | ![Yield](https://img.shields.io/badge/Yield-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Akropolis/Vesting/Akropolis%20Vesting%20Security%20Audit%20Report.pdf) | 2019-08-05 |
 | Akropolis | Token | ![Yield](https://img.shields.io/badge/Yield-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Akropolis/Token/Akropolis%20Token%20Smart%20Contract%20Audit%20Report.pdf) | 2019-07-07 |
-| TrustWallet | TST Token | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/TrustWallet/TST%20Token/README.md) | 2019-06-06 |
 | Roobee | Roobee | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Roobee/Roobee%20Token%20Security%20Audit%20Report.pdf) | 2019-04-18 |
-| POA Network | POA PoPA | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20PoPA/README.md) | 2019-03-06 |
 | LTO Network | Token Sale | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/LTO%20Network/Token%20Sale/LTO%20Network%20Token%20Sale%20Security%20Audit%20Report.pdf) | 2019-01-15 |
-| POA Network | POA Bridge | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Bridge/README.md) | 2018-02-05 |
-| POA Network | POA Consensus | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | 2018-02-05 |
-| KickICO | KickICO | ![Launchpad](https://img.shields.io/badge/Launchpad-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | 2017-04-09 |
+| TrustWallet | TST Token | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/TrustWallet/TST%20Token/README.md) | 2018-06-18 |
+| POA Network | POA PoPA | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20PoPA/README.md) | 2018-06-15 |
+| POA Network | POA Bridge | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Bridge/README.md) | 2018-05-02 |
+| POA Network | POA Consensus | ![L2](https://img.shields.io/badge/L2-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/POA%20Network/POA%20Consensus/README.md) | 2018-05-02 |
+| Ubcoin | UBCoinToken | ![Services](https://img.shields.io/badge/Services-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Ubcoin/UBCoinToken/README.md) | 2018-02-21 |
+| KickICO | KickICO | ![Launchpad](https://img.shields.io/badge/Launchpad-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/KickICO/README.md) | 2017-09-04 |
 
