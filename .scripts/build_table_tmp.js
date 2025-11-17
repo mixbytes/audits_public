@@ -284,8 +284,20 @@ audits = await Promise.all(audits.map(async (audit) => {
         } else {
             const found = text.match(/([A-z]+)\s*(\d+),?\s*(\d+)/);
             if (found) {
-                const date = moment(found[0]).format("YYYY-MM-DD");
-                audit.push(date);
+                // Try parsing with format string (e.g., "JULY 13  2020" or "July 13, 2020")
+                const dateStr = found[0].trim().replace(/\t/g, ' ');
+                const parsedDate = moment(dateStr, ['MMMM DD YYYY', 'MMMM DD  YYYY', 'MMMM D  YYYY', 'MMMM DD, YYYY', 'MMMM D, YYYY', 'MMM DD, YYYY'], true);
+                if (parsedDate.isValid()) {
+                    audit.push(parsedDate.format("YYYY-MM-DD"));
+                } else {
+                    // Fallback: try default parsing
+                    const fallbackDate = moment(dateStr);
+                    if (fallbackDate.isValid()) {
+                        audit.push(fallbackDate.format("YYYY-MM-DD"));
+                    } else {
+                        audit.push('N/A');
+                    }
+                }
             } else {
                 audit.push('N/A');
             }
@@ -294,14 +306,52 @@ audits = await Promise.all(audits.map(async (audit) => {
     else {
         const files = glob.sync(`${audit[2]}/date.txt`);
         if (files.length > 0) {
-            const date_raw = fs.readFileSync(files[0])
-            const date = moment(date_raw).format("YYYY-MM-DD");
-            audit.push(date);
+            const date_raw = fs.readFileSync(files[0], 'utf8').trim();
+            // Parse DD.MM.YYYY format (e.g., 09.04.2017)
+            if (date_raw.match(/^\d+\.\d+\.\d+$/)) {
+                const dateArray = date_raw.split('.');
+                const date = moment(new Date(
+                    parseInt(dateArray[2]),
+                    parseInt(dateArray[1]) - 1,
+                    parseInt(dateArray[0])
+                )).format("YYYY-MM-DD");
+                audit.push(date);
+            } else {
+                // Try to parse with moment's default parsing
+                const parsedDate = moment(date_raw);
+                if (parsedDate.isValid()) {
+                    audit.push(parsedDate.format("YYYY-MM-DD"));
+                } else {
+                    audit.push('N/A');
+                }
+            }
         }
         else {
             audit.push('N/A');
         }
     }
+    
+    // Extract Category from markdown file if it exists
+    let categoryFromMd = 'N/A';
+    if (audit[4] != null) {
+        try {
+            const mdContent = fs.readFileSync(audit[3], 'utf8');
+            // Look for Summary section
+            const summaryMatch = mdContent.match(/####\s+Summary\s+([\s\S]*?)(?=####|$)/i);
+            if (summaryMatch) {
+                const summaryContent = summaryMatch[1];
+                // Look for Category line in the table (format: Category| value or Category | value)
+                const categoryMatch = summaryContent.match(/Category\s*\|\s*([^\n|]+)/i);
+                if (categoryMatch && categoryMatch[1]) {
+                    categoryFromMd = categoryMatch[1].trim();
+                }
+            }
+        } catch (error) {
+            // If file doesn't exist or can't be read, keep 'N/A'
+        }
+    }
+    audit.push(categoryFromMd);
+    
     return audit;
 }));
 
@@ -323,7 +373,8 @@ audits.forEach(audit => {
     const pdfPath = audit[4] != null ? `[📄](${encodeURI(BASE_URL + audit[4])})` : `[📄](${encodeURI(BASE_URL + audit[3])})`;
     const key = audit[0] + ":" + audit[1];
     const category = CATEGORY_MAP[key] ?? '-';
-    const finalCategory = category !== '-' ? ("![" + category + "]" + UNIQUE_CATEGORIES[category]) : category;
+    const categoryFinal = category !== '-' ? category : audit[6];
+    const finalCategory = categoryFinal !== 'N/A' ? ("![" + categoryFinal + "]" + UNIQUE_CATEGORIES[categoryFinal]) : categoryFinal;
 
     table += `| ${audit[0]} | ${audit[1]} | ${finalCategory} | ${pdfPath} | ${audit[5]} |\n`;
 });
