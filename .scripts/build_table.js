@@ -302,6 +302,10 @@ audits = await Promise.all(audits.map(async (audit) => {
             audit.push('N/A');
         }
     }
+
+    let categoryFromMd = 'N/A';
+    audit.push(categoryFromMd);
+
     return audit;
 }));
 
@@ -323,7 +327,8 @@ audits.forEach(audit => {
     const pdfPath = audit[4] != null ? `[📄](${encodeURI(BASE_URL + audit[4])})` : `[📄](${encodeURI(BASE_URL + audit[3])})`;
     const key = audit[0] + ":" + audit[1];
     const category = CATEGORY_MAP[key] ?? '-';
-    const finalCategory = category !== '-' ? ("![" + category + "]" + UNIQUE_CATEGORIES[category]) : category;
+    const categoryFinal = category !== '-' ? category : audit[6];
+    const finalCategory = categoryFinal !== 'N/A' ? ("![" + categoryFinal + "]" + UNIQUE_CATEGORIES[categoryFinal]) : categoryFinal;
 
     table += `| ${audit[0]} | ${audit[1]} | ${finalCategory} | ${pdfPath} | ${audit[5]} |\n`;
 });
