@@ -304,6 +304,23 @@ audits = await Promise.all(audits.map(async (audit) => {
     }
 
     let categoryFromMd = 'N/A';
+    if (audit[4] != null) {
+        try {
+            const mdContent = fs.readFileSync(audit[3], 'utf8');
+            // Look for Summary section
+            const summaryMatch = mdContent.match(/####\s+Summary\s+([\s\S]*?)(?=####|$)/i);
+            if (summaryMatch) {
+                const summaryContent = summaryMatch[1];
+                // Look for Category line in the table (format: Category| value or Category | value)
+                const categoryMatch = summaryContent.match(/Category\s*\|\s*([^\n|]+)/i);
+                if (categoryMatch && categoryMatch[1]) {
+                    categoryFromMd = categoryMatch[1].trim();
+                }
+            }
+        } catch (error) {
+            // If file doesn't exist or can't be read, keep 'N/A'
+        }
+    }
     audit.push(categoryFromMd);
 
     return audit;
@@ -319,7 +336,7 @@ audits.sort(function(a, b) {
 });
 
 // let table = '| Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |\n';
-let table = '| Client | Project | Category | Report | Date |\n';
+let table = '| Client | Project Name | Category | Report | Date |\n';
 table +=    '|---|---|---|---|---|\n';
 audits.forEach(audit => {
     // const mdPath = `[link](${encodeURI(BASE_URL + audit[3])})`;
