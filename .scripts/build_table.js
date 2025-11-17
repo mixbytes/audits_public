@@ -8,6 +8,10 @@ const README_TEMPLATE_PATH = __dirname + '/main_readme_template.md';
 const MAIN_README_PATH = __dirname + '/../README.md';
 
 const CATEGORY_MAP = {
+    'Mantle Network:mETH x Aave Integration': 'Liquid Staking',
+    'Velodrome:Pool Launcher': 'DEX',
+    'Barter DAO:Superposition': 'DEX Aggregator',
+    'Notional Finance:Notional v4': 'Lending',
     'Velodrome:CLGaugeFactory': 'DEX',
     'NUTS Finance:Pike': 'Lending',
     'Gearbox Protocol:Kodiak & Mellow Adapters': 'Lending',
@@ -18,6 +22,7 @@ const CATEGORY_MAP = {
     'Lido:Easy Track (3)': 'Liquid Staking',
     'P2P.org:SSV Integration Diff Audit (v1)': 'Staking',
     'Lido:WstETH Staker': 'Liquid Staking',
+    'Threshold Network:tBTC v2': 'Cross Chain Bridge',
     'Barter DAO:InchFusionBarterResolver': 'DEX Aggregator',
     'Enso:ERC‑4337 Integration': 'Middleware',
     'Yield Basis:DAO': 'Leveraged Farming',
@@ -209,6 +214,35 @@ const CATEGORY_MAP = {
     'KickICO:KickICO': 'Launchpad'
   };
 
+const UNIQUE_CATEGORIES = {
+    'Basis Trading': '(https://img.shields.io/badge/Basis%20Trading-%23424200)',
+    'Bridge': '(https://img.shields.io/badge/Bridge-%23424200)',
+    'CDP': '(https://img.shields.io/badge/CDP-%23424200)',
+    'Cross Chain Bridge': '(https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200)',
+    'DEX': '(https://img.shields.io/badge/DEX-%23424200)',
+    'DEX Aggregator': '(https://img.shields.io/badge/DEX%20Aggregator-%23424200)',
+    'DEX CDP Lending': '(https://img.shields.io/badge/DEX%20CDP%20Lending-%23424200)',
+    'Derivatives': '(https://img.shields.io/badge/Derivatives-%23424200)',
+    'Indexes': '(https://img.shields.io/badge/Indexes-%23424200)',
+    'Insurance': '(https://img.shields.io/badge/Insurance-%23424200)',
+    'L2': '(https://img.shields.io/badge/L2-%23424200)',
+    'Launchpad': '(https://img.shields.io/badge/Launchpad-%23424200)',
+    'Lending': '(https://img.shields.io/badge/Lending-%23424200)',
+    'Lending DEX': '(https://img.shields.io/badge/Lending%20DEX-%23424200)',
+    'Leveraged Farming': '(https://img.shields.io/badge/Leveraged%20Farming-%23424200)',
+    'Liquid Restaking': '(https://img.shields.io/badge/Liquid%20Restaking-%23424200)',
+    'Liquid Staking': '(https://img.shields.io/badge/Liquid%20Staking-%23424200)',
+    'Middleware': '(https://img.shields.io/badge/Middleware-%23424200)',
+    'NFTFi': '(https://img.shields.io/badge/NFTFi-%23424200)',
+    'Oracle': '(https://img.shields.io/badge/Oracle-%23424200)',
+    'RWA': '(https://img.shields.io/badge/RWA-%23424200)',
+    'Services': '(https://img.shields.io/badge/Services-%23424200)',
+    'Staking': '(https://img.shields.io/badge/Staking-%23424200)',
+    'Uncollateralized Lending': '(https://img.shields.io/badge/Uncollateralized%20Lending-%23424200)',
+    'Yield': '(https://img.shields.io/badge/Yield-%23424200)',
+    'Yield Aggregator': '(https://img.shields.io/badge/Yield%20Aggregator-%23424200)'
+};
+
 (async () => {
 
 const mdFiles = glob.sync("*/**/+(readme|README).md")
@@ -289,8 +323,9 @@ audits.forEach(audit => {
     const pdfPath = audit[4] != null ? `[📄](${encodeURI(BASE_URL + audit[4])})` : `[📄](${encodeURI(BASE_URL + audit[3])})`;
     const key = audit[0] + ":" + audit[1];
     const category = CATEGORY_MAP[key] ?? '-';
+    const finalCategory = category !== '-' ? ("![" + category + "]" + UNIQUE_CATEGORIES[category]) : category;
 
-    table += `| ${audit[0]} | ${audit[1]} | ${category} | ${pdfPath} | ${audit[5]} |\n`;
+    table += `| ${audit[0]} | ${audit[1]} | ${finalCategory} | ${pdfPath} | ${audit[5]} |\n`;
 });
 
 let readme = fs.readFileSync(README_TEMPLATE_PATH).toString();
