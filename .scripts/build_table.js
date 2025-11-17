@@ -336,7 +336,7 @@ audits.sort(function(a, b) {
 });
 
 // let table = '| Project | Audit Name | MD Report | PDF Report | Release Date (YYYY-MM-DD) |\n';
-let table = '| Client | Project Name | Category | Report | Date |\n';
+let table = '| Client | Project | Category | Report | Date |\n';
 table +=    '|---|---|---|---|---|\n';
 audits.forEach(audit => {
     // const mdPath = `[link](${encodeURI(BASE_URL + audit[3])})`;
