@@ -305,7 +305,7 @@ audits = await Promise.all(audits.map(async (audit) => {
     
     // Extract Category from markdown file if it exists
     let categoryFromMd = 'N/A';
-    if (audit[3] != null) {
+    if (audit[4] != null) {
         try {
             const mdContent = fs.readFileSync(audit[3], 'utf8');
             // Look for Summary section
