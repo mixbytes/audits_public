@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Gearbox Protocol | Gearbox InfiniFi Integration | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20InfiniFi%20Integration/Gearbox%20InfiniFi%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-14 |
 | Mantle Network | mETH x Aave Integration | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/mETH%20x%20Aave%20Integration/Mantle%20mETH%20x%20Aave%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-13 |
 | Velodrome | Pool Launcher | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Velodrome/Pool%20Launcher/Velodrome%20Pool%20Launcher%20Security%20Audit%20Report.pdf) | 2025-11-10 |
 | Barter DAO | Superposition | ![DEX Aggregator](https://img.shields.io/badge/DEX%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/BarterDAO%20Superposition%20Security%20Audit%20Report.pdf) | 2025-11-07 |
