@@ -4,6 +4,7 @@ Security audit reports performed by the MixBytes team and released with client a
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
 | Instadapp | Fluid Liquidity Layer | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20Liquidity%20Layer/Instadapp%20Fluid%20Liquidity%20Layer%20Security%20Audit%20Report.pdf) | 2025-12-10 |
+| Tramplin | Megavalidator | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Tramplin/Megavalidator/Tramplin%20Megavalidator%20Security%20Audit%20Report.pdf) | 2025-12-10 |
 | P2P.org | Resolv Integration | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Resolv%20Integration/P2P.org%20Resolv%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-25 |
 | Gearbox Protocol | Gearbox InfiniFi Integration | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20InfiniFi%20Integration/Gearbox%20InfiniFi%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-14 |
 | Mantle Network | mETH x Aave Integration | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Mantle%20Network/mETH%20x%20Aave%20Integration/Mantle%20mETH%20x%20Aave%20Integration%20Security%20Audit%20Report.pdf) | 2025-11-13 |
