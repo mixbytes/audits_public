@@ -169,7 +169,7 @@ Acknowledged
 ##### Description
 `MAX_INPUT_AMOUNT_EXCESS` in the liquidity layer was increased from 1% to 1000%, which creates a risk of ETH loss for the user:
 - https://github.com/Instadapp/fluid-contracts/blob/298c84e3daa9505457cf22265e5c4a8927d7e8c9/contracts/liquidity/userModule/main.sol#L637
-<br/>
+
 ##### Recommendation
 We recommend refunding excess ETH to the user.
 
@@ -188,7 +188,7 @@ Fixed in https://github.com/Instadapp/fluid-contracts/commit/5bd3d775f67d8f8d731
 The `preTransferOut()` hook was missed for two safe transfers:
 - https://github.com/Instadapp/fluid-contracts/blob/298c84e3daa9505457cf22265e5c4a8927d7e8c9/contracts/liquidity/userModule/main.sol#L1092
 - https://github.com/Instadapp/fluid-contracts/blob/298c84e3daa9505457cf22265e5c4a8927d7e8c9/contracts/liquidity/userModule/main.sol#L1115
-<br/>
+
 ##### Recommendation
 
 We recommend calling the hook in the aforementioned cases.
