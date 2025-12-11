@@ -8,6 +8,11 @@ const README_TEMPLATE_PATH = __dirname + '/main_readme_template.md';
 const MAIN_README_PATH = __dirname + '/../README.md';
 
 const CATEGORY_MAP = {
+    'Instadapp:Fluid Liquidity Layer': 'Lending',
+    'Tramplin:Megavalidator': 'Staking',
+    'AAVE:Aave v3.6': 'Lending',
+    'P2P.org:Resolv Integration': 'Staking',
+    'Gearbox Protocol:Gearbox InfiniFi Integration': 'Lending',
     'Mantle Network:mETH x Aave Integration': 'Liquid Staking',
     'Velodrome:Pool Launcher': 'DEX',
     'Barter DAO:Superposition': 'DEX Aggregator',
@@ -279,12 +284,12 @@ audits = await Promise.all(audits.map(async (audit) => {
                 parseInt(dateArray[2]),
                 dateArray[1] - 1,
                 parseInt(dateArray[0]))
-            ).format("YYYY-MM-DD");
+            ).format("YYYY.MM.DD");
             audit.push(date);
         } else {
             const found = text.match(/([A-z]+)\s*(\d+),?\s*(\d+)/);
             if (found) {
-                const date = moment(found[0]).format("YYYY-MM-DD");
+                const date = moment(found[0]).format("YYYY.MM.DD");
                 audit.push(date);
             } else {
                 audit.push('N/A');
@@ -295,7 +300,7 @@ audits = await Promise.all(audits.map(async (audit) => {
         const files = glob.sync(`${audit[2]}/date.txt`);
         if (files.length > 0) {
             const date_raw = fs.readFileSync(files[0])
-            const date = moment(date_raw).format("YYYY-MM-DD");
+            const date = moment(date_raw).format("YYYY.MM.DD");
             audit.push(date);
         }
         else {
