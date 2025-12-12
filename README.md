@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| NUTS Finance | Pike | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025.12.12 |
 | Instadapp | Fluid Liquidity Layer | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20Liquidity%20Layer/Instadapp%20Fluid%20Liquidity%20Layer%20Security%20Audit%20Report.pdf) | 2025.12.10 |
 | Tramplin | Megavalidator | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Tramplin/Megavalidator/Tramplin%20Megavalidator%20Security%20Audit%20Report.pdf) | 2025.12.10 |
 | AAVE | Aave v3.6 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v3.6/Aave%20v3.6%20Security%20Audit%20Report.pdf) | 2025.12.09 |
@@ -13,7 +14,6 @@ Security audit reports performed by the MixBytes team and released with client a
 | Barter DAO | Superposition | ![DEX Aggregator](https://img.shields.io/badge/DEX%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/BarterDAO%20Superposition%20Security%20Audit%20Report.pdf) | 2025.11.07 |
 | Notional Finance | Notional v4 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Notional%20Finance/Notional%20v4/Notional%20v4%20Security%20Audit%20Report.pdf) | 2025.11.05 |
 | Velodrome | CLGaugeFactory | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Velodrome/CLGaugeFactory/Velodrome%20CLGaugeFactory%20Security%20Audit%20Report.pdf) | 2025.11.05 |
-| NUTS Finance | Pike | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025.11.04 |
 | Gearbox Protocol | Kodiak & Mellow Adapters | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Kodiak%20&%20Mellow%20Adapters/Gearbox%20Kodiak%20&%20Mellow%20Adapters%20Security%20Audit%20Report.pdf) | 2025.10.31 |
 | Gearbox Protocol | Gearbox Midas Integration | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Midas%20Integration/Gearbox%20Midas%20Integration%20Security%20Audit%20Report.pdf) | 2025.10.30 |
 | Instadapp | Jupiter Lend Vaults | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Jupiter%20Lend%20Vaults/Jupiter%20Lend%20Vaults%20on%20Solana%20Security%20Audit%20Report.pdf) | 2025.10.24 |
