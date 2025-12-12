@@ -4,6 +4,7 @@ Security audit reports performed by the MixBytes team and released with client a
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
 | NUTS Finance | Pike | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025.12.12 |
+| NUTS Finance | Tapio | ![Middleware](https://img.shields.io/badge/Middleware-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Tapio/NUTS%20Tapio%20Security%20Audit%20Report.pdf) | 2025.12.12 |
 | Instadapp | Fluid Liquidity Layer | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20Liquidity%20Layer/Instadapp%20Fluid%20Liquidity%20Layer%20Security%20Audit%20Report.pdf) | 2025.12.10 |
 | Tramplin | Megavalidator | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Tramplin/Megavalidator/Tramplin%20Megavalidator%20Security%20Audit%20Report.pdf) | 2025.12.10 |
 | AAVE | Aave v3.6 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v3.6/Aave%20v3.6%20Security%20Audit%20Report.pdf) | 2025.12.09 |
