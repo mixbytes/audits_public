@@ -3,7 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
-| EYWA | CDP | ![Cross-chain]undefined | [📄](https://github.com/mixbytes/audits_public/blob/master/EYWA/CDP/Eywa%20CDP%20Security%20Audit%20Report.pdf) | 2025.12.15 |
+| EYWA | CDP | ![Cross Chain Bridge](https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/EYWA/CDP/Eywa%20CDP%20Security%20Audit%20Report.pdf) | 2025.12.15 |
 | Lido | Lido v3 | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20v3/Lido%20v3%20Security%20Audit%20Report.pdf) | 2025.12.12 |
 | NUTS Finance | Pike | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Pike/NUTS%20Pike%20Security%20Audit%20Report.pdf) | 2025.12.12 |
 | NUTS Finance | Tapio | ![Middleware](https://img.shields.io/badge/Middleware-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/NUTS%20Finance/Tapio/NUTS%20Tapio%20Security%20Audit%20Report.pdf) | 2025.12.12 |
