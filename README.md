@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Algebra Finance | Algebra ALM | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Algebra%20ALM/Algebra%20ALM%20Security%20Audit%20Report.pdf) | 2025.12.19 |
 | Gearbox Protocol | Gearbox Upshift Integration | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Upshift%20Integration/Gearbox%20Upshift%20Integration%20Security%20Audit%20Report.pdf) | 2025.12.18 |
 | EYWA | CDP | ![Cross Chain Bridge](https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/EYWA/CDP/Eywa%20CDP%20Security%20Audit%20Report.pdf) | 2025.12.15 |
 | Lido | Lido v3 | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20v3/Lido%20v3%20Security%20Audit%20Report.pdf) | 2025.12.12 |
