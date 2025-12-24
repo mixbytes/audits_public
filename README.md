@@ -3,7 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
-| Diffuse | Prime | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Diffuse/Prime/Diffuse%20Prime%20Security%20Audit%20Report.pdf) | 2025.12.22 |
+| Diffuse | Prime | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Diffuse/Prime/Diffuse%20Prime%20Security%20Audit%20Report.pdf) | 2025.12.22 |
 | Algebra Finance | Algebra ALM | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Algebra%20ALM/Algebra%20ALM%20Security%20Audit%20Report.pdf) | 2025.12.19 |
 | AAVE | Aave v3.6 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v3.6/Aave%20v3.6%20Security%20Audit%20Report.pdf) | 2025.12.18 |
 | Gearbox Protocol | Gearbox Upshift Integration | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Upshift%20Integration/Gearbox%20Upshift%20Integration%20Security%20Audit%20Report.pdf) | 2025.12.18 |
