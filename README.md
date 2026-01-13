@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Algebra Finance | Upgradeable Dymanic Fee Plugin | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Upgradeable%20Dymanic%20Fee%20Plugin/Algebra%20Upgradeable%20Plugins%20Security%20Audit%20Report.pdf) | 2026.01.12 |
 | Diffuse | Prime | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Diffuse/Prime/Diffuse%20Prime%20Security%20Audit%20Report.pdf) | 2025.12.22 |
 | Algebra Finance | Algebra ALM | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Algebra%20ALM/Algebra%20ALM%20Security%20Audit%20Report.pdf) | 2025.12.19 |
 | AAVE | Aave v3.6 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v3.6/Aave%20v3.6%20Security%20Audit%20Report.pdf) | 2025.12.18 |
