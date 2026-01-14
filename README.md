@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Lido | Utility contract for CSM Oracle report day offset | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Utility%20contract%20for%20CSM%20Oracle%20report%20day%20offset/Lido%20Utility%20contract%20for%20CSM%20Oracle%20report%20day%20offset%20Security%20Audit%20Report.pdf) | 2026.01.14 |
 | Algebra Finance | Upgradeable Dynamic Fee Plugin | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Upgradeable%20Dynamic%20Fee%20Plugin/Algebra%20Upgradeable%20Plugins%20Security%20Audit%20Report.pdf) | 2026.01.12 |
 | Gearbox Protocol | Gearbox Kelp Integration | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Kelp%20Integration/Gearbox%20Kelp%20Integration%20Security%20Audit%20Report.pdf) | 2026.01.12 |
 | Diffuse | Prime | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Diffuse/Prime/Diffuse%20Prime%20Security%20Audit%20Report.pdf) | 2025.12.22 |
