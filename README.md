@@ -3,7 +3,6 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
-| Yelay | ERC4626 | N/A | [📄](https://github.com/mixbytes/audits_public/blob/master/Yelay/ERC4626/Yelay%20ERC4626%20Security%20Audit%20Report.pdf) | Invalid date |
 | Resolv | ExternalRequestsCoordinator | ![Basis Trading](https://img.shields.io/badge/Basis%20Trading-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/ExternalRequestsCoordinator/Resolv%20ExternalRequestsCoordinator%20Security%20Audit%20Report.pdf) | 2026.01.15 |
 | Lido | Utility contract for CSM Oracle report day offset | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Utility%20contract%20for%20CSM%20Oracle%20report%20day%20offset/Lido%20Utility%20contract%20for%20CSM%20Oracle%20report%20day%20offset%20Security%20Audit%20Report.pdf) | 2026.01.14 |
 | Algebra Finance | Upgradeable Dynamic Fee Plugin | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Algebra%20Finance/Upgradeable%20Dynamic%20Fee%20Plugin/Algebra%20Upgradeable%20Plugins%20Security%20Audit%20Report.pdf) | 2026.01.12 |
