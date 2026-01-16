@@ -8,6 +8,8 @@ const README_TEMPLATE_PATH = __dirname + '/main_readme_template.md';
 const MAIN_README_PATH = __dirname + '/../README.md';
 
 const CATEGORY_MAP = {
+    'Lido:Lido v3': 'Liquid Staking',
+    'Lido:Lido v3': 'EasyTrack stVaults',
     'Instadapp:Fluid Liquidity Layer': 'Lending',
     'Tramplin:Megavalidator': 'Staking',
     'AAVE:Aave v3.6': 'Lending',
@@ -287,7 +289,8 @@ audits = await Promise.all(audits.map(async (audit) => {
             ).format("YYYY.MM.DD");
             audit.push(date);
         } else {
-            const found = text.match(/([A-z]+)\s*(\d+),?\s*(\d+)/);
+            // Yelay ERC4626 Security Audit Report JANUARY 14, 2026
+            const found = text.match(/([A-z]+)\s+(\d+),?\s*(20\d+)/);
             if (found) {
                 const date = moment(found[0]).format("YYYY.MM.DD");
                 audit.push(date);
