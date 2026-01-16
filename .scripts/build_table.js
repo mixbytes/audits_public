@@ -9,7 +9,7 @@ const MAIN_README_PATH = __dirname + '/../README.md';
 
 const CATEGORY_MAP = {
     'Lido:Lido v3': 'Liquid Staking',
-    'Lido:Lido v3': 'EasyTrack stVaults',
+    'Lido:EasyTrack stVaults': 'Liquid Staking',
     'Instadapp:Fluid Liquidity Layer': 'Lending',
     'Tramplin:Megavalidator': 'Staking',
     'AAVE:Aave v3.6': 'Lending',
