@@ -23,6 +23,8 @@ During this audit, the team immersed themselves in the entire new Lido v3 archit
 
 **Theoretical Attacks.** Sandwich attack on the report handling with huge bad debt internalization leading to negative rebase was analyzed. The user can theoretically exit their position by selling stETH on the market before the report is handled and then re-enter Lido at a lower rate. However, the selling price on the market will likely already account for the negative rebase, as there will probably be entities monitoring vaults health. Entering the withdrawal queue before the bad debt was internalized from the vaults, leading to negative rebase, also makes no sense, as the lower StETH rate between entry and finalization will be taken.
 
+**BLS signature verification vulnerability.** Between the commits `b98371488eb9479cf072bd6c2b682a59c5dd71d8` and `33f2f59156697aae93cdea2d0984de7be347e3af`, there was a correctly addressed BLS signature verification vulnerability. The vulnerability allowed malicious node operators to flip the signature sign bit (0x20 mask) in compressed BLS points, which would pass on-chain validation but fail Consensus Layer checks, resulting in locked 1 ETH deposits. The fix implements comprehensive validation functions (`validateCompressedPubkeyFlags` and `validateCompressedSignatureFlags`). We have verified that the implemented fixes are sufficient and correctly prevent the sign bit manipulation attack while maintaining full compatibility with the Consensus Layer validation logic.
+
 In conclusion, the project demonstrates a high level of security, operational integrity, and good overall code quality. The contracts in scope are well-written and follow established best practices. However, several findings require careful consideration to ensure a balanced distribution of risks between the staking vaults and Lido V2. Addressing these issues will further enhance the protocol’s efficiency and reliability.
 
 ### 1.3 Project Overview
@@ -35,7 +37,7 @@ Client Name| Lido
 Project Name| Lido v3
 Type| Solidity
 Platform| EVM
-Timeline| 17.06.2025 - 11.12.2025
+Timeline| 17.06.2025 - 14.01.2026
     
 #### Scope of Audit
 
@@ -59,10 +61,11 @@ Date                                      | Commit Hash | Note
 19.11.2025 | 83616971c3dedfa50b9775b6b9418c69a0320987 | Commit with Updates
 21.11.2025 | 17e854ac4315053fe6a9023c65009244d83872e3 | Commit with Updates
 27.11.2025 | b98371488eb9479cf072bd6c2b682a59c5dd71d8 | Commit with Updates
+12.01.2026 | 33f2f59156697aae93cdea2d0984de7be347e3af | Commit with Updates
     
 #### Mainnet Deployments
 
-We conducted comprehensive bytecode verification for all deployed contracts against the audited commit (`b98371488eb9479cf072bd6c2b682a59c5dd71d8`), confirming identical bytecode. We verified the configuration of all storage parameters and constructor arguments, including the `initialMaxExternalRatioBP` (300 basis points for Phase 1 cap), oracle slashing reserve epochs (8192 for both lookback and look-ahead windows), LazyOracle quarantine period (259200 seconds), and Easy Track factory limits aligned with the phased rollout strategy. The upgrade vote structure was reviewed, confirming proper segregation between immediate execution items (8 Easy Track factory additions) and Dual Governance-protected items (18 core protocol changes), with correct role transitions including `REPORT_REWARDS_MINTED_ROLE` migration from Lido to Accounting contract and new Burner permissions.
+We conducted comprehensive bytecode verification for all deployed contracts against the audited commit (`33f2f59156697aae93cdea2d0984de7be347e3af`), confirming identical bytecode. We verified the configuration of all storage parameters and constructor arguments, including the `initialMaxExternalRatioBP` (300 basis points for Phase 1 cap), oracle slashing reserve epochs (8192 for both lookback and look-ahead windows), LazyOracle quarantine period (259200 seconds), and Easy Track factory limits aligned with the phased rollout strategy. The upgrade vote structure was reviewed, confirming proper segregation between immediate execution items (8 Easy Track factory additions) and Dual Governance-protected items (18 core protocol changes), with correct role transitions including `REPORT_REWARDS_MINTED_ROLE` migration from Lido to Accounting contract and new Burner permissions.
 
 In addition to the entire deployment scope, we reviewed two versions of V3VoteScript.sol:
 
@@ -71,16 +74,16 @@ In addition to the entire deployment scope, we reviewed two versions of V3VoteSc
 
 We confirmed that Version 2 is fully equivalent to Version 1, with the exception of three additional vote items that transition the PredepositGuarantee contract to a paused state. While the V3TemporaryAdmin, V3VoteScript, and V3Template contracts were out of scope for this audit, we reviewed their logic to validate consistency with the upgrade steps defined in the governance proposal. Access control configuration was verified across all protocol contracts, including VaultHub, OperatorGrid and PredepositGuarantee.
 
-OssifiableProxy.sol ([0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb](https://etherscan.io/address/0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb)) was deployed for LidoLocator.sol
-OssifiableProxy.sol ([0x852deD011285fe67063a08005c71a85690503Cee](https://etherscan.io/address/0x852deD011285fe67063a08005c71a85690503Cee)) was deployed for AccountingOracle.sol
-OssifiableProxy.sol ([0xE76c52750019b80B43E36DF30bf4060EB73F573a](https://etherscan.io/address/0xE76c52750019b80B43E36DF30bf4060EB73F573a)) was deployed for Burner.sol
-OssifiableProxy.sol ([0x1d201BE093d847f6446530Efb0E8Fb426d176709](https://etherscan.io/address/0x1d201BE093d847f6446530Efb0E8Fb426d176709)) was deployed for VaultHub.sol
-OssifiableProxy.sol ([0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3](https://etherscan.io/address/0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3)) was deployed for PredepositGuarantee.sol
-OssifiableProxy.sol ([0xC69685E89Cefc327b43B7234AC646451B27c544d](https://etherscan.io/address/0xC69685E89Cefc327b43B7234AC646451B27c544d)) was deployed for OperatorGrid.sol
-OssifiableProxy.sol ([0x23ED611be0e1a820978875C0122F92260804cdDf](https://etherscan.io/address/0x23ED611be0e1a820978875C0122F92260804cdDf)) was deployed for Accounting.sol
-OssifiableProxy.sol ([0x5DB427080200c235F2Ae8Cd17A7be87921f7AD6c](https://etherscan.io/address/0x5DB427080200c235F2Ae8Cd17A7be87921f7AD6c)) was deployed for LazyOracle.sol
-StakingVault.sol ([0x06A56487494aa080deC7Bf69128EdA9225784553](https://etherscan.io/address/0x06A56487494aa080deC7Bf69128EdA9225784553)) was deployed as a reference implementation for stVault
-Dashboard.sol ([0x294825c2764c7D412dc32d87E2242c4f1D989AF3](https://etherscan.io/address/0x294825c2764c7D412dc32d87E2242c4f1D989AF3)) was deployed as a reference implementation for Dashboard
+OssifiableProxy.sol ([0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb](https://etherscan.io/address/0xC1d0b3DE6792Bf6b4b37EccdcC24e45978Cfd2Eb)) was deployed for LidoLocator.sol;
+OssifiableProxy.sol ([0x852deD011285fe67063a08005c71a85690503Cee](https://etherscan.io/address/0x852deD011285fe67063a08005c71a85690503Cee)) was deployed for AccountingOracle.sol;
+OssifiableProxy.sol ([0xE76c52750019b80B43E36DF30bf4060EB73F573a](https://etherscan.io/address/0xE76c52750019b80B43E36DF30bf4060EB73F573a)) was deployed for Burner.sol;
+OssifiableProxy.sol ([0x1d201BE093d847f6446530Efb0E8Fb426d176709](https://etherscan.io/address/0x1d201BE093d847f6446530Efb0E8Fb426d176709)) was deployed for VaultHub.sol;
+OssifiableProxy.sol ([0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3](https://etherscan.io/address/0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3)) was deployed for PredepositGuarantee.sol (The current implementation at [0xCC08C36BD5bb78FDcB10F35B404ada6Ffc71a023](https://etherscan.io/address/0xCC08C36BD5bb78FDcB10F35B404ada6Ffc71a023) is set for PredepositGuarantee, but will be changed during Phase 2 transition to [0xE78717192C45736DF0E4be55c0219Ee7f9aDdd0D](https://etherscan.io/address/0xE78717192C45736DF0E4be55c0219Ee7f9aDdd0D));
+OssifiableProxy.sol ([0xC69685E89Cefc327b43B7234AC646451B27c544d](https://etherscan.io/address/0xC69685E89Cefc327b43B7234AC646451B27c544d)) was deployed for OperatorGrid.sol;
+OssifiableProxy.sol ([0x23ED611be0e1a820978875C0122F92260804cdDf](https://etherscan.io/address/0x23ED611be0e1a820978875C0122F92260804cdDf)) was deployed for Accounting.sol;
+OssifiableProxy.sol ([0x5DB427080200c235F2Ae8Cd17A7be87921f7AD6c](https://etherscan.io/address/0x5DB427080200c235F2Ae8Cd17A7be87921f7AD6c)) was deployed for LazyOracle.sol;
+StakingVault.sol ([0x06A56487494aa080deC7Bf69128EdA9225784553](https://etherscan.io/address/0x06A56487494aa080deC7Bf69128EdA9225784553)) was deployed as a reference implementation for stVault;
+Dashboard.sol ([0x294825c2764c7D412dc32d87E2242c4f1D989AF3](https://etherscan.io/address/0x294825c2764c7D412dc32d87E2242c4f1D989AF3)) was deployed as a reference implementation for Dashboard.
 
 
 File name | Contract deployed on mainnet
@@ -97,7 +100,7 @@ TokenRateNotifier.sol | [0x25e35855783bec3E49355a29e110f02Ed8b05ba9](https://eth
 OssifiableProxy.sol | [0x1d201BE093d847f6446530Efb0E8Fb426d176709](https://etherscan.io/address/0x1d201BE093d847f6446530Efb0E8Fb426d176709)
 VaultHub.sol | [0x7c7d957D0752AB732E73400624C4a1eb1cb6CF50](https://etherscan.io/address/0x7c7d957D0752AB732E73400624C4a1eb1cb6CF50)
 OssifiableProxy.sol | [0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3](https://etherscan.io/address/0xF4bF42c6D6A0E38825785048124DBAD6c9eaaac3)
-PredepositGuarantee.sol | [0xCC08C36BD5bb78FDcB10F35B404ada6Ffc71a023](https://etherscan.io/address/0xCC08C36BD5bb78FDcB10F35B404ada6Ffc71a023)
+PredepositGuarantee.sol | [0xE78717192C45736DF0E4be55c0219Ee7f9aDdd0D](https://etherscan.io/address/0xE78717192C45736DF0E4be55c0219Ee7f9aDdd0D)
 OssifiableProxy.sol | [0xC69685E89Cefc327b43B7234AC646451B27c544d](https://etherscan.io/address/0xC69685E89Cefc327b43B7234AC646451B27c544d)
 OperatorGrid.sol | [0xA612E30D71d7D54aEaf4e5A21023F3F270932C2C](https://etherscan.io/address/0xA612E30D71d7D54aEaf4e5A21023F3F270932C2C)
 OssifiableProxy.sol | [0x23ED611be0e1a820978875C0122F92260804cdDf](https://etherscan.io/address/0x23ED611be0e1a820978875C0122F92260804cdDf)
