@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Liquorice | Liquorice | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Liquorice/Liquorice%20Security%20Audit%20Report.pdf) | 2026.01.20 |
 | Lido | EasyTrack stVaults | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/EasyTrack%20stVaults/Lido%20EasyTrack%20stVaults%20Security%20Audit%20Report.pdf) | 2026.01.15 |
 | Lido | Lido v3 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20v3/Lido%20v3%20Security%20Audit%20Report.pdf) | 2026.01.15 |
 | Resolv | ExternalRequestsCoordinator | ![Basis Trading](https://img.shields.io/badge/Basis%20Trading-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/ExternalRequestsCoordinator/Resolv%20ExternalRequestsCoordinator%20Security%20Audit%20Report.pdf) | 2026.01.15 |
@@ -65,7 +66,6 @@ Security audit reports performed by the MixBytes team and released with client a
 | P2P.org | Staking Lending Proxy | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Staking%20Lending%20Proxy/P2P%20Staking%20Lending%20Proxy.pdf) | 2025.03.20 |
 | Resolv | Treasury Escrow | ![Basis Trading](https://img.shields.io/badge/Basis%20Trading-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/Treasury%20Escrow/Resolv%20Treasury%20Escrow%20Security%20Audit%20Report.pdf) | 2025.03.14 |
 | Enjoyoors | EVM Vaults | ![CDP](https://img.shields.io/badge/CDP-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Enjoyoors/EVM%20Vaults/Enjoyoors%20EVM%20Vaults%20Security%20Audit%20Report.pdf) | 2025.03.11 |
-| Liquorice | Liquorice | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Liquorice/Liquorice%20Security%20Audit%20Report.pdf) | 2025.02.26 |
 | Ozean Finance | Ozean Finance | ![RWA](https://img.shields.io/badge/RWA-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Ozean%20Finance/Ozean%20Finance%20Security%20Audit%20Report.pdf) | 2025.02.20 |
 | P2P.org | Lending Proxy | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Lending%20Proxy/P2P.org%20Lending%20Proxy%20Security%20Audit%20Report.pdf) | 2025.01.24 |
 | EYWA | DAO | ![Cross Chain Bridge](https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/EYWA/DAO/Eywa%20DAO%20Security%20Audit%20Report.pdf) | 2025.01.15 |
