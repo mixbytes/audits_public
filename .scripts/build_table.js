@@ -221,34 +221,12 @@ const CATEGORY_MAP = {
     'KickICO:KickICO': 'Launchpad'
   };
 
-const UNIQUE_CATEGORIES = {
-    'Basis Trading': '(https://img.shields.io/badge/Basis%20Trading-%23424200)',
-    'Bridge': '(https://img.shields.io/badge/Bridge-%23424200)',
-    'CDP': '(https://img.shields.io/badge/CDP-%23424200)',
-    'Cross Chain Bridge': '(https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200)',
-    'DEX': '(https://img.shields.io/badge/DEX-%23424200)',
-    'DEX Aggregator': '(https://img.shields.io/badge/DEX%20Aggregator-%23424200)',
-    'DEX CDP Lending': '(https://img.shields.io/badge/DEX%20CDP%20Lending-%23424200)',
-    'Derivatives': '(https://img.shields.io/badge/Derivatives-%23424200)',
-    'Indexes': '(https://img.shields.io/badge/Indexes-%23424200)',
-    'Insurance': '(https://img.shields.io/badge/Insurance-%23424200)',
-    'L2': '(https://img.shields.io/badge/L2-%23424200)',
-    'Launchpad': '(https://img.shields.io/badge/Launchpad-%23424200)',
-    'Lending': '(https://img.shields.io/badge/Lending-%23424200)',
-    'Lending DEX': '(https://img.shields.io/badge/Lending%20DEX-%23424200)',
-    'Leveraged Farming': '(https://img.shields.io/badge/Leveraged%20Farming-%23424200)',
-    'Liquid Restaking': '(https://img.shields.io/badge/Liquid%20Restaking-%23424200)',
-    'Liquid Staking': '(https://img.shields.io/badge/Liquid%20Staking-%23424200)',
-    'Middleware': '(https://img.shields.io/badge/Middleware-%23424200)',
-    'NFTFi': '(https://img.shields.io/badge/NFTFi-%23424200)',
-    'Oracle': '(https://img.shields.io/badge/Oracle-%23424200)',
-    'RWA': '(https://img.shields.io/badge/RWA-%23424200)',
-    'Services': '(https://img.shields.io/badge/Services-%23424200)',
-    'Staking': '(https://img.shields.io/badge/Staking-%23424200)',
-    'Uncollateralized Lending': '(https://img.shields.io/badge/Uncollateralized%20Lending-%23424200)',
-    'Yield': '(https://img.shields.io/badge/Yield-%23424200)',
-    'Yield Aggregator': '(https://img.shields.io/badge/Yield%20Aggregator-%23424200)'
-};
+function categoryToBadgeUrl(text) {
+    const prefix = 'https://img.shields.io/badge/';
+    const encodedText = text.replace(/ /g, '%20');
+    const postfix = '-%23424200';
+    return prefix + encodedText + postfix;
+}
 
 (async () => {
 
@@ -353,7 +331,7 @@ audits.forEach(audit => {
     const key = audit[0] + ":" + audit[1];
     const category = CATEGORY_MAP[key] ?? '-';
     const categoryFinal = category !== '-' ? category : audit[6];
-    const finalCategory = categoryFinal !== 'N/A' ? ("![" + categoryFinal + "]" + UNIQUE_CATEGORIES[categoryFinal]) : categoryFinal;
+    const finalCategory = categoryFinal !== 'N/A' ? ("![" + categoryFinal + "](" + categoryToBadgeUrl(categoryFinal) + ")") : categoryFinal;
 
     table += `| ${audit[0]} | ${audit[1]} | ${finalCategory} | ${pdfPath} | ${audit[5]} |\n`;
 });
