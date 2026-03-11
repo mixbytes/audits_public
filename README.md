@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Barter DAO | Superposition | ![DEX Aggregator](https://img.shields.io/badge/DEX%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/BarterDAO%20Superposition%20Security%20Audit%20Report.pdf) | 2026.03.10 |
 | OKX | xAsset | ![CEX](https://img.shields.io/badge/CEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/OKX/xAsset/OKX%20xAsset%20Security%20Audit%20Report.pdf) | 2026.02.02 |
 | Liquorice | Liquorice | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Liquorice/Liquorice%20Security%20Audit%20Report.pdf) | 2026.01.20 |
 | Lido | EasyTrack stVaults | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/EasyTrack%20stVaults/Lido%20EasyTrack%20stVaults%20Security%20Audit%20Report.pdf) | 2026.01.15 |
