@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Lido | Easy Track (3) | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(3)/Lido%20Easy%20Track%20Security%20Audit%20Report.pdf) | 2026.03.18 |
 | Instadapp | Fluid Money Market Oracle | ![Oracle](https://img.shields.io/badge/Oracle-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Instadapp/Fluid%20Money%20Market%20Oracle/Instadapp%20Fluid%20Money%20Market%20Oracle%20Security%20Audit%20Report.pdf) | 2026.03.17 |
 | OKX | DEX-Router | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/OKX/DEX-Router/OKX%20DEX-Router%20Security%20Audit%20Report.pdf) | 2026.03.13 |
 | Barter DAO | Superposition | ![DEX Aggregator](https://img.shields.io/badge/DEX%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Barter%20DAO/Superposition/BarterDAO%20Superposition%20Security%20Audit%20Report.pdf) | 2026.03.10 |
