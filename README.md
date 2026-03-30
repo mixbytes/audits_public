@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Yield Basis | Hybrid Vault | ![Leveraged Farming](https://img.shields.io/badge/Leveraged%20Farming-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/Hybrid%20Vault/Yield%20Basis%20Hybrid%20Vault%20Security%20Audit%20Report.pdf) | 2026.03.26 |
 | Lido | DeFi Wrapper Mellow Strategy | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/DeFi%20Wrapper%20Mellow%20Strategy/Lido%20DeFi%20Wrapper%20Mellow%20Strategy%20Adapter%20Security%20Audit%20Report.pdf) | 2026.03.19 |
 | P2P.org | SSV Integration Diff Audit (v1) | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/P2P.org/SSV%20Integration%20Diff%20Audit%20(v1)/P2P.org%20SSV%20Integration%20Security%20Audit%20Report.pdf) | 2026.03.19 |
 | Lido | Easy Track (3) | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20(3)/Lido%20Easy%20Track%20Security%20Audit%20Report.pdf) | 2026.03.18 |
