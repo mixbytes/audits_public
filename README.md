@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Yield Basis | Hybrid Vault | ![Leveraged Farming](https://img.shields.io/badge/Leveraged%20Farming-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/Hybrid%20Vault/Yield%20Basis%20Hybrid%20Vault%20Security%20Audit%20Report.pdf) | 2026.04.10 |
 | DIA | DIA Oracle V3 | ![Oracle](https://img.shields.io/badge/Oracle-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/DIA/DIA%20Oracle%20V3/DIA%20Oracle%20V3%20Security%20Audit%20Report.pdf) | 2026.03.31 |
 | AAVE | Aave v3.7 | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/AAVE/Aave%20v3.7/Aave%20v3.7%20Security%20Audit%20Report.pdf) | 2026.03.30 |
 | Lido | DeFi Wrapper Mellow Strategy | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/DeFi%20Wrapper%20Mellow%20Strategy/Lido%20DeFi%20Wrapper%20Mellow%20Strategy%20Adapter%20Security%20Audit%20Report.pdf) | 2026.03.19 |
