@@ -3,9 +3,9 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| MEV-X | Homelander | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/MEV-X/Homelander/MEV-X%20Homelander%20Security%20Audit%20Report.pdf) | 2026.05.12 |
 | EYWA | CDP | ![Cross Chain Bridge](https://img.shields.io/badge/Cross%20Chain%20Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/EYWA/CDP/CrossCurve%20CDP%20Security%20Audit%20Report.pdf) | 2026.05.06 |
 | Lido | CircuitBreaker | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/CircuitBreaker/Lido%20CircuitBreaker%20Security%20Audit%20Report.pdf) | 2026.05.01 |
-| MEV-X | Homelander | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/MEV-X/Homelander/MEV-X%20Homelander%20Security%20Audit%20Report.pdf) | 2026.04.28 |
 | Lido | EasyTrack stVaults v3.0.2  | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/EasyTrack%20stVaults%20v3.0.2%20/Lido%20EasyTrack%20stVaults%20Security%20Audit%20Report.pdf) | 2026.04.21 |
 | Lido | Lido v3.0.2 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Lido%20v3.0.2/Lido%20v3%20Security%20Audit%20Report.pdf) | 2026.04.21 |
 | Yield Basis | Hybrid Vault | ![Leveraged Farming](https://img.shields.io/badge/Leveraged%20Farming-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Yield%20Basis/Hybrid%20Vault/Yield%20Basis%20Hybrid%20Vault%20Security%20Audit%20Report.pdf) | 2026.04.10 |
