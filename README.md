@@ -4,6 +4,7 @@ Security audit reports performed by the MixBytes team and released with client a
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
 | Resolv | Vault Street | ![RWA](https://img.shields.io/badge/RWA-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/Vault%20Street/Resolv%20Vault%20Street%20Security%20Audit%20Report.pdf) | 2026.06.17 |
+| Lido | AAVE Migrator | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/AAVE%20Migrator/Lido%20AAVE%20Migrator%20Security%20Audit%20Report.pdf) | 2026.06.08 |
 | Lido | GGV Migrator V2 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/GGV%20Migrator%20V2/Lido%20GGV%20Migrator%20V2%20Security%20Audit%20Report.pdf) | 2026.05.27 |
 | P2P.org | Eth2 Depositor | ![Staking](https://img.shields.io/badge/Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/P2P.org/Eth2%20Depositor/P2P.org%20Eth2%20Depositor%20Security%20Audit%20Report.pdf) | 2026.05.25 |
 | MEV-X | Homelander | ![DEX](https://img.shields.io/badge/DEX-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/MEV-X/Homelander/MEV-X%20Homelander%20Security%20Audit%20Report.pdf) | 2026.05.12 |
