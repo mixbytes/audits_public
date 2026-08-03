@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Shift | DeFi Platform | ![Yield Aggregator](https://img.shields.io/badge/Yield%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Shift/DeFi%20Platform/Shift%20DeFi%20Platform%20Security%20Audit%20Report.pdf) | 2026.07.31 |
 | Lido | Easy Track Factories (SRv3:CMv2) | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20Factories%20(SRv3:CMv2)/Lido%20Easy%20Track%20Factories%20SRv3%20CSMv3%20CMv2%20Security%20Audit%20Report.pdf) | 2026.07.24 |
 | Lido | SRv3 CMv2 Voting script | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/SRv3%20CMv2%20Voting%20script/Lido%20SRv3%20CMv2%20Voting%20script%20Security%20Audit%20Report.pdf) | 2026.07.09 |
 | Gearbox Protocol | Gearbox Kelp Integration | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20Kelp%20Integration/Gearbox%20Kelp%20Integration%20Security%20Audit%20Report.pdf) | 2026.06.17 |
