@@ -3,7 +3,6 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
-| TokenRateNotifier | TokenRateNotifier | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/TokenRateNotifier/Lido%20TokenRateNotifier%20Security%20Audit%20Report.pdf) | 2026.08.04 |
 | Shift | DeFi Platform | ![Yield Aggregator](https://img.shields.io/badge/Yield%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Shift/DeFi%20Platform/Shift%20DeFi%20Platform%20Security%20Audit%20Report.pdf) | 2026.07.31 |
 | Shift | USDT0 Bridge & Strategies | ![Yield Aggregator](https://img.shields.io/badge/Yield%20Aggregator-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Shift/USDT0%20Bridge%20&%20Strategies/Shift%20USDT0%20Bridge%20&%20Strategies%20Security%20Audit%20Report%20.pdf) | 2026.07.31 |
 | Lido | Oracle | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Oracle/Lido%20Oracle%20Security%20Audit%20Report.pdf) | 2026.07.28 |
