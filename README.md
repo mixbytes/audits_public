@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Gearbox Protocol | core-v3 Account Factory Diff-Audit | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/core-v3%20Account%20Factory%20Diff-Audit/Gearbox%20core-v3%20Account%20Factory%20Diff-Audit%20Report.pdf) | 2026.08.07 |
 | Gearbox Protocol | Gearbox core v3 Account Factory Diff | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20core%20v3%20Account%20Factory%20Diff/Gearbox%20core-v3%20Account%20Factory%20Diff%20Security%20Audit%20Report.pdf) | 2026.08.07 |
 | Lido | L2 Direct Staking (Linea Adapter) | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/L2%20Direct%20Staking%20(Linea%20Adapter)/Lido%20L2%20Direct%20Staking%20(Linea%20Adapter)%20Security%20Audit%20Report.pdf) | 2026.08.04 |
 | Lido | L2 Direct Staking | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/L2%20Direct%20Staking/Lido%20L2%20Direct%20Staking%20Security%20Audit%20Report.pdf) | 2026.08.04 |
