@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Resolv | Vault Street | ![RWA](https://img.shields.io/badge/RWA-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/Vault%20Street/Resolv%20Vault%20Street%20Security%20Audit%20Report.pdf) | 2026.08.24 |
 | Gearbox Protocol | Integrations-v3 (Midas RWA) | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Integrations-v3%20(Midas%20RWA)/Gearbox%20Protocol%20integrations-v3%20(Midas%20RWA)%20Security%20Audit%20Report.pdf) | 2026.08.14 |
 | Gearbox Protocol | Integrations-v3 (Securitize RWA) | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Integrations-v3%20(Securitize%20RWA)/Gearbox%20Protocol%20integrations-v3%20(Securitize%20RWA)%20Security%20Audit%20Report.pdf) | 2026.08.14 |
 | Gearbox Protocol | Gearbox core v3 Account Factory Diff | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Gearbox%20core%20v3%20Account%20Factory%20Diff/Gearbox%20core-v3%20Account%20Factory%20Diff%20Security%20Audit%20Report.pdf) | 2026.08.07 |
