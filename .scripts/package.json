@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "brace-expansion": "^2.1.2",
     "glob": "^7.1.7",
     "moment": "^2.29.1",
     "pdf-parse": "^1.1.1"
