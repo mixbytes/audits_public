@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Lido | L2 Direct Staking | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/L2%20Direct%20Staking/Lido%20L2%20Direct%20Staking%20Security%20Audit%20Report.pdf) | 2026.09.03 |
 | Lido | Easy Track factory for Deposit Reserve Target | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20factory%20for%20Deposit%20Reserve%20Target/Lido%20Easy%20Track%20factory%20for%20Deposit%20Reserve%20Target%20management%20Security%20Audit%20Report.pdf) | 2026.09.02 |
 | Lido | Oracle v8.0.6 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Oracle%20v8.0.6/Lido%20Oracle%20Security%20Audit%20Report.pdf) | 2026.08.31 |
 | Resolv | Vault Street | ![RWA](https://img.shields.io/badge/RWA-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Resolv/Vault%20Street/Resolv%20Vault%20Street%20Security%20Audit%20Report.pdf) | 2026.08.31 |
