@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| DIA | DIA Oracle V3 | ![Oracle](https://img.shields.io/badge/Oracle-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/DIA/DIA%20Oracle%20V3/DIA%20Oracle%20V3%20Security%20Audit%20Report.pdf) | 2026.09.11 |
 | Lido | Execution Delegation Framework | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Execution%20Delegation%20Framework/Lido%20Execution%20Delegation%20Framework%20Security%20Audit%20Report.pdf) | 2026.09.11 |
 | Lido | L2 Direct Staking | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/L2%20Direct%20Staking/Lido%20L2%20Direct%20Staking%20Security%20Audit%20Report.pdf) | 2026.09.03 |
 | Lido | Easy Track factory for Deposit Reserve Target | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20factory%20for%20Deposit%20Reserve%20Target/Lido%20Easy%20Track%20factory%20for%20Deposit%20Reserve%20Target%20management%20Security%20Audit%20Report.pdf) | 2026.09.02 |
