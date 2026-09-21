@@ -672,7 +672,7 @@ Fixed at https://github.com/CreamFi/compound-protocol/commit/f634f8fc6332d4e7e5f
 In `CCollateralCapErc20.sol` at line https://github.com/CreamFi/compound-protocol/blob/23a4ae93adc70334553f5a83429a4e967c1eefaa/contracts/CCollateralCapErc20.sol#L513 the `div_ScalarByExpTruncate()` may round the result down to the next nearest integer if it is calculated to be a non-integer number of cToken units, sufficiently small loans may be affected, however, the loss should never be more than one indivisible unit of a token used
 
 ##### Recommendation
-This is a relatively unavoidable error which appears due to to EVM operation result. It should be acknowledged by suppliers with extremely small amount of tokens
+This is a relatively unavoidable error which appears due to the EVM operation result. It should be acknowledged by suppliers with extremely small amount of tokens
 
 ##### Status
 Acknowledged
