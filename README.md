@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| Lido | Oracle v8.2.0 Diff | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Oracle%20v8.2.0%20Diff/Lido%20Oracle%20v8.2.0%20Diff%20Security%20Audit%20Report.pdf) | 2026.10.07 |
 | DIA | DIA Oracle V3 | ![Oracle](https://img.shields.io/badge/Oracle-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/DIA/DIA%20Oracle%20V3/DIA%20Oracle%20V3%20Security%20Audit%20Report.pdf) | 2026.09.11 |
 | Lido | Execution Delegation Framework | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Execution%20Delegation%20Framework/Lido%20Execution%20Delegation%20Framework%20Security%20Audit%20Report.pdf) | 2026.09.11 |
 | Lido | L2 Direct Staking | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/L2%20Direct%20Staking/Lido%20L2%20Direct%20Staking%20Security%20Audit%20Report.pdf) | 2026.09.03 |
