@@ -3,6 +3,7 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
+| BarterLab | BarterLab | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/BarterLab/BarterLab%20BarterLend%20Security%20Audit%20Report.pdf) | 2026.10.30 |
 | Lido | CSM 0x02 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM%200x02/Lido%20CSM%200x02%20Deployment%20Verification%20Report.pdf) | 2026.10.08 |
 | Lido | Easy Track Factories CSM 0x02 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20Factories%20CSM%200x02/Lido%20Easy%20Track%20Factories%20CSM%200x02%20Deployment%20Verification%20Report.pdf) | 2026.10.07 |
 | Lido | Oracle v8.2.0 Diff | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Oracle%20v8.2.0%20Diff/Lido%20Oracle%20v8.2.0%20Diff%20Security%20Audit%20Report.pdf) | 2026.10.07 |
