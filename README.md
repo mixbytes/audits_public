@@ -3,7 +3,6 @@ Security audit reports performed by the MixBytes team and released with client a
 
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
-| Catapult | PULT OFT Bridge | ![Bridge](https://img.shields.io/badge/Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Catapult/PULT%20OFT%20Bridge/Catapult%20PULT%20OFT%20Bridge%20Security%20Audit%20Report.pdf) | 2026.11.06 |
 | BarterLab | BarterLab | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/BarterLab/BarterLab%20BarterLend%20Security%20Audit%20Report.pdf) | 2026.10.30 |
 | Lido | CSM 0x02 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/CSM%200x02/Lido%20CSM%200x02%20Deployment%20Verification%20Report.pdf) | 2026.10.08 |
 | Lido | Easy Track Factories CSM 0x02 | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/Easy%20Track%20Factories%20CSM%200x02/Lido%20Easy%20Track%20Factories%20CSM%200x02%20Deployment%20Verification%20Report.pdf) | 2026.10.07 |
