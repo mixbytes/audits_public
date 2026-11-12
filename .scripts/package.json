@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glob": "^7.1.7",
+    "glob": "^13.0.6",
     "moment": "^2.29.1",
     "pdf-parse": "^1.1.1"
   }
