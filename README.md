@@ -4,6 +4,7 @@ Security audit reports performed by the MixBytes team and released with client a
 | Client | Project | Category | Report | Date |
 |---|---|---|---|---|
 | Gearbox Protocol | Price Feeds and Signature Degen NFT | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Gearbox%20Protocol/Price%20Feeds%20and%20Signature%20Degen%20NFT/Gearbox%20Price%20Feeds%20and%20Signature%20Degen%20NFT.pdf) | 2026.11.19 |
+| Lido | ConsolidationMigrator | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/ConsolidationMigrator/Lido%20ConsolidationMigrator%20Deployment%20Verification%20Report.pdf) | 2026.11.16 |
 | Lido | CMv2 Top-Up Control | ![Liquid Staking](https://img.shields.io/badge/Liquid%20Staking-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Lido/CMv2%20Top-Up%20Control/Lido%20CMv2%20Top-Up%20Control%20Security%20Audit%20Report.pdf) | 2026.11.12 |
 | Catapult | PULT OFT Bridge | ![Bridge](https://img.shields.io/badge/Bridge-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/Catapult/PULT%20OFT%20Bridge/Catapult%20PULT%20OFT%20Bridge%20Security%20Audit%20Report.pdf) | 2026.11.10 |
 | BarterLab | BarterLab | ![Lending](https://img.shields.io/badge/Lending-%23424200) | [📄](https://github.com/mixbytes/audits_public/blob/master/BarterLab/BarterLab%20BarterLend%20Security%20Audit%20Report.pdf) | 2026.10.30 |
